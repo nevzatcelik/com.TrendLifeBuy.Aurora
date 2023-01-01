@@ -58,12 +58,7 @@ public class US022_023_024 {
 
     @Then("Verifies that the Basic Info tab contains First Name, Last Name,Email Address, Phone Number, Date of Birth, Description,Text Box")
     public void verifiesThatTheBasicInfoTabContainsFirstNameLastNameEmailAddressPhoneNumberDateOfBirthDescriptionTextBox() {
-        assertTrue(nevzat.firstNameBoxMyAccount.isDisplayed());
-        assertTrue(nevzat.lastNameBoxMyAccount.isDisplayed());
-        assertTrue(nevzat.emailAdressBoxMyAccount.isDisplayed());
-        assertTrue(nevzat.phoneNumberBoxMyAccount.isDisplayed());
-        assertTrue(nevzat.dateOfBirthBoxMyAccount.isDisplayed());
-        assertTrue(nevzat.descriptionsBoxMyAccount.isDisplayed());
+        nevzat.verifiesThatTheBasicInfoTab();
     }
 
     @Then("User verifies that the information in the Basic Info tab \\({string},{string}, {string} {string}) is the user's information.")
@@ -83,7 +78,7 @@ public class US022_023_024 {
 
     @Then("User enters {string} {string} {string} {string} {string} {string} in textboxes and confirms that it is updateable")
     public void userEntersInTextboxesAndConfirmsThatItIsUpdateable(String firstname, String lastname, String mail, String phoneNumber, String dateOfBirth, String description) {
-
+        nevzat.uploadAllBoxInAccountPage(firstname,lastname,mail,phoneNumber,dateOfBirth,description);
     }
 
 
