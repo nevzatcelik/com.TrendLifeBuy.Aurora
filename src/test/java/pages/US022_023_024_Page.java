@@ -1,8 +1,10 @@
 package pages;
 
+import org.bouncycastle.jcajce.provider.asymmetric.X509;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
@@ -50,6 +52,21 @@ public class US022_023_024_Page {
     @FindBy(xpath = "//*[text()='Success']")
     private WebElement successMessageMyAccount;
 
+    @FindBy(xpath = "//button[@id='Password-tab']")
+    public WebElement changePasswordButtonMyAccount;
+
+    @FindBy(xpath = "//input[@name='current_password']")
+    private WebElement currentPasswordBox;
+
+    @FindBy(xpath = "//input[@placeholder='New Password']")
+    private WebElement newPasswordBox;
+
+    @FindBy(xpath = "//input[@name='new_password_confirmation']")
+    private WebElement reEnterNewPasswordBox;
+
+    @FindBy(xpath = "//button[@class='amaz_primary_btn style2 rounded-0  text-uppercase  text-center min_200 change_password']")
+    private WebElement updateNowButtonChangePassword;
+
     public void verifiesThatTheBasicInfoTab(){
         assertTrue(firstNameBoxMyAccount.isDisplayed());
         assertTrue(lastNameBoxMyAccount.isDisplayed());
@@ -72,6 +89,20 @@ public class US022_023_024_Page {
         descriptionsBoxMyAccount.sendKeys(ConfigReader.getProperty(description));
         ReusableMethods.bekle(2);
         updateNowButtonMyAccount.click();
+        Assert.assertTrue(successMessageMyAccount.isDisplayed());
+    }
+
+    public void verifiesThatChangePasswordPage(){
+        currentPasswordBox.isDisplayed();
+        newPasswordBox.isDisplayed();
+        reEnterNewPasswordBox.isDisplayed();
+    }
+    public void changePassword(String current, String newPassword, String reNewPassword){
+        currentPasswordBox.sendKeys(ConfigReader.getProperty(current));
+        newPasswordBox.sendKeys(ConfigReader.getProperty(newPassword));
+        reEnterNewPasswordBox.sendKeys(ConfigReader.getProperty(reNewPassword));
+        Actions actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
         Assert.assertTrue(successMessageMyAccount.isDisplayed());
     }
 }

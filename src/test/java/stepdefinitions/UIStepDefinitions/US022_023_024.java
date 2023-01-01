@@ -82,4 +82,18 @@ public class US022_023_024 {
     }
 
 
+    @Then("User clicks Change Password button on My Account page")
+    public void userClicksChangePasswordButtonOnMyAccountPage() {
+        nevzat.changePasswordButtonMyAccount.click();
+    }
+
+    @Then("User verifies that the text boxes in the {string} {string} {string} Change Password tab")
+    public void userVerifiesThatTheTextBoxesInTheChangePasswordTab(String current, String newPassword, String reNewPassword) {
+       nevzat.changePassword(current,newPassword,reNewPassword);
+    }
+
+    @Then("User verifies that the text boxes in the Change Password tab")
+    public void userVerifiesThatTheTextBoxesInTheChangePasswordTab() {
+      nevzat.verifiesThatChangePasswordPage();
+    }
 }
