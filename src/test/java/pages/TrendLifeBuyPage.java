@@ -50,7 +50,7 @@ public class TrendLifeBuyPage {
             emailBox.sendKeys(ConfigReader.getProperty(mail));
             passwordBox.sendKeys(ConfigReader.getProperty(password));
             actions.sendKeys(Keys.PAGE_DOWN).perform();
-            ReusableMethods.bekle(2);
+            ReusableMethods.bekle(3);
             signInButton.click();
         }
     }

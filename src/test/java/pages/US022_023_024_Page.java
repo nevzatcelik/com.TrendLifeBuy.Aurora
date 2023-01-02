@@ -71,6 +71,12 @@ public class US022_023_024_Page {
     @FindBy(xpath = "(//*[text()='Address'])[1]")
     public WebElement adressButtonMyAccount;
 
+    @FindBy(xpath = "//*[text()='Add new address']")
+    public WebElement addNewAddress;
+
+    @FindBy(xpath = "//button[@class='amazy_status_btn edit_address']")
+    public WebElement editIconAdressPage;
+
     public void verifiesThatTheBasicInfoTab(){
         assertTrue(firstNameBoxMyAccount.isDisplayed());
         assertTrue(lastNameBoxMyAccount.isDisplayed());
@@ -121,7 +127,7 @@ public class US022_023_024_Page {
         reEnterNewPasswordBox.sendKeys(ConfigReader.getProperty(reNewPassword));
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
-        Assert.assertFalse(successMessageMyAccount.isDisplayed());
+        Assert.assertTrue(successMessageMyAccount.isDisplayed());
     }
 
     @FindBy(xpath = "//*[text()='nevzat']")
@@ -138,6 +144,47 @@ public class US022_023_024_Page {
 
     @FindBy(xpath = "//*[text()='571534519']")
     private WebElement phoneNumberAdressPage;
+
+    @FindBy(xpath = "(//*[text()='Type'])[2]")
+    private WebElement typeUpdateAddressPage;
+
+    @FindBy(xpath = "(//input[@name='name'])[3]")
+    private WebElement nameBoxUpdateAddressPage;
+
+    @FindBy(xpath = "(//input[@name='email'])[3]")
+    private WebElement emailAdressBoxUpdateAddressPage;
+
+    @FindBy(xpath = "(//input[@name='phone'])[3]")
+    private WebElement phoneNumberBoxUpdateAddressPage;
+
+    @FindBy(xpath = "(//div[@class='nice-select theme_select style2 wide'])[6]")
+    private WebElement countryBoxUpdateAddressPage;
+
+    @FindBy(xpath = "(//div[@class='nice-select theme_select style2 wide'])[7]")
+    private WebElement stateBoxUpdateAddressPage;
+
+    @FindBy(xpath = "(//div[@class='nice-select theme_select style2 wide'])[8]")
+    private WebElement cityBoxUpdateAddressPage;
+
+    @FindBy(xpath = "(//input[@name='postal_code'])[2]")
+    private WebElement postalCodeUpdateAddressPage;
+
+    @FindBy(xpath = "(//textarea[@name='address'])[2]")
+    private WebElement streetAddressUpdateAddressPage;
+
+    public void updateAddressPageAssertion(){
+        ReusableMethods.waitForVisibility(typeUpdateAddressPage,5);
+        Assert.assertTrue(typeUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(nameBoxUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(emailAdressBoxUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(phoneNumberBoxUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(countryBoxUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(stateBoxUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(cityBoxUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(postalCodeUpdateAddressPage.isDisplayed());
+        Assert.assertTrue(streetAddressUpdateAddressPage.isDisplayed());
+    }
+
 
     public void addressPageUserAssertinInformation(){
         ReusableMethods.bekle(2);
@@ -156,6 +203,5 @@ public class US022_023_024_Page {
         Assert.assertEquals(expectedPhoneNumber,phoneNumberAdressPage.getText());
 
     }
-
 
 }
