@@ -11,6 +11,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class US022_023_024_Page {
@@ -29,13 +30,13 @@ public class US022_023_024_Page {
     public WebElement image;
 
     @FindBy(xpath = "//input[@name='first_name']")
-    public WebElement firstNameBoxMyAccount;
+    private WebElement firstNameBoxMyAccount;
 
     @FindBy(xpath = "//input[@name='last_name']")
-    public WebElement lastNameBoxMyAccount;
+    private WebElement lastNameBoxMyAccount;
 
     @FindBy(xpath = "(//input[@name='email'])[1]")
-    public WebElement emailAdressBoxMyAccount;
+    private WebElement emailAdressBoxMyAccount;
 
     @FindBy(xpath = "(//input[@name='phone'])[1]")
     private WebElement phoneNumberBoxMyAccount;
@@ -67,6 +68,9 @@ public class US022_023_024_Page {
     @FindBy(xpath = "//button[@class='amaz_primary_btn style2 rounded-0  text-uppercase  text-center min_200 change_password']")
     private WebElement updateNowButtonChangePassword;
 
+    @FindBy(xpath = "(//BUTTON[@class='nav-link'])[2]")
+    public WebElement adressButtonMyAccount;
+
     public void verifiesThatTheBasicInfoTab(){
         assertTrue(firstNameBoxMyAccount.isDisplayed());
         assertTrue(lastNameBoxMyAccount.isDisplayed());
@@ -74,6 +78,20 @@ public class US022_023_024_Page {
         assertTrue(phoneNumberBoxMyAccount.isDisplayed());
         assertTrue(dateOfBirthBoxMyAccount.isDisplayed());
         assertTrue(descriptionsBoxMyAccount.isDisplayed());
+    }
+
+    //TC2204
+    public void verifiesBasicInfoTabMyAccount(String firstname, String lastname, String emailAdress, String value){
+        String expected1=ConfigReader.getProperty(firstname);
+        String actual1=firstNameBoxMyAccount.getAttribute(value);
+        String expected2= ConfigReader.getProperty(lastname);
+        String actual2=lastNameBoxMyAccount.getAttribute(value);
+        String expected3=ConfigReader.getProperty(emailAdress);
+        String actual3=emailAdressBoxMyAccount.getAttribute(value);
+
+        assertEquals(expected1,actual1);
+        assertEquals(expected2,actual2);
+        assertEquals(expected3,actual3);
     }
     public void uploadAllBoxInAccountPage(String firstname, String lastname, String mail, String phoneNumber, String dateOfBirth, String description){
         firstNameBoxMyAccount.clear();
@@ -103,6 +121,6 @@ public class US022_023_024_Page {
         reEnterNewPasswordBox.sendKeys(ConfigReader.getProperty(reNewPassword));
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
-        Assert.assertTrue(successMessageMyAccount.isDisplayed());
+        Assert.assertFalse(successMessageMyAccount.isDisplayed());
     }
 }

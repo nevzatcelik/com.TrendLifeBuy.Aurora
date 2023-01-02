@@ -68,3 +68,13 @@ Feature: US22
     Then User clicks Change Password button on My Account page
     Then User verifies that the text boxes in the "password" "newPassword" "reNewPassword" Change Password tab
     And  Closes the page
+
+  Scenario: TC_2208 It should be verified that the Full Name, Address, Region, E-mail, Phone Number information in the Address tab belong the user.
+
+    Given Open browser go to url "myUrl"
+    Then User clicks on the login link, enters "mail" and "password" and logs in
+    Then User clicks on dashboard link
+    Then User clicks My Account section on dashboard page
+    Then User clicks Adress button on My Account page
+    Then User verifies that the information are  on the User Address page belong the User
+    And  Closes the page
