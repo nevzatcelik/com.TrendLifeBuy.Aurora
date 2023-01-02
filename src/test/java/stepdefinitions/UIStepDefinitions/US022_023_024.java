@@ -95,4 +95,26 @@ public class US022_023_024 {
         nevzat.addressPageUserAssertinInformation();
 
     }
+
+    @Then("User verifies that in the address tab")
+    public void userVerifiesThatInTheAddressTab() {
+        ReusableMethods.bekle(2);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).
+                sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+       Assert.assertTrue(nevzat.addNewAddress.isDisplayed());
+
+    }
+
+    @Then("User clicks edit icon")
+    public void userClicksEditIcon() {
+        ReusableMethods.waitForClickablility(nevzat.editIconAdressPage,5);
+        nevzat.editIconAdressPage.click();
+
+
+    }
+
+    @Then("User verifies that there are textboxes on the page")
+    public void userVerifiesThatThereAreTextboxesOnThePage() {
+     nevzat.updateAddressPageAssertion();
+    }
 }
