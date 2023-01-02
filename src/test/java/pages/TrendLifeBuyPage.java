@@ -59,4 +59,6 @@ public class TrendLifeBuyPage {
         passwordBox.sendKeys(ConfigReader.getProperty(password));
         signInButton.click();
     }
+
+
 }

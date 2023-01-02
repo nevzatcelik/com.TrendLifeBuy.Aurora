@@ -16,8 +16,8 @@ public class TrendLifeBuyCommonStep {
     public void open_browser_go_to_url(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
     }
-    @Then("User clicks on the login link, enters {string} and {string} and logs in")
-    public void user_clicks_on_the_login_link_enters_and_and_logs_in(String mail,String password) {
+    @Then("User clicks on the login link, enters {string} and {string} and logs in.")
+    public void userClicksOnTheLoginLinkEntersAndAndLogsIn(String mail, String password) {
      life.userLogin(mail,password);
     }
     @Then("User clicks on dashboard link")
@@ -33,5 +33,6 @@ public class TrendLifeBuyCommonStep {
       life.adminLogin(mail, password);
 
     }
+
 
 }
