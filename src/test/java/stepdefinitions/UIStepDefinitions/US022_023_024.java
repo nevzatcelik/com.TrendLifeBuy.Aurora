@@ -63,16 +63,7 @@ public class US022_023_024 {
 
     @Then("User verifies that the information in the Basic Info tab \\({string},{string}, {string} {string}) is the user's information.")
     public void userVerifiesThatTheInformationInTheBasicInfoTabIsTheUserSInformation(String firstname, String lastname, String emailAdress, String value) {
-        String expected1=ConfigReader.getProperty(firstname);
-        String actual1=nevzat.firstNameBoxMyAccount.getAttribute(value);
-        String expected2= ConfigReader.getProperty(lastname);
-        String actual2=nevzat.lastNameBoxMyAccount.getAttribute(value);
-        String expected3=ConfigReader.getProperty(emailAdress);
-        String actual3=nevzat.emailAdressBoxMyAccount.getAttribute(value);
-
-        assertEquals(expected1,actual1);
-        assertEquals(expected2,actual2);
-        assertEquals(expected3,actual3);
+     nevzat.verifiesBasicInfoTabMyAccount(firstname,lastname,emailAdress,value);
 
     }
 
@@ -95,5 +86,10 @@ public class US022_023_024 {
     @Then("User verifies that the text boxes in the Change Password tab")
     public void userVerifiesThatTheTextBoxesInTheChangePasswordTab() {
       nevzat.verifiesThatChangePasswordPage();
+    }
+
+    @Then("User clicks Adress button on My Account page")
+    public void userClicksAdressButtonOnMyAccountPage() {
+        nevzat.adressButtonMyAccount.click();
     }
 }
