@@ -68,7 +68,7 @@ public class US022_023_024_Page {
     @FindBy(xpath = "//button[@class='amaz_primary_btn style2 rounded-0  text-uppercase  text-center min_200 change_password']")
     private WebElement updateNowButtonChangePassword;
 
-    @FindBy(xpath = "(//BUTTON[@class='nav-link'])[2]")
+    @FindBy(xpath = "(//*[text()='Address'])[1]")
     public WebElement adressButtonMyAccount;
 
     public void verifiesThatTheBasicInfoTab(){
@@ -123,4 +123,39 @@ public class US022_023_024_Page {
         actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
         Assert.assertFalse(successMessageMyAccount.isDisplayed());
     }
+
+    @FindBy(xpath = "//*[text()='nevzat']")
+    private WebElement fullNametextAdressPage;
+
+    @FindBy(xpath = "//*[text()='SMOCZA']")
+    private WebElement adressTextAdressPage;
+
+    @FindBy(xpath = "//*[text()='Warsaw, Warsaw, Poland']")
+    private WebElement regionTextAdressPage;
+
+    @FindBy(xpath = "(//*[text()='nevzat12@gmail.com'])[2]")
+    private WebElement eMailAdressPage;
+
+    @FindBy(xpath = "//*[text()='571534519']")
+    private WebElement phoneNumberAdressPage;
+
+    public void addressPageUserAssertinInformation(){
+        ReusableMethods.bekle(2);
+        Actions actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).
+        sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        String expectedName="nevzat";
+        String expectedAdress="SMOCZA";
+        String expectedRegion="Warsaw, Warsaw, Poland";
+        String expectedeMail="nevzat12@gmail.com";
+        String expectedPhoneNumber="571534519";
+        Assert.assertEquals(expectedName,fullNametextAdressPage.getText());
+        Assert.assertEquals(expectedAdress,adressTextAdressPage.getText());
+        Assert.assertEquals(expectedRegion,regionTextAdressPage.getText());
+        Assert.assertEquals(expectedeMail,eMailAdressPage.getText());
+        Assert.assertEquals(expectedPhoneNumber,phoneNumberAdressPage.getText());
+
+    }
+
+
 }

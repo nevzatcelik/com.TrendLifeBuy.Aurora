@@ -1,11 +1,9 @@
 package stepdefinitions.UIStepDefinitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.TrendLifeBuyPage;
 import pages.US022_023_024_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,7 +15,6 @@ import static org.junit.Assert.assertTrue;
 public class US022_023_024 {
 
 
-    TrendLifeBuyPage life=new TrendLifeBuyPage();
     US022_023_024_Page nevzat=new US022_023_024_Page();
     Actions actions=new Actions(Driver.getDriver());
 
@@ -88,8 +85,14 @@ public class US022_023_024 {
       nevzat.verifiesThatChangePasswordPage();
     }
 
-    @Then("User clicks Adress button on My Account page")
-    public void userClicksAdressButtonOnMyAccountPage() {
+    @Then("User clicks Address button on My Account page")
+    public void userClicksAddressButtonOnMyAccountPage() {
         nevzat.adressButtonMyAccount.click();
+    }
+
+    @Then("User verifies that the information are  on the User Address page belong the User")
+    public void userVerifiesThatTheInformationAreOnTheUserAddressPageBelongTheUser() {
+        nevzat.addressPageUserAssertinInformation();
+
     }
 }
