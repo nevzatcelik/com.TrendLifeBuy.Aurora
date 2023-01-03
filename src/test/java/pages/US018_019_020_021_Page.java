@@ -93,7 +93,39 @@ public class US018_019_020_021_Page {
     @FindBy(xpath = "//h4[text()='Payment Info ']")
     public WebElement detailsPaymentInfo;
 
+    // ==================== US19 MY WALLET   =======================>>>
+    // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/wallet/customer/my-wallet-index']")
+    public WebElement myWalletLink;
+    @FindBy(xpath = "//h4[text()='My Wallet']")
+    public WebElement myWalletTitle;
+    @FindBy(xpath = "//span[text()='Total Balance']")
+    public WebElement myWalletTotalBalance;
+    @FindBy(xpath = "//h4[text()='Running Balance']")
+    public WebElement myWalletRunningBalance;
+    @FindBy(xpath = "//h4[text()='Pending Balance']")
+    public WebElement myWalletPendingBalance;
+    @FindBy(xpath = "//span[text()='Recharge Wallet']")
+    public WebElement myWalletRechargeWallet;
+    @FindBy(xpath = "//h3[text()='Recharge Amount']")
+    public WebElement rechargeWalletRechargeAmountTab;
+    @FindBy(xpath = "//input[@id='recharge_amount']")
+    public WebElement enterRechargeAmountBox;
+    @FindBy(xpath = "//h5[text()='Cancel']")
+    public WebElement cancelButtonAmountBox;
+    @FindBy(xpath = "//button[text()='Add Fund']")
+    public WebElement addFundButton;
+    @FindBy(xpath = "//h4[text()='My wallet recharge']")
+    public WebElement myWalletRechargeTitle;
+    @FindBy(xpath = "//div[@class='dashboard_white_box_body']")
+    public WebElement sutunWalletRechargeHistoryTitle;
 
+    @FindBy(xpath = "//h4[text()='Wallet Recharge History']")
+    public WebElement walletRechargeHistoryTitle;
+    @FindBy(xpath = "(//div[@class='table-responsive'])[1]")
+    public WebElement walletRechargeHistoryTab;
+
+    // ==================== US20 MY COUPONS   =======================>>>
 
 
 
