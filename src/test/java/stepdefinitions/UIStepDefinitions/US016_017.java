@@ -71,5 +71,53 @@ public class US016_017 {
         ReusableMethods.bekle(2);
         Driver.getDriver().switchTo().window(ilkSayfaWinHandDegeri);
     }
+    @Then("User clicks My Order section on dashbord page")
+    public void user_clicks_my_order_section_on_dashbord_page() {
+        ReusableMethods.bekle(2);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
 
+        ReusableMethods.bekle(2);
+        trendlife.myOrderButton.click();
+        //  actions.sendKeys(Keys.END).perform();
+        ReusableMethods.bekle(2);
+    }
+
+    @Then("User verifies that My Order page is accessible")
+    public void user_verifies_that_my_order_page_is_accessible() {
+        Assert.assertTrue(trendlife.myOrderButton.isEnabled());
+        ReusableMethods.bekle(2);
+    }
+
+    @Then("User verifies that My Order list can be filtered as All, To Pay, To Ship, To Received")
+    public void userVerifiesThatMyOrderListCanBeFilteredAsAllToPayToShipToReceived() {
+        Assert.assertTrue(trendlife.myOrderAllButton.isDisplayed());
+        Assert.assertTrue(trendlife.myOrderToPayButton.isDisplayed());
+        Assert.assertTrue(trendlife.myOrderToShipButton.isDisplayed());
+        Assert.assertTrue(trendlife.myOrderToReceiveButton.isDisplayed());
+    }
+
+    @Then("User verifies that Order ID is displayed")
+    public void user_verifies_that_order_ıd_is_displayed() {
+        Assert.assertTrue(trendlife.orderIdButton.isDisplayed());
+    }
+    @Then("User verifies that Status is displayed")
+    public void user_verifies_that_status_is_displayed() {
+        Assert.assertTrue(trendlife.statusButton.isDisplayed());
+    }
+    @Then("User verifies that Order date is displayed")
+    public void user_verifies_that_order_date_is_displayed() {
+        Assert.assertTrue(trendlife.orderDateButton.isDisplayed());
+    }
+    @Then("User verifies that Order Amount is displayed")
+    public void user_verifies_that_order_amount_is_displayed() {
+        Assert.assertTrue(trendlife.orderAmountButton.isDisplayed());
+    }
+    @Then("User verifies that Paid By is displayed")
+    public void user_verifies_that_paid_by_is_displayed() {
+        Assert.assertTrue(trendlife.paidByButton.isDisplayed());
+    }
 }

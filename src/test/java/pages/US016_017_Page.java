@@ -31,10 +31,8 @@ public class US016_017_Page {
     @FindBy(xpath = "/html/body/div[3]/div/div/div[1]/div/div[3]/ul/li[2]/a")
     public WebElement purchaseHistory;
 
-
     @FindBy(xpath = "//div[@class='nice-select amaz_select3']")
     public WebElement allHistoryDropDown;
-
 
     @FindBy(xpath = "//li[@data-value='all']")
     public WebElement allHistoryButton;
@@ -56,6 +54,60 @@ public class US016_017_Page {
 
     @FindBy(xpath = "(//a[@class='amazy_status_btn'])[1]")
     public WebElement downloadOrderInvoice;
+
+    // +++++++++++++++ US17 +++++++++++++++++++++
+
+    @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[3]")
+    public WebElement myOrderButton;
+
+    @FindBy(xpath = "//button[@id='home-tab']")
+    public WebElement myOrderAllButton;
+
+    @FindBy(xpath = "//button[@id='Pay-tab']")
+    public WebElement myOrderToPayButton;
+
+    @FindBy(xpath = "//button[@id='Ship-tab']")
+    public WebElement myOrderToShipButton;
+
+    @FindBy(xpath = "//button[@id='Receive-tab']")
+    public WebElement myOrderToReceiveButton;
+
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center flex-wrap gap_5'])[1]")
+    public WebElement orderIdButton;
+
+    @FindBy(xpath = "(//h4[@class='font_14 f_w_500 m-0 lh-base'])[2]")
+    public WebElement orderDateButton;
+
+    @FindBy(xpath = "(//h4[@class='font_14 f_w_500 m-0 lh-base'])[3] ")
+    public WebElement statusButton;
+
+    @FindBy(xpath = "(//h4[@class='font_14 f_w_500 m-0 lh-base'])[4] ")
+    public WebElement orderAmountButton;
+
+    @FindBy(xpath = "(//h4[@class='font_14 f_w_500 m-0 lh-base'])[5] ")
+    public WebElement paidByButton;
+
+    @FindBy(xpath = "(//span[@class='current'])[1]")
+    public WebElement numbersDropDownMenu;
+
+    @FindBy(xpath = "//span[text()='Last 5 orders']")
+    public WebElement lastFiveOrdersButton;
+
+    @FindBy(xpath = "(//li[@class='option'])[1]")
+    public WebElement lastTenOrdersButton;
+
+    @FindBy(xpath = "//li[@data-value='20']")
+    public WebElement lastTwentyOrdersButton;
+
+    @FindBy(xpath = "//li[@data-value='40']")
+    public WebElement lastFourtyOrdersButton;
+
+    @FindBy(xpath = "(//span[text()='Prev'])[1]")
+    public WebElement previousButton;
+
+    @FindBy(xpath = "(//span[text()='Next'])[1]")
+    public WebElement nextButton;
+
 
 
 }
