@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         },
         features ="src/test/resources/features",
         glue={"stepdefinitions","hooks"},
-        tags= "@SystemTest",
+        tags= "@30",
         dryRun =false
 )
 public class SystemTestRunner {
