@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US018_019_020_021_Page {
@@ -93,9 +94,62 @@ public class US018_019_020_021_Page {
     @FindBy(xpath = "//h4[text()='Payment Info ']")
     public WebElement detailsPaymentInfo;
 
+    // ==================== US19 MY WALLET   =======================>>>
+    // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/wallet/customer/my-wallet-index']")
+    public WebElement myWalletLink;
+    @FindBy(xpath = "//h4[text()='My Wallet']")
+    public WebElement myWalletTitle;
+    @FindBy(xpath = "//span[text()='Total Balance']")
+    public WebElement myWalletTotalBalance;
+    @FindBy(xpath = "//h4[text()='Running Balance']")
+    public WebElement myWalletRunningBalance;
+    @FindBy(xpath = "//h4[text()='Pending Balance']")
+    public WebElement myWalletPendingBalance;
+    @FindBy(xpath = "//span[text()='Recharge Wallet']")
+    public WebElement myWalletRechargeWallet;
+    @FindBy(xpath = "//h3[text()='Recharge Amount']")
+    public WebElement rechargeWalletRechargeAmountTab;
+    @FindBy(xpath = "//input[@id='recharge_amount']")
+    public WebElement enterRechargeAmountBox;
+    @FindBy(xpath = "//h5[text()='Cancel']")
+    public WebElement cancelButtonAmountBox;
+    @FindBy(xpath = "//button[text()='Add Fund']")
+    public WebElement addFundButton;
+    @FindBy(xpath = "//h4[text()='My wallet recharge']")
+    public WebElement myWalletRechargeTitle;
+    @FindBy(xpath = "//div[@class='dashboard_white_box_body']")
+    public WebElement sutunWalletRechargeHistoryTitle;
+
+    @FindBy(xpath = "//h4[text()='Wallet Recharge History']")
+    public WebElement walletRechargeHistoryTitle;
+    @FindBy(xpath = "(//div[@class='table-responsive'])[1]")
+    public WebElement walletRechargeHistoryTab;
+
+    // ==================== US20 MY COUPONS   =======================>>>
+
+    @FindBy(xpath = "(//a[@href='https://trendlifebuy.com/profile/coupons'])[1]")
+    public WebElement myCouponsLink;
+    @FindBy(xpath = "https://trendlifebuy.com/profile/coupons")
+    public WebElement getMyCouponsLinkUrl;
+    @FindBy(xpath = "//input[@id='code']")
+    public WebElement addCouponsCodeBox;
+    @FindBy(xpath = "//button[text()='Add Coupon']")
+    public WebElement addCouponButton;
+
+    @FindBy(xpath = "//th[text()='Coupon Value']")
+    public WebElement collectedCouponsValue;
+    @FindBy(xpath = "//th[text()='Store Name']")
+    public WebElement collectedCouponsName;
+    @FindBy(xpath = "//th[text()='Coupon Code']")
+    public WebElement collectedCouponsCode;
+    @FindBy(xpath = "//th[text()='Validity']")
+    public WebElement collectedCouponsValidity;
+    @FindBy(xpath = "//th[text()='Action']")
+    public WebElement collectedCouponsAction;
 
 
-
+    // ==================== US21 Refund & Dispute   =======================>>>
 
 
 
