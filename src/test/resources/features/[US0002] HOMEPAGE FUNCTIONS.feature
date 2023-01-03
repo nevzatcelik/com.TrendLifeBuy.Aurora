@@ -1,3 +1,4 @@
+@SystemTest
 Feature: US 0002 Home Page Functions Test
 
   Scenario: TC 0201 Play store and apple store buttons should redirect to the relevant page
