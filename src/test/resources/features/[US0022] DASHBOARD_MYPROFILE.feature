@@ -99,3 +99,26 @@ Feature: US22
     Then User clicks edit icon
     Then User verifies that there are textboxes on the page
     And  Closes the page
+
+      Scenario: TC_2211 it should be verified that the address can be updated by using the Update button.
+
+      Given Open browser go to url "userUrl"
+      Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
+      Then User clicks on dashboard link
+      Then User clicks My Account section on dashboard page
+      Then User clicks Address button on My Account page
+      Then User clicks edit icon
+      Then User chooses Type on Update address
+      Then User verifies the changes
+      And Closes the page
+
+    Scenario: TC_2212 It should be verified that a new address can be added to the profile with the Add New Address button.
+
+    Given Open browser go to url "userUrl"
+    Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
+    Then User clicks on dashboard link
+    Then User clicks My Account section on dashboard page
+    Then User clicks Address button on My Account page
+    Then User clicks Add New Adress button on My Account page
+    Then User verifies redirected to page
+    And  Closes the page

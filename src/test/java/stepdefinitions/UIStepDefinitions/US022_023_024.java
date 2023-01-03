@@ -117,4 +117,27 @@ public class US022_023_024 {
     public void userVerifiesThatThereAreTextboxesOnThePage() {
      nevzat.updateAddressPageAssertion();
     }
+
+    @Then("User chooses Type on Update address")
+    public void userChoosesTypeOnUpdateAddress() {
+        assertTrue(nevzat.billingAddressUpdateAddressPage.isSelected());
+
+    }
+
+    @Then("User verifies the changes")
+    public void userVerifiesTheChanges() {
+      nevzat.updateAdressPageChange();
+    }
+
+    @Then("User clicks Add New Adress button on My Account page")
+    public void userClicksAddNewAdressButtonOnMyAccountPage() {
+        nevzat.addNewAddress.click();
+    }
+
+    @Then("User verifies redirected to page")
+    public void userVerifiesRedirectedToPage() {
+      //  actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitForVisibility(nevzat.createButtonAddressPage,5);
+      assertTrue(nevzat.createButtonAddressPage.isDisplayed());
+    }
 }
