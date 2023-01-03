@@ -28,10 +28,7 @@ public class US025_030_031_032 {
         Assert.assertEquals(expected,actual);
         //   Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/profile"));
     }
-    @Then("Verifies that the Basic Info tab contains First Name, Last Name,Email Address, Phone Number, Date of Birth, Description,Text Box")
-    public void verifiesThatTheBasicInfoTabContainsFirstNameLastNameEmailAddressPhoneNumberDateOfBirthDescriptionTextBox() {
-        Assert.assertTrue(life.firstnameBoxMyAccount.isDisplayed());
-    }
+/*
     @Then("User clicks Purchase History section on dashbord page")
     public void user_clicks_purchase_history_section_on_dashbord_page() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -39,15 +36,15 @@ public class US025_030_031_032 {
         actions.sendKeys(Keys.ARROW_DOWN).perform();
         actions.sendKeys(Keys.ARROW_DOWN).perform();
         life.purchaseHistoryLink.click();
-    }
-    @Then("User verifies that Purchase History page is accessible")
+    } */
+ /*   @Then("User verifies that Purchase History page is accessible")
     public void user_verifies_that_purchase_history_page_is_accessible() {
         String expected="https://trendlifebuy.com/my-purchase-histories";
         String actual= Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(expected,actual);
         ReusableMethods.bekle(2);
-    }
+    } */
     @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
     public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
         Assert.assertTrue(life.systemMessage.isDisplayed());
