@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.java.zh_cn.假如;
 import org.bouncycastle.jcajce.provider.asymmetric.X509;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -10,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.awt.image.RescaleOp;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -154,7 +157,7 @@ public class US022_023_024_Page {
     @FindBy(xpath = "(//input[@name='email'])[3]")
     private WebElement emailAdressBoxUpdateAddressPage;
 
-    @FindBy(xpath = "(//input[@name='phone'])[3]")
+    @FindBy(xpath = "(//input[@placeholder='Phone Number'])[2]")
     private WebElement phoneNumberBoxUpdateAddressPage;
 
     @FindBy(xpath = "(//div[@class='nice-select theme_select style2 wide'])[6]")
@@ -203,5 +206,59 @@ public class US022_023_024_Page {
         Assert.assertEquals(expectedPhoneNumber,phoneNumberAdressPage.getText());
 
     }
+
+    @FindBy(xpath = "(//input[@type='radio'])[4]")
+    public WebElement billingAddressUpdateAddressPage;
+    @FindBy(xpath = "(//li[@data-value='175'])[2]")
+    private WebElement countryPoland;
+    @FindBy(xpath = "(//*[text()='Select from options'])[15]")
+    private WebElement stateofWarsaw;
+    @FindBy(xpath = "(//li[text()='Warsaw'])[2]")
+    private WebElement cityOptions;
+    @FindBy(xpath = "(//li[@data-value='32650'])[1]")
+    private WebElement cityOfWarsaw;
+    @FindBy(xpath = "(//input[@type='text'])[19]")
+    private WebElement cityTextBox;
+    @FindBy(xpath = "//li[text()='Warsaw']")
+    private WebElement stateofWarsaw2;
+    @FindBy(xpath = "//button[text()='Update']")
+    private WebElement updateButtonAdressPage;
+    @FindBy(xpath = "(//input[@type='text'])[18]")
+    private WebElement stateTextBoxAdressPage;
+
+    public void updateAdressPageChange(){
+        nameBoxUpdateAddressPage.click();
+        nameBoxUpdateAddressPage.clear();
+        nameBoxUpdateAddressPage.sendKeys("nevzat");
+        emailAdressBoxUpdateAddressPage.click();
+        emailAdressBoxUpdateAddressPage.clear();
+        emailAdressBoxUpdateAddressPage.sendKeys("nevzat12@gmail.com");
+        Actions actions=new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        countryBoxUpdateAddressPage.click();
+        ReusableMethods.bekle(1);
+        countryBoxUpdateAddressPage.sendKeys("Poland");
+        countryPoland.click();
+        ReusableMethods.bekle(3);
+        stateBoxUpdateAddressPage.click();
+        ReusableMethods.bekle(2);
+        stateTextBoxAdressPage.sendKeys("Warsaw");
+        ReusableMethods.bekle(2);
+        stateofWarsaw2.click();
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
+        ReusableMethods.bekle(2);
+        cityTextBox.sendKeys("Warsaw");
+        cityOfWarsaw.click();
+        ReusableMethods.bekle(2);
+        postalCodeUpdateAddressPage.clear();
+        postalCodeUpdateAddressPage.sendKeys("01-012");
+        streetAddressUpdateAddressPage.clear();
+        streetAddressUpdateAddressPage.sendKeys("SMOCZA");
+        updateButtonAdressPage.click();
+        Assert.assertTrue(successMessageMyAccount.isDisplayed());
+    }
+
+    @FindBy(xpath = "//button[text()='Create']")
+    public WebElement createButtonAddressPage;
 
 }
