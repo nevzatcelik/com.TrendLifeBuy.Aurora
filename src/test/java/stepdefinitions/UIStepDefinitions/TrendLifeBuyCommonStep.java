@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 
 public class TrendLifeBuyCommonStep {
@@ -31,6 +32,7 @@ public class TrendLifeBuyCommonStep {
     @Given("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
     public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail,String password) {
       life.adminLogin(mail, password);
+        ReusableMethods.bekle(4);
 
     }
 
