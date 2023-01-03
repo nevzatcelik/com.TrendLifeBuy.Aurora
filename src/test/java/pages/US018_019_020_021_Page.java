@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US018_019_020_021_Page {
@@ -127,7 +128,28 @@ public class US018_019_020_021_Page {
 
     // ==================== US20 MY COUPONS   =======================>>>
 
+    @FindBy(xpath = "(//a[@href='https://trendlifebuy.com/profile/coupons'])[1]")
+    public WebElement myCouponsLink;
+    @FindBy(xpath = "https://trendlifebuy.com/profile/coupons")
+    public WebElement getMyCouponsLinkUrl;
+    @FindBy(xpath = "//input[@id='code']")
+    public WebElement addCouponsCodeBox;
+    @FindBy(xpath = "//button[text()='Add Coupon']")
+    public WebElement addCouponButton;
 
+    @FindBy(xpath = "//th[text()='Coupon Value']")
+    public WebElement collectedCouponsValue;
+    @FindBy(xpath = "//th[text()='Store Name']")
+    public WebElement collectedCouponsName;
+    @FindBy(xpath = "//th[text()='Coupon Code']")
+    public WebElement collectedCouponsCode;
+    @FindBy(xpath = "//th[text()='Validity']")
+    public WebElement collectedCouponsValidity;
+    @FindBy(xpath = "//th[text()='Action']")
+    public WebElement collectedCouponsAction;
+
+
+    // ==================== US21 Refund & Dispute   =======================>>>
 
 
 

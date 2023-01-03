@@ -202,4 +202,50 @@ public class US018_019_020_021 {
     }
 
     // ============================= 3. US20- MY COUPON  ====================
+
+    @Then("User clicks My Coupons section on dashboard page")
+    public void userClicksMyCouponsSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(3);
+        life.myCouponsLink.click();
+    }
+    @Then("User confirms that the My Coupon page is accessible")
+    public void userConfirmsThatTheMyCouponPageIsAccessible() {
+        String expectedLink="https://trendlifebuy.com/profile/coupons";
+        String actualLink=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actualLink,expectedLink);
+    }
+
+    @Then("User verifies that the coupon code can be entered in the textBox in the Add Coupons section of the My Coupon page")
+    public void userVerifiesThatTheCouponCodeCanBeEnteredInTheTextBoxInTheAddCouponsSectionOfTheMyCouponPage() {
+        life.addCouponsCodeBox.sendKeys("GÖRDUN mu? addCouponsCodeBox kutusu calisiyor");
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.addCouponsCodeBox.isDisplayed());   //????
+
+    }
+    @Then("User verifies that the coupon code can be added with the Add Coupon button on the My Coupons page")
+    public void userVerifiesThatTheCouponCodeCanBeAddedWithTheAddCouponButtonOnTheMyCouponsPage() {
+        life.addCouponsCodeBox.sendKeys("CODE ler tek kullanimlik, NAAPCEEEZ?  Methods ile cagirmaa???"); // Code 123123123  ama kullaninca code nin isi bitiyor, tek seferlik
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.addCouponButton.isDisplayed());
+        life.addCouponButton.click();
+        ReusableMethods.bekle(2);
+        //Assert.assertFalse(life.addCouponButton.isDisplayed()); ----???? 2002
+
+    }
+
+    @Then("User verifies which information the Collected Coupons list is listed")
+    public void userVerifiesWhichInformationTheCollectedCouponsListIsListed() {
+        Assert.assertTrue(life.collectedCouponsValue.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsName.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsCode.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsValidity.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsAction.isDisplayed());
+    }
+
+    //  ==================== 4. US21  MY Refund & Dispute   =======================>>>
+
+
+
+
 }
