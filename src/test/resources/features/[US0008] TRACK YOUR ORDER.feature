@@ -1,4 +1,4 @@
-
+@SystemTest
 Feature: US00_08 Track Your Order (As a user, I would like to have a section on the site where I shop from, where I can inquire about the latest status of my orders.)
 
   Scenario: [TC_0801] It should be verified that inquiries can be made by typing the Secret ID number into the Secret ID (Only For Guest User) textbox for purchases made without registering to the site (in visitor mode).

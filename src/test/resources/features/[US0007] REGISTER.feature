@@ -1,4 +1,4 @@
-
+@SmokeTest
 Feature: US00_07 Register As a user, I want to be able to register on the site in order to benefit from the functions of the site.
 
   Scenario: TC_0701 It should be verified that it is on the Sign Up page.

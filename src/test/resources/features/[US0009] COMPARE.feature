@@ -1,4 +1,4 @@
-
+@SystemTest
 Feature: US00_09 Compare (As a user, I would like to have a page where I can compare similar products on the site.)
 
   Scenario: [TC_0901] It should be verified that inquiries can be made by typing the Secret ID number into the Secret ID (Only For Guest User) textbox for purchases made without registering to the site (in visitor mode).
