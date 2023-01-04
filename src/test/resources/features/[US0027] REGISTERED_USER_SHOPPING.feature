@@ -26,30 +26,27 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User verifies that the products is displayed
-      #ürünlerin gözükmesi lazım nasıl test edilecek
       And Closes the page
 
     Scenario: TC_2705 Verify that Add to Cart button appears when the user hovers over the product
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User verifies that the Add to Cart is appears
+      Then User hovers over the product, and click the Add to Cart
       And Closes the page
 
     Scenario: TC_2706 When clicking the Add to Cart button the product has been added to the Cart Page.
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product and clicks on the Add to Cart
-      #yukarıdaki iki adımı birleştirebilirsin ya da ayrı ayrı adım yap ona göre bunları güncelle
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
       Then User verifies that the Item added to your cart is displayed
       And Closes the page
 
     Scenario: TC_2707 Verify that view cart button is visible and when clicked it redirects to the Cart page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
       Then Verify that View Cart is displayed
       Then User clicks on the View Cart button
       Then User verifies that it redirects to the Cart page
@@ -58,7 +55,8 @@
     Scenario: TC_2708 Verify that the Proceed to Checkout button is visible on the Cart page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User verifies that the Proceed to Checkout button is displayed
@@ -67,7 +65,8 @@
     Scenario: TC_2709 Verify that When the Proceed to Checkout button is clicked,it redirects to the Checkout page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -77,20 +76,22 @@
     Scenario: TC_2710 Verify that the Continue to Shipping button is visible on the Checkout page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User verifies that the Continue to Shipping button is displayed
       And Closes the page
 
     Scenario: TC_2711 Verify that the Continue to Shipping button redirects to the Shipping page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User verifies that it redirects to the Shipping page
       And Closes the page
@@ -98,10 +99,11 @@
     Scenario: TC_2712 Verify that the Continue to Payment button is visible on the Shipping page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User verifies that the Payment button is visible
       And Closes the page
@@ -110,10 +112,11 @@
     it should redirects to the Payment page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
@@ -123,10 +126,11 @@
     Scenario: TC_2714 Verify that the Pay Now button is visible on the Payment page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
@@ -137,10 +141,11 @@
     it should be verified that it redirects to the Order Summary page when the Pay Now button is clicked
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
@@ -153,10 +158,11 @@
     Scenario: TC_2716 Verify that the order has been received message is seen on the Order Summary page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
@@ -168,10 +174,11 @@
     Scenario: TC_2717 Verify that the information about the order is seen on the Order Summary page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
@@ -183,10 +190,11 @@
     Scenario: TC_2718 Verify that the Continue Shopping button is visible on the Order Summary page.
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
@@ -198,10 +206,11 @@
     Scenario: TC_2719 Verify that clicking on the Continue Shopping button redirects to the home page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
-      Then User hovers over the product
-      Then User clicks on the Add to Cart button
+      Then User hovers over the product, and click the Add to Cart
+      Then User clicks on the AddToCartWindow
+      Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
-      Then User clicks on the Proceed to Checkout button
+      Then User clicks the on Proceed to Checkout button
       Then User clicks on the Continue to Shipping button
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
