@@ -148,7 +148,7 @@ public class US022_023_024 {
 
     @Then("User verifies that the page is accessibleS")
     public void userVerifiesThatThePageIsAccessibleS() {
-      Assert.assertTrue(nevzat.allSubmittedTicketText.isDisplayed());
+      Assert.assertTrue(nevzat.adressButtonMyAccount.isDisplayed());
     }
 
     @Then("User verifies that the All Submitted Ticket text is visible")
