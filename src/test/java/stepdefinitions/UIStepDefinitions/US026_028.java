@@ -227,17 +227,49 @@ public class US026_028 {
             System.out.println("Email is mandatory");
         }
 
+    }
+    @Then("To Checkout Page")
+    public void emailme_checkbox() {
+        ReusableMethods.bekle(5);
+        page.closead.click();
+        ReusableMethods.bekle(2);
+        Actions actn = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        ReusableMethods.bekle(2);
+        actn.moveToElement(page.product2).perform();
+        Actions actn2 = new Actions(Driver.getDriver());
+        actn2.moveToElement(page.product2addtocart).perform();
+        ReusableMethods.bekle(2);
+        page.product2addtocart.click();
+        ReusableMethods.bekle(2);
+        page.addtocartwindow.click();
+        ReusableMethods.bekle(2);
+        page.viewcartwindow.click();
+        ReusableMethods.bekle(2);
+        page.proceedtocheckout.click();
+        ReusableMethods.bekle(2);
 
 
+    }
+    @Then("Email me with news and offers Check Box is visible and selected")
+    public void email_visible_selected () {
+        Actions checkbox = new Actions(Driver.getDriver());
+        checkbox.moveToElement(page.emailboxcheckout).perform();
+        Assert.assertTrue(page.emailboxcheckout.isDisplayed());
+        Assert.assertTrue(page.emailboxcheckout.isSelected());
 
 
+    }
 
-
-
-
-
-
-
+    @Then("Home delivery and Pickup Location radio buttons are visible and selectable in the Shipping Address section.")
+    public void radiobutton_visible_selectable(){
+        Actions radiobutton = new Actions(Driver.getDriver());
+        radiobutton.moveToElement(page.homedeliveryradiobutton).click().perform();
+        radiobutton.moveToElement(page.homedeliveryradiobutton).click().perform();
+        Assert.assertTrue(page.homedeliveryradiobutton.isEnabled());
+        Assert.assertTrue(page.pickuplocationradiobutton.isEnabled());
+        Assert.assertTrue(page.homedeliveryradiobutton.isSelected());
+        Assert.assertFalse(page.pickuplocationradiobutton.isSelected());
 
 
 

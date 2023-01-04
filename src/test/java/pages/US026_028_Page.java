@@ -69,6 +69,12 @@ public class US026_028_Page {
     @FindBy (xpath = "//*[@id=\"email\"]")
     public WebElement emailboxcheckout;
 
+    @FindBy (xpath = "//input[@value='home_delivery']")
+    public WebElement homedeliveryradiobutton;
+
+    @FindBy (xpath = "//input[@value='pickup_location']")
+    public WebElement pickuplocationradiobutton;
+
 
 
 
