@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         },
         features ="src/test/resources/features",
         glue={"stepdefinitions", "hooks"},
-        tags= "@regression",
+        tags= "@fatih",
         dryRun =false
 )
 public class RegressionTestRunner {
