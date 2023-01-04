@@ -181,7 +181,7 @@ public class US027_029_Page {
     public WebElement TotalSubscriberButton;
 
     @FindBy(xpath = "//a[@class='large_logo']")
-    public WebElement trendLifeLogo;
+    public WebElement admintrendLifeLogo;
 
     @FindBy(xpath="//a[text()='Customer']")
     public WebElement customerDown;
@@ -191,6 +191,14 @@ public class US027_029_Page {
 
     @FindBy(xpath = "//h1[text()='252']")
     public WebElement visitorWeek;
+
+    @FindBy(xpath = "//img[@title='Trendlifebuy | Online Shopping']")
+    public WebElement websiteNewPage;
+
+    @FindBy(xpath = "//a[text()='Pending Orders']")
+    public WebElement orderRelevantpage;
+
+
 
 
 

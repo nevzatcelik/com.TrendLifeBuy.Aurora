@@ -16,11 +16,19 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Set;
+
+
 public class US027_029 {
     US027_029_Page us027_029_page = new US027_029_Page();
     TrendLifeBuyPage trendLifeBuyPage = new TrendLifeBuyPage();
 
     TrendLifeBuyCommonStep ortaklife = new TrendLifeBuyCommonStep();
+
+    //US027_029_Page adminVerifiesReleventPage;
+
+
+
 
     @Then("Verify that login button appear")
     public void verify_that_login_button_appear() {
@@ -295,19 +303,7 @@ public class US027_029 {
     @Then("Admin verifies that the Side Bar narrows and expands")
     public void adminVerifiesThatTheSideBarNarrowsAndExpands() {
         ReusableMethods.bekle(5);
-        Assert.assertFalse(us027_029_page.adminDashboardTitle.isDisplayed()); //tekrar bak.
-        // böyle passed oluyor ama ahmet hocanın örneğine bak
-
-
-
-
-        // @Then("Admin clicks on the menu icon and verifiy Bar")
-        //public void adminClicksOnTheMenuIconAndVerifiyBar() {
-        // ReusableMethods.bekle(10); //menü ikonu tıklanmıyor
-        //us027_029_page.adminMenuicon.click();
-        // Assert.assertFalse(us027_029_page.adminDashboardTitle.isDisplayed());
-
-        //}
+        Assert.assertFalse(us027_029_page.adminDashboardTitle.isDisplayed());
     }
 
     @Then("Admin clicks on the Website button")
@@ -317,31 +313,28 @@ public class US027_029 {
 
     @Then("Admin verifies that it should redirect to the user interface of the site")
     public void adminVerifiesThatItShouldRedirectToTheUserInterfaceOfTheSite() {
-        String actualUrl= "https://trendlifebuy.com/";
+        String ilkSayfaHandleDegeri=Driver.getDriver().getWindowHandle();
+        us027_029_page.adminWebsiteButton.click();
+
+        Set<String> windowHandleSeti=Driver.getDriver().getWindowHandles();
+        String ikincisfWindowHandledegeri="";
+
+        for (String eachhandledegeri: windowHandleSeti
+        ) {
+            if (!eachhandledegeri.equals(ilkSayfaHandleDegeri)){
+                ikincisfWindowHandledegeri=eachhandledegeri;
+            }
+        }
+        Driver.getDriver().switchTo().window(ikincisfWindowHandledegeri);
+
+        Assert.assertTrue(us027_029_page.websiteNewPage.isDisplayed());
+
+        String actualUrl=Driver.getDriver().getCurrentUrl();
         String expectedUrl="https://trendlifebuy.com/";
-        Assert.assertTrue(actualUrl.equals(expectedUrl)); // yeni sayfa açılıyor nasıl test edilebilir
+        Assert.assertTrue(actualUrl.equals(expectedUrl));
+
+
     }
-    
-    
-    
-
-    //@Then("Admin clicks on Today, This Week, This Mounth and This Year buttons")
-    //public void adminTodayThisWeekThisMounthAndThisYearButtons() {
-        //us027_029_page.adminTodayButton.click();
-        //us027_029_page.adminWeekButton.click();
-       //Assert.assertTrue(us027_029_page.visitorDataToday.getText().equals(us027_029_page.visitorWeek.getText()));
-        //ReusableMethods.bekle(2);
-        //us027_029_page.adminWeekButton.click();
-        //ReusableMethods.bekle(2);
-        //us027_029_page.adminMonthButton.click();
-        //ReusableMethods.bekle(2);
-        //us027_029_page.adminYearButton.click();
-        //ReusableMethods.bekle(2);
-
-
-        //us027_029_page.visitorDataToday.getText();
-        //us027_029_page.visitorWeek.getText();
-
 
 
     @Then("Admin clicks on Today button")
@@ -371,9 +364,6 @@ public class US027_029 {
         Assert.assertFalse(us027_029_page.todayVisitor.equals(us027_029_page.weekVisitor)); //test olmadı
     }
 
-
-
-
     @Then("Admin clicks on the Visitor")
     public void adminClicksOnTheVisitor() {
         us027_029_page.visitorButton.click();
@@ -383,30 +373,84 @@ public class US027_029 {
     public void adminVerifiesThatItRedirectsToTheRelevantPage() {
         String actualUrl=Driver.getDriver().getCurrentUrl();
         String expectedUrl="https://trendlifebuy.com/admin-report/visitor-report";
+        Assert.assertTrue(actualUrl.equals(expectedUrl));
     }
+
     @Then("Admin clicks TrendlifeLogo")
     public void adminClicksTrendlifeLogo() {
-        us027_029_page.trendlifeLogo.click();
+        Driver.getDriver().navigate().back();
+        //Actions actions10=new Actions(Driver.getDriver());
+        //actions10.click(us027_029_page.trendlifeLogo).perform();
+
     }
 
     @Then("Admin clicks on the Total Order")
     public void adminClicksOnTheTotalOrder() {
+       // us027_029_page.TotalOrderButton.click();
+        //ReusableMethods.bekle(4);
+
+        String ilksfHandledegeri=Driver.getDriver().getCurrentUrl();
         us027_029_page.TotalOrderButton.click();
+
+        Set<String> windowHandleSeti=Driver.getDriver().getWindowHandles();
+        String ikincisfWindowHandledegeri="";
+
+        for (String eachhandledegeri: windowHandleSeti
+        ) {
+            if (!eachhandledegeri.equals(ilksfHandledegeri)){
+                ikincisfWindowHandledegeri=eachhandledegeri;
+            }
+        }
+        Driver.getDriver().switchTo().window(ikincisfWindowHandledegeri);
+        Assert.assertTrue(us027_029_page.orderRelevantpage.isDisplayed());
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://trendlifebuy.com/ordermanage/total-sales-list";
+        Assert.assertTrue(actualUrl.equals(expectedUrl));
+        us027_029_page.admintrendLifeLogo.click();
+
     }
-
-
-
 
     @Then("Admin clicks on the Total Pending Order")
     public void adminClicksOnTheTotalPendingOrder() {
+
+        String ilksfHandledegeri=Driver.getDriver().getCurrentUrl();
         us027_029_page.TotalOrderButton.click();
+
+        Set<String> windowHandleSeti=Driver.getDriver().getWindowHandles();
+        String ikincisfWindowHandledegeri="";
+
+        for (String eachhandledegeri: windowHandleSeti
+        ) {
+            if (!eachhandledegeri.equals(ilksfHandledegeri)){
+                ikincisfWindowHandledegeri=eachhandledegeri;
+            }
+        }
+        Driver.getDriver().switchTo().window(ikincisfWindowHandledegeri);
+        Assert.assertTrue(us027_029_page.orderRelevantpage.isDisplayed());
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://trendlifebuy.com/ordermanage/total-sales-list";
+        Assert.assertTrue(actualUrl.equals(expectedUrl));
     }
-
-
 
     @Then("Admin clicks on the Total Completed Order")
     public void adminClicksOnTheTotalCompletedOrder() {
-        us027_029_page.TotalCompletedOrderButton.click();
+        String ilksfHandledegeri=Driver.getDriver().getCurrentUrl();
+        us027_029_page.TotalOrderButton.click();
+
+        Set<String> windowHandleSeti=Driver.getDriver().getWindowHandles();
+        String ikincisfWindowHandledegeri="";
+
+        for (String eachhandledegeri: windowHandleSeti
+        ) {
+            if (!eachhandledegeri.equals(ilksfHandledegeri)){
+                ikincisfWindowHandledegeri=eachhandledegeri;
+            }
+        }
+        Driver.getDriver().switchTo().window(ikincisfWindowHandledegeri);
+        Assert.assertTrue(us027_029_page.orderRelevantpage.isDisplayed());
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://trendlifebuy.com/ordermanage/total-sales-list";
+        Assert.assertTrue(actualUrl.equals(expectedUrl));
     }
 
     @Then("Admin clicks on the Total Sale")
@@ -433,13 +477,10 @@ public class US027_029 {
     @Then("Admin clicks on the Total Subscriber")
     public void adminClicksOnTheTotalSubscriber() {
         us027_029_page.TotalSubscriberButton.click();
-    }
-
-    @Then("Admin verifies that it redirects to the relevant page")
-    public void adminVerifiesThatItRedirectsToTheRelevantPage() {
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        String expectedUrl="https://trendlifebuy.com/marketing/subscribers";
-
 
     }
+
+
+
 }
+

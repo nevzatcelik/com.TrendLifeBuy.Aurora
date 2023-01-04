@@ -30,7 +30,7 @@
       Then Admin clicks on the menu icon
       #Then Admin clicks on the menu icon and verifiy Bar
       Then Admin verifies that the Side Bar narrows and expands
-      #And Closes the page
+      And Closes the page
 
     Scenario: TC_2905 When clicking on the Website button on the Dashboard home page,
     it should redirects to the user interface of the site
@@ -64,7 +64,7 @@
       Then Admin verifies that it redirects to the relevant page
       Then Admin clicks TrendlifeLogo
       Then Admin clicks on the Total Pending Order
-      Then Admin  verifies that it redirects to the relevant page
+      Then Admin verifies that it redirects to the relevant page
       Then Admin clicks TrendlifeLogo
       Then Admin clicks on the Total Completed Order
       Then Admin verifies that it redirects to the relevant page
