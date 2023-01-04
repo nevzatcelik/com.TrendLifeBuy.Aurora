@@ -1,6 +1,6 @@
-@SystemTest
-Feature: US037 recharge - offline - index tests / Administrator should be able to view balance changes made offline
 
+Feature: US037 recharge - offline - index tests / Administrator should be able to view balance changes made offline
+  @SystemTest
   Scenario: TC_3701 Verify that the Offline Recharge List is available on the Offline Recharge page
     
     Given Open browser go to url "adminUrl"

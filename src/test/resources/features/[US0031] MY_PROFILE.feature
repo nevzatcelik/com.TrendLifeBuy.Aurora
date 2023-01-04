@@ -1,4 +1,3 @@
-@SmokeTest
 Feature: US_0031 As an administrator, in order to access my profile information and logout, I want the profile I am logged into to be visible on the top bar of the dashboard homepage.
 
   Scenario: US_3101 Verify that the profile icon is visible on the top bar of the Dashboard home page.
@@ -6,7 +5,7 @@ Feature: US_0031 As an administrator, in order to access my profile information 
     Then Admin enters an "admineminemail", a "password" and then clicks sign in link on admin page to login
     Then Verify that the profile icon appears in the top bar.
     Then Closes the page
-
+  @SmokeTest
   Scenario: US_3102 When the profile icon is clicked, it should be verified that the Name of the account that is logged in appears in the window that opens.
     Given Open browser go to url "adminUrl"
     Then Admin enters an "admineminemail", a "password" and then clicks sign in link on admin page to login

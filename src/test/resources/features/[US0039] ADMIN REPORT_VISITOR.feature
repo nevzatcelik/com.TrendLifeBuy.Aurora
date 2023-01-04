@@ -1,4 +1,4 @@
-@regression
+
 Feature: US039 admin report visitor report tests / Administrator want a Visitor Report page to access reports of users visiting the site
 
   Scenario: TC_3901 Verify that the Visitor / Visitor Report List is visible

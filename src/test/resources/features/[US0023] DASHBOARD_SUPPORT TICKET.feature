@@ -1,4 +1,4 @@
-@regression1
+
   Feature:US0023 DASHBOARD_SUPPORT TICKET
 
     Scenario: TC_2301 Verify that the Support Ticket page is accessible.
@@ -9,7 +9,7 @@
     Then User clicks Support Ticket on dashboard page
     Then User verifies that the page is accessibleS
     And  Closes the page
-
+    @Regresdsion
       Scenario:TC_2302 Verify that the All Submitted Ticket List is visible on the Spport Ticket page.
 
       Given Open browser go to url "userUrl"

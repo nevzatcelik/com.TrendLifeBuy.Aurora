@@ -1,5 +1,5 @@
 
-@SystemTest
+
 Feature: US_0016 Purchase History visibility test on Dashboard page
 
   Scenario: TC_1601 Verification of the Purchase History page

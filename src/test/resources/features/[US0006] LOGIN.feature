@@ -1,5 +1,6 @@
-@SmokeTest
+
 Feature: US00_06 Login (As a user, I want to be able to login with my registered email and password information.)
+  @SmokeTest
   Scenario: [TC_0601] When clicking the Click Here link next to Forgot Password? text, verify that it redirects to the relevant page
 
     Given Open browser go to url "userUrl"

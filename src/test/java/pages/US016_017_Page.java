@@ -27,8 +27,8 @@ public class US016_017_Page {
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement dashboardLink;
 
-    // @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
-    @FindBy(xpath = "/html/body/div[3]/div/div/div[1]/div/div[3]/ul/li[2]/a")
+   @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
+  //  @FindBy(xpath = "/html/body/div[3]/div/div/div[1]/div/div[3]/ul/li[2]/a")
     public WebElement purchaseHistory;
 
     @FindBy(xpath = "//div[@class='nice-select amaz_select3']")
