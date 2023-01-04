@@ -56,7 +56,7 @@ Feature: US040 support ticket - my ticket tests / Administrator want a page to o
     Then Admin verifies Ticket List can be created according to the filtering made from Priority tab
     Then Admin verifies Ticket List can be created according to the filtering made from Status tab
     And Closes the page
-  @fatih
+
   Scenario: TC_4006 Verify that the Tickets are listed under the headings Subject, Category, User Name, priority, User Agent, Status, Action
 
     Given Open browser go to url "adminUrl"
