@@ -1,4 +1,4 @@
-  @System Testing
+  @SystemTest
   Feature: US20 Using Coupon and Adding Test in Shopping
       @US2001
       Scenario: 2001 Test to access My Coupon page

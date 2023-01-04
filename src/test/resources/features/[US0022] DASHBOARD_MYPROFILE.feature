@@ -1,14 +1,14 @@
 @SmokeTest
-Feature: US22
+Feature: US0022 DASHBOARD MY PROFILE
 
   Scenario: TC_2201 Verify that the My Profile page is accessible.
 
     Given Open browser go to url "userUrl"
-    Then  User clicks on the login link, enters "nevzatmail" and "password" and logs in
-    Then  User clicks on dashboard link
-    Then  User clicks My Account section on dashboard page
-    Then  User verifies that the page is "expected" accessible
-    And   Closes the page
+    Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
+    Then User clicks on dashboard link
+    Then User clicks My Account section on dashbord page
+    Then User verifies that the page is accessibleS
+    Then Closes the page
 
 
   Scenario: TC_2202 Verify that the profile picture can be updated
