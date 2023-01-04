@@ -29,8 +29,8 @@ public class US022_023_024 {
     }
 
 
-    @Then("User verifies that the page is {string} accessible")
-    public void userVerifiesThatThePageIsAccessible(String expectedurl) {
+    @Then("User verifies that the page is {string} accessibleS")
+    public void userVerifiesThatThePageIsAccessibleS(String expectedurl) {
         String actual=Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(ConfigReader.getProperty(expectedurl),actual);
@@ -146,8 +146,8 @@ public class US022_023_024 {
       nevzat.supportTicketclick();
     }
 
-    @Then("User verifies that the page is accessible")
-    public void userVerifiesThatThePageIsAccessible() {
+    @Then("User verifies that the page is accessibleS")
+    public void userVerifiesThatThePageIsAccessibleS() {
       Assert.assertTrue(nevzat.allSubmittedTicketText.isDisplayed());
     }
 
@@ -203,6 +203,11 @@ public class US022_023_024 {
 
     @Then("User enters information  {string} {string} {string} and {string}")
     public void userEntersInformationAnd(String subject, String category, String priority, String description) {
+         nevzat.crateNewTicketPage();
+    }
 
+    @Then("User verifies that the information are enterable on Create New Ticket page")
+    public void userVerifiesThatTheInformationAreEnterableOnCreateNewTicketPage() {
+        nevzat.allSubmittedTicketText.isDisplayed();
     }
 }

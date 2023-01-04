@@ -46,7 +46,7 @@ Feature: US22
     Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
     Then User clicks on dashboard link
     Then User clicks My Account section on dashboard page
-    Then User enters "newfirstname" "newLastname" "newMail" "newPhoneNumber" "newDateOfBirth" "newDescription" in textboxes and confirms that it is updateable
+    Then User enters "SXnewfirstname" "newLastname" "newMail" "newPhoneNumber" "newDateOfBirth" "newDescription" in textboxes and confirms that it is updateable
     And  Closes the page
 
   Scenario: TC_2206 Verify that Current Password, New Password, Re enter New Password TextBoxes are present in the Change Password tab.
