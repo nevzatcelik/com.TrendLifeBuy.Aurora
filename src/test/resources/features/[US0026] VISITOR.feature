@@ -46,6 +46,30 @@ Feature: US0026 As a visitor, I want to be able to shop from the site without re
                 Scenario: It should be verified that it is mandatory to enter E-mail in the Contact Information field on the Checkout page.
                   Given Open browser go to url "userUrl"
                   Then verified that it is mandatory to enter E-mail in the Contact Information field on the Checkout page.
+                  And Closes the page
+
+                  Scenario: Verify that the Email me with news and offers Check Box is visible and selected
+                    Given Open browser go to url "userUrl"
+                    Then To Checkout Page
+                    Then Email me with news and offers Check Box is visible and selected
+                    And Closes the page
+
+                    Scenario: Verify that the Home delivery and Pickup Location radio buttons are visible and selectable in the Shipping Address section
+                      Given Open browser go to url "userUrl"
+                      Then To Checkout Page
+                      Then Home delivery and Pickup Location radio buttons are visible and selectable in the Shipping Address section.
+                      And Closes the page
+
+
+
+
+
+
+
+
+
+
+
 
 
 
