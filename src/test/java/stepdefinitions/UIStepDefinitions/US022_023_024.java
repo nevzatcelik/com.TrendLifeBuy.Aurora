@@ -140,4 +140,69 @@ public class US022_023_024 {
         ReusableMethods.waitForVisibility(nevzat.createButtonAddressPage,5);
       assertTrue(nevzat.createButtonAddressPage.isDisplayed());
     }
+
+    @Then("User clicks Support Ticket on dashboard page")
+    public void userClicksSupportTicketOnDashboardPage() {
+      nevzat.supportTicketclick();
+    }
+
+    @Then("User verifies that the page is accessible")
+    public void userVerifiesThatThePageIsAccessible() {
+      Assert.assertTrue(nevzat.allSubmittedTicketText.isDisplayed());
+    }
+
+    @Then("User verifies that the All Submitted Ticket text is visible")
+    public void userVerifiesThatTheAllSubmittedTicketTextIsVisible() {
+        Assert.assertTrue(nevzat.allSubmittedTicketText.isDisplayed());
+    }
+
+    @Then("User verifies name sequences of All Sent Ticket line text")
+    public void userVerifiesNameSequencesOfAllSentTicketLineText() {
+        nevzat.allSubmittedAssertion();
+    }
+
+    @Then("User clicks view button on Support Ticket page")
+    public void userClicksViewButtonOnSupportTicketPage() {
+        nevzat.viewButtonSupportTicketPage.click();
+    }
+
+    @Then("User verifies that data is visible")
+    public void userVerifiesThatDataIsVisible() {
+        Assert.assertTrue(nevzat.dataTextSupportPage.isDisplayed());
+    }
+
+    @Then("User verifies that Status, Priority, and Category information is visible")
+    public void userVerifiesThatStatusPriorityAndCategoryInformationIsVisible() {
+       nevzat.statusPriorityCategoryAssertion();
+    }
+
+    @Then("User verifies that the answer is visible")
+    public void userVerifiesThatTheAnswerIsVisible() {
+        Assert.assertTrue(nevzat.answerFromAdmin.isDisplayed());
+    }
+
+    @Then("User verifies that the Reply button visible")
+    public void userVerifiesThatTheReplyButtonVisible() {
+      nevzat.replyButtonSupportTicketandAnswer();
+    }
+
+    @Then("User verifies that All Ticket dropdown section is filterable")
+    public void userVerifiesThatAllTicketDropdownSectionIsFilterable() {
+      nevzat.supportTicketFilter();
+    }
+
+    @Then("User clicks Add New Button on Support Ticket page")
+    public void userClicksAddNewButtonOnSupportTicketPage() {
+        nevzat.plusAddnewButton.click();
+    }
+
+    @Then("User verifies that redirect to Create New Ticket page")
+    public void userVerifiesThatRedirectToCreateNewTicketPage() {
+      Assert.assertTrue(nevzat.createNewTicketText.isDisplayed());
+    }
+
+    @Then("User enters information  {string} {string} {string} and {string}")
+    public void userEntersInformationAnd(String subject, String category, String priority, String description) {
+
+    }
 }
