@@ -41,11 +41,15 @@
       And Closes the page
 
     Scenario: TC_2906 When clicking the Today, This Week, This Mounth and This Year buttons on the Dashboard main page,
-    it should be verified that the data on the Summary Board changes according to the selected value
+    Summary Board changes according to the selected value
       Given Open browser go to url "adminUrl"
       Then Admin enters an "adminzeynepmail", a "password" and then clicks sign in link on admin page to login
-      Then Admin clicks on Today, This Week, This Mounth and This Year buttons
+      Then Admin clicks on Today button
+      Then Admin clicks on This Week button
+      Then Admin clicks on This Month button
+      Then Admin clicks on This Year button
       Then Admin verifies that the data on the Summary Board changes
+
       And Closes the page
 
     Scenario: TC_2907 When the Visitor, Total Order, Total Pending Order, Total Completed Order, Total Sale,

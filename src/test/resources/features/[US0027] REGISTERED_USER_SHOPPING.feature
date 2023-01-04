@@ -38,7 +38,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User verifies that the Item added to your cart is displayed
       And Closes the page
 
@@ -46,7 +46,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then Verify that View Cart is displayed
       Then User clicks on the View Cart button
       Then User verifies that it redirects to the Cart page
@@ -56,7 +56,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User verifies that the Proceed to Checkout button is displayed
@@ -66,7 +66,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -77,7 +77,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -88,7 +88,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -100,7 +100,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -113,7 +113,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -127,7 +127,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -142,7 +142,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -150,6 +150,7 @@
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
       Then User selects one of the payment methods
+      Then User selects one of the  billing addres
       #yukarının devamı olarak gerekli bilgiler girilmeli deniliyor ona gmre buraya adımlar ekle. action ile
       Then User clicks on the Pay Now button
       Then User verifies that it redirects to the Order Summary page
@@ -159,7 +160,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -167,6 +168,7 @@
       Then User select Shipping Methods
       Then User clicks on the Continue to Payment button
       Then User selects one of the payment methods
+      Then User selects one of the  billing addres
       Then User clicks on the Pay Now button
       Then User verifies that the order has been received message is seen
       And Closes the page
@@ -175,7 +177,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -191,7 +193,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button
@@ -207,7 +209,7 @@
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User hovers over the product, and click the Add to Cart
-      Then User clicks on the AddToCartWindow
+      #Then User clicks on the AddToCartWindow
       Then User clicks on the Add to Cart
       Then User clicks on the View Cart button
       Then User clicks the on Proceed to Checkout button

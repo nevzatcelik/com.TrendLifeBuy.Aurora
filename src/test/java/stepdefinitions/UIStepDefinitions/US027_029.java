@@ -189,7 +189,29 @@ public class US027_029 {
 
     @Then("User selects one of the payment methods")
     public void user_selects_one_of_the_payment_methods() {
+        Actions action10=new Actions(Driver.getDriver());
+        action10.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        //action10.moveToElement(us027_029_page.cashOnDelivery).perform();
+        us027_029_page.cashOnDelivery.click();
+        ReusableMethods.bekle(5);
 
+    }
+
+    @Then("User selects one of the  billing addres")
+    public void userSelectsOneOfTheBillingAddres() {
+        Actions action8=new Actions(Driver.getDriver());
+        action8.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(6);
+        Actions action9=new Actions(Driver.getDriver());
+        action9.moveToElement(us027_029_page.sameAsShipping).perform();
+        ReusableMethods.bekle(4);
+        us027_029_page.sameAsShipping.click();
+
+    }
+
+    @Then("User clicks on the Pay Now button")
+    public void user_clicks_on_the_pay_now_button() {
+        us027_029_page.payNowButton.click();
 
     }
 
@@ -201,34 +223,35 @@ public class US027_029 {
 
     @Then("User verifies that the order has been received message is seen")
     public void user_verifies_that_the_order_has_been_received_message_is_seen() {
-
-    }
-
-    @Then("User clicks on the Pay Now button")
-    public void user_clicks_on_the_pay_now_button() {
-
+        Assert.assertTrue(us027_029_page.orderReceivedMessage.isDisplayed());
     }
 
     @Then("User verifies that the information about the order is seen")
     public void user_verifies_that_the_information_about_the_order_is_seen() {
-
-    }
-
-
-
-    @Then("User clicks on the Continue Shopping button")
-    public void user_clicks_on_the_continue_shopping_button() {
-
+        Assert.assertTrue(us027_029_page.orderInformation.isDisplayed());
     }
 
     @Then("User verifies that the Continue Shopping button is displayed")
     public void userVerifiesThatTheContinueShoppingButtonIsDisplayed() {
+        Assert.assertTrue(us027_029_page.continueShopping.isDisplayed());
+    }
+
+    @Then("User clicks on the Continue Shopping button")
+    public void user_clicks_on_the_continue_shopping_button() {
+        Actions action10=new Actions(Driver.getDriver());
+        action10.moveToElement(us027_029_page.continueShopping).perform();
+        us027_029_page.continueShopping.click();
     }
 
     @Then("User verifies that the Continue Shopping button is redirects to the homepage")
     public void user_verifies_that_the_continue_shopping_button_is_redirects_to_the_homepage() {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://trendlifebuy.com/";
 
     }
+
+
+
 
 
 
@@ -236,7 +259,6 @@ public class US027_029 {
     public void admin_verifies_that_the_site_is_accesible() {
         Assert.assertTrue(trendLifeBuyPage.dashboardLink.isDisplayed());
     }
-
 
     @Then("Admin verifies that admin Dashboard can be logged with valid admin email and password")
     public void adminVerifiesThatAdminDashboardCanBeLoggedWithValidAdminEmailAndPassword() {
@@ -257,6 +279,10 @@ public class US027_029 {
 
     @Then("Admin verifies that the site can be searched using the Search Textbox")
     public void adminVerifiesThatTheSiteCanBeSearchedUsingTheSearchTextbox() {
+        Actions actions=new Actions(Driver.getDriver());
+        actions.moveToElement(us027_029_page.customerDown);
+        us027_029_page.customerDown.click();
+
     }
 
     @Then("Admin clicks on the menu icon")
@@ -295,18 +321,49 @@ public class US027_029 {
         String expectedUrl="https://trendlifebuy.com/";
         Assert.assertTrue(actualUrl.equals(expectedUrl)); // yeni sayfa açılıyor nasıl test edilebilir
     }
+    
+    
+    
 
-    @Then("Admin clicks on Today, This Week, This Mounth and This Year buttons")
-    public void adminTodayThisWeekThisMounthAndThisYearButtons() {
+    //@Then("Admin clicks on Today, This Week, This Mounth and This Year buttons")
+    //public void adminTodayThisWeekThisMounthAndThisYearButtons() {
+        //us027_029_page.adminTodayButton.click();
+        //us027_029_page.adminWeekButton.click();
+       //Assert.assertTrue(us027_029_page.visitorDataToday.getText().equals(us027_029_page.visitorWeek.getText()));
+        //ReusableMethods.bekle(2);
+        //us027_029_page.adminWeekButton.click();
+        //ReusableMethods.bekle(2);
+        //us027_029_page.adminMonthButton.click();
+        //ReusableMethods.bekle(2);
+        //us027_029_page.adminYearButton.click();
+        //ReusableMethods.bekle(2);
+
+
+        //us027_029_page.visitorDataToday.getText();
+        //us027_029_page.visitorWeek.getText();
+
+
+
+    @Then("Admin clicks on Today button")
+    public void adminClicksOnTodayButton() {
         us027_029_page.adminTodayButton.click();
+        //us027_029_page.visitorDataToday.getText();
+
+    }
+
+    @Then("Admin clicks on This Week button")
+    public void adminClicksOnThisWeekButton() {
         us027_029_page.adminWeekButton.click();
-        ReusableMethods.bekle(2);
-        us027_029_page.adminWeekButton.click();
-        ReusableMethods.bekle(2);
-        us027_029_page.adminMonthButton.click();
-        ReusableMethods.bekle(2);
+        //us027_029_page.visitorWeek.getText();
+
+    }
+    @Then("Admin clicks on This Month button")
+    public void adminClicksOnThisMonthButton() {
+    }
+
+    @Then("Admin clicks on This Year button")
+    public void adminClicksOnThisYearButton() {
         us027_029_page.adminYearButton.click();
-        ReusableMethods.bekle(2);
     }
 
     @Then("Admin verifies that the data on the Summary Board changes")
@@ -314,21 +371,75 @@ public class US027_029 {
         Assert.assertFalse(us027_029_page.todayVisitor.equals(us027_029_page.weekVisitor)); //test olmadı
     }
 
+
+
+
     @Then("Admin clicks on the Visitor")
     public void adminClicksOnTheVisitor() {
         us027_029_page.visitorButton.click();
     }
 
+    @Then("Admin verifies that it redirects to the relevant page")
+    public void adminVerifiesThatItRedirectsToTheRelevantPage() {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://trendlifebuy.com/admin-report/visitor-report";
+    }
     @Then("Admin clicks TrendlifeLogo")
     public void adminClicksTrendlifeLogo() {
+        us027_029_page.trendlifeLogo.click();
+    }
+
+    @Then("Admin clicks on the Total Order")
+    public void adminClicksOnTheTotalOrder() {
+        us027_029_page.TotalOrderButton.click();
+    }
+
+
+
+
+    @Then("Admin clicks on the Total Pending Order")
+    public void adminClicksOnTheTotalPendingOrder() {
+        us027_029_page.TotalOrderButton.click();
+    }
+
+
+
+    @Then("Admin clicks on the Total Completed Order")
+    public void adminClicksOnTheTotalCompletedOrder() {
+        us027_029_page.TotalCompletedOrderButton.click();
+    }
+
+    @Then("Admin clicks on the Total Sale")
+    public void adminClicksOnTheTotalSale() {
+        us027_029_page.TotalSaleButton.click();
+    }
+
+    @Then("Admin clicks on the Total Review")
+    public void adminClicksOnTheTotalReview() {
+        us027_029_page.TotalReviewButton.click();
+    }
+
+    @Then("Admin clicks on the Total Revenue")
+    public void adminClicksOnTheTotalRevenue() {
+        us027_029_page.TotalRevenueButton.click();
+    }
+
+
+    @Then("Admin clicks on the Active Customer")
+    public void adminClicksOnTheActiveCustomer() {
+        us027_029_page.ActiveCustomerButton.click();
+    }
+
+    @Then("Admin clicks on the Total Subscriber")
+    public void adminClicksOnTheTotalSubscriber() {
+        us027_029_page.TotalSubscriberButton.click();
     }
 
     @Then("Admin verifies that it redirects to the relevant page")
     public void adminVerifiesThatItRedirectsToTheRelevantPage() {
-       // Assert.assertTrue();
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl="https://trendlifebuy.com/marketing/subscribers";
+
 
     }
-
-
-
 }

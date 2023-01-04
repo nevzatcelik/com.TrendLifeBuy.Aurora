@@ -50,7 +50,7 @@ public class US027_029_Page {
     @FindBy(xpath = "//h3[text()='Payment']")
     public WebElement paymentTitle;
 
-    @FindBy(xpath = "//a[text()='Pay Now']")
+    @FindBy(xpath = "//a[@id='payment_btn_trigger']")
     public WebElement payNowButton;
 
     @FindBy(xpath = "//h4[text()='Order summary']")
@@ -62,8 +62,44 @@ public class US027_029_Page {
     @FindBy(xpath = "//span[text()='Flat Rate']")
     public WebElement shippingMethod;
 
-    @FindBy(xpath = "//span[text()='Stripe']")
+    @FindBy(xpath = "(//span[@class='checkmark mr_10'])[1]")
     public WebElement paymentMethod;
+
+    @FindBy(xpath = "//a[text()='Home delivery']")
+    public WebElement HomeDelivery;
+
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement nameBox;
+
+    @FindBy(xpath = "//input[@id='address']")
+    public WebElement addressBox;
+
+    @FindBy(xpath="//input[@id='email']")
+    public WebElement emailBox;
+
+    @FindBy (xpath="//input[@id='phone']")
+    public WebElement phoneBox;
+
+    @FindBy(xpath = "//select[@id='country']")
+    public WebElement countryBox;
+
+    @FindBy(xpath = "//input[@id='postal_code']")
+    public WebElement postalCodeBox;
+
+    @FindBy(xpath="//span[text()='I agree with the terms and conditions.']")
+    public WebElement agreeConditions;
+
+    @FindBy(xpath = "//span[text()='Cash On Delivery']")
+    public WebElement cashOnDelivery;
+
+    @FindBy(xpath = "(//span[@class='checkmark mr_10'])[4]")
+    public WebElement sameAsShipping;
+
+    @FindBy(xpath = "//div[text()='Order created succesfully']")
+    public WebElement orderReceivedMessage;
+
+    @FindBy(xpath = "//div[@class='summery_pro_content']")
+    public WebElement orderInformation;
 
 
 
@@ -146,6 +182,15 @@ public class US027_029_Page {
 
     @FindBy(xpath = "//a[@class='large_logo']")
     public WebElement trendLifeLogo;
+
+    @FindBy(xpath="//a[text()='Customer']")
+    public WebElement customerDown;
+
+    @FindBy(xpath="//h1[text()='14']")
+    public WebElement visitorDataToday;
+
+    @FindBy(xpath = "//h1[text()='252']")
+    public WebElement visitorWeek;
 
 
 
