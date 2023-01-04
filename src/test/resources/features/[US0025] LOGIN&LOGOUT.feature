@@ -1,4 +1,4 @@
-@SmokeTest
+
 Feature:US_0025 As a user, I want to be able to logout from the site after completing my shopping on the site.
 
   Scenario: US_2501 Verify that the Logout link is visible on the home page.
@@ -13,7 +13,7 @@ Feature:US_0025 As a user, I want to be able to logout from the site after compl
     Then User clicks on the Logout link.
     Then It is displayed on the account that the user is logged out of.
     And Closes the page
-
+  @SmokeTest
   Scenario: US_2503 Verify that there is a Logout link in the Dashboard Side Bar.
     Given Open browser go to url "userUrl"
     Then  User clicks on the login link, enters "eminemail" and "password" and logs in

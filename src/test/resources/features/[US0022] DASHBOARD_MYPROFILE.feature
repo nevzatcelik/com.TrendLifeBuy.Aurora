@@ -1,4 +1,4 @@
-@SmokeTest
+
 Feature: US0022 DASHBOARD MY PROFILE
 
   Scenario: TC_2201 Verify that the My Profile page is accessible.
@@ -20,7 +20,7 @@ Feature: US0022 DASHBOARD MY PROFILE
     Then User clicks Choose File button on My Profile page and "uploadPhoto" Photo
     Then User verifies that the photo  is uploaded
     And Closes the page
-
+  @SmokeTest
   Scenario: TC_2203 Verify that you have First Name, Last Name, Email Address, Phone Number, Date of Birth, Description, TextBox in the Basic Info tab.
 
     Given Open browser go to url "userUrl"

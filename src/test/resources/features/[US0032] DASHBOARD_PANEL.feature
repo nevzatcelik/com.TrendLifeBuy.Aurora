@@ -1,4 +1,4 @@
-@SmokeTest
+
   Feature: US_0032 As an administrator, I would like the pages to be listed in a Side Bar under categories so that I can easily access the pages in the Dashboard panel.
 
     Scenario: US_3201 As an administrator, I would like the pages to be listed in a Side Bar under categories so that I can easily access the pages in the Dashboard panel.

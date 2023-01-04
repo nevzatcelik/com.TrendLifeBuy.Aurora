@@ -1,4 +1,4 @@
-@SmokeTest
+
 Feature: US0026 As a visitor, I want to be able to shop from the site without registering.
 
 
@@ -9,7 +9,7 @@ Feature: US0026 As a visitor, I want to be able to shop from the site without re
     Given Open browser go to url "userUrl"
     Then Visitor verify that the site is accessible
     And Closes the page
-
+  @SmokeTest
    Scenario: It should be verified that the products on the site are displayed without registering on the site
 
       Given Open browser go to url "userUrl"

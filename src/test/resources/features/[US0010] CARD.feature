@@ -1,4 +1,4 @@
-@SmokeTest
+
 Feature: US00_10 Card (As a user, I would like to have a cart page where I can send the products I intend to buy while shopping and then do my shopping.)
 
   Scenario: [TC_1001] It should be verified that the number of the product to be purchased from the Quantity section can be changed.

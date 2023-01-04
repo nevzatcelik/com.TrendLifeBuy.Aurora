@@ -1,4 +1,4 @@
-@SmokeTest
+
   Feature: US0027 As a registered user of the site, I want to be able to shop from the site
 
     Scenario TC_2701 Verify that the site is accessible
@@ -21,7 +21,7 @@
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in
       Then User verifies that the site can be logged with correct email and password
       And Closes the page
-
+    @SmokeTest
     Scenario: TC_2704 Verify that the products are displayed on the main page
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "zeynepmail" and "password" and logs in

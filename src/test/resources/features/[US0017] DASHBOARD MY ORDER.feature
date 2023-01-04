@@ -1,5 +1,5 @@
 
-@SystemTest
+
 
 Feature: US_0017 My Order page visibility test on Dashboard page
 

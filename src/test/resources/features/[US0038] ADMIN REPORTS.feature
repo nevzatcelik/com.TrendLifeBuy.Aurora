@@ -1,4 +1,4 @@
-@regression
+
 Feature: US038 admin-report keyword-search tests / Administrator can see reports about keywords used on the site
 
   Scenario: TC_3801 Verify that it is possible to search the Keyword search report list with Quick Search TextBox
