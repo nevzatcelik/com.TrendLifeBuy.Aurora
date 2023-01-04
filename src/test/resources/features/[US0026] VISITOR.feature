@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: US0026 As a visitor, I want to be able to shop from the site without registering.
 
 
