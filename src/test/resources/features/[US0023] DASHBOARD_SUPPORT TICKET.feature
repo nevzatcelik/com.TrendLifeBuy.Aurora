@@ -1,4 +1,4 @@
-
+@regression1
   Feature:US0023 DASHBOARD_SUPPORT TICKET
 
     Scenario: TC_2301 Verify that the Support Ticket page is accessible.
@@ -7,7 +7,7 @@
     Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
     Then User clicks on dashboard link
     Then User clicks Support Ticket on dashboard page
-    Then User verifies that the page is accessible
+    Then User verifies that the page is accessibleS
     And  Closes the page
 
       Scenario:TC_2302 Verify that the All Submitted Ticket List is visible on the Spport Ticket page.
@@ -48,7 +48,7 @@
       Then User verifies that Status, Priority, and Category information is visible
       And  Closes the page
 
-      Scenario: TC_2206
+      Scenario: TC_2306
 
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
@@ -58,7 +58,7 @@
       Then User verifies that the answer is visible
       And  Closes the page
 
-      Scenario: TC_2207
+      Scenario: TC_2307
 
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
@@ -68,7 +68,7 @@
       Then User verifies that the Reply button visible
       And  Closes the page
 
-      Scenario: TC_2208
+      Scenario: TC_2308
 
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
@@ -76,8 +76,8 @@
       Then User clicks Support Ticket on dashboard page
       Then User verifies that All Ticket dropdown section is filterable
       And  Closes the page
-    @regression1
-      Scenario: TC_2209
+
+      Scenario: TC_2309
 
       Given Open browser go to url "userUrl"
       Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
@@ -87,10 +87,10 @@
       Then User verifies that redirect to Create New Ticket page
       And Closes the page
 
-      Scenario: TC_2210
+      Scenario: TC_2310
 
-      Given Open browser go to url "myUrl"
-      Then User clicks on the login link, enters "mail" and "password" and logs in
+      Given Open browser go to url "userUrl"
+      Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
       Then User clicks on dashboard link
       Then User clicks Support Ticket on dashboard page
       Then User clicks Add New Button on Support Ticket page

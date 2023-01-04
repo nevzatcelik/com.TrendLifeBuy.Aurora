@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -358,4 +359,35 @@ public class US022_023_024_Page {
 
     @FindBy(xpath = "//*[text()='Create new ticket ']")
     public WebElement createNewTicketText;
+    @FindBy(xpath = "//input[@name='subject']")
+    private WebElement subjectBoxCreateNewTicket;
+    @FindBy(xpath = "(//div[@class='nice-select theme_select style2 wide'])[1]")
+    private WebElement categoryBoxCrateNewTicket;
+    @FindBy(xpath = "(//div[@class='nice-select theme_select style2 wide'])[2]")
+    private WebElement priortyBoxCreateNewTicket;
+    @FindBy(xpath = "//div[@class='note-editable']")
+    private WebElement descriptionBoxCrateNewTicket;
+    @FindBy(xpath = "(//*[text()='Installation'])[2]")
+    private WebElement dropDownInstallation;
+    @FindBy(xpath = "//li[text()='High']")
+    private WebElement dropDownHigh;
+    @FindBy(xpath = "//button[text()='+ Create Now']")
+    private WebElement createNewTicketButton;
+    @FindBy(xpath = "//*[text()='Nevzat Celik']")
+    private WebElement nevzat;
+    public void crateNewTicketPage(){
+        subjectBoxCreateNewTicket.sendKeys("hello");
+        ReusableMethods.bekle(2);
+        actions.scrollToElement(categoryBoxCrateNewTicket).scrollToElement(dropDownInstallation).perform();
+        categoryBoxCrateNewTicket.click();
+        dropDownInstallation.click();
+        priortyBoxCreateNewTicket.click();
+        dropDownHigh.click();
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
+        descriptionBoxCrateNewTicket.sendKeys("abcdefghijklmn");
+        actions.sendKeys(Keys.TAB).perform();
+        ReusableMethods.bekle(2);
+        createNewTicketButton.click();
+
+    }
 }
