@@ -59,6 +59,12 @@ public class US027_029_Page {
     @FindBy(xpath="//a[text()='Continue Shopping']")
     public WebElement continueShopping;
 
+    @FindBy(xpath = "//span[text()='Flat Rate']")
+    public WebElement shippingMethod;
+
+    @FindBy(xpath = "//span[text()='Stripe']")
+    public WebElement paymentMethod;
+
 
 
 

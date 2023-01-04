@@ -3,6 +3,7 @@ package stepdefinitions.UIStepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en_old.Ac;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -136,45 +137,65 @@ public class US027_029 {
     public void user_clicks_on_the_continue_to_shipping_button() {
         //ReusableMethods.bekle(5);
         Actions action4=new Actions(Driver.getDriver());
-        action4.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-        //ReusableMethods.bekle(8);
+        action4.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.ARROW_UP).perform();
+        ReusableMethods.bekle(7);
+        Actions action5=new Actions(Driver.getDriver());
+        action5.moveToElement(us027_029_page.continueToShipping).perform();
+        ReusableMethods.bekle(7);
         us027_029_page.continueToShipping.click();
     }
 
     @Then("User verifies that it redirects to the Shipping page")
     public void user_verifies_that_it_redirects_to_the_shipping_page() {
-        //ReusableMethods.bekle(3);
-        //Assert.assertTrue(us027_029_page.shippingMethodTitle.isDisplayed());
+        ReusableMethods.bekle(3);
+        Assert.assertTrue(us027_029_page.shippingMethodTitle.isDisplayed());
 
     }
 
     @Then("User verifies that the Payment button is visible")
     public void user_verifies_that_the_payment_button_is_visible() {
+        Assert.assertTrue(us027_029_page.continueToPayment.isDisplayed());
 
     }
 
     @Then("User select Shipping Methods")
     public void user_select_shipping_methods() {
-
+        //us027_029_page.continueToShipping.click();
     }
 
     @Then("User clicks on the Continue to Payment button")
     public void user_clicks_on_the_continue_to_payment_button() {
+        Actions action6=new Actions(Driver.getDriver());
+        action6.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        ReusableMethods.bekle(3);
+        Actions action7=new Actions(Driver.getDriver());
+        action7.moveToElement(us027_029_page.continueToPayment).perform();
+        ReusableMethods.bekle(4);
+        us027_029_page.continueToPayment.click();
 
     }
 
     @Then("User verifies that it should redirects to the Payment page")
     public void user_verifies_that_it_should_redirects_to_the_payment_page() {
+        Assert.assertTrue(us027_029_page.paymentTitle.isDisplayed());
 
     }
 
     @Then("User verifies that Pay Now button is displayed")
     public void user_verifies_that_pay_now_button_is_displayed() {
+        Assert.assertTrue(us027_029_page.payNowButton.isDisplayed());
+
+    }
+
+    @Then("User selects one of the payment methods")
+    public void user_selects_one_of_the_payment_methods() {
+
 
     }
 
     @Then("User verifies that it redirects to the Order Summary page")
     public void user_verifies_that_it_redirects_to_the_order_summary_page() {
+        Assert.assertTrue(us027_029_page.orderSummaryTitle.isDisplayed());
 
     }
 
@@ -193,10 +214,7 @@ public class US027_029 {
 
     }
 
-    @Then("User selects one of the payment methods")
-    public void user_selects_one_of_the_payment_methods() {
 
-    }
 
     @Then("User clicks on the Continue Shopping button")
     public void user_clicks_on_the_continue_shopping_button() {
