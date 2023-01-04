@@ -1,7 +1,6 @@
 package pages;
 
-import io.cucumber.java.zh_cn.假如;
-import org.bouncycastle.jcajce.provider.asymmetric.X509;
+
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -11,13 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
-import java.awt.image.RescaleOp;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class US022_023_024_Page {
+    Actions actions=new Actions(Driver.getDriver());
     public US022_023_024_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -233,7 +230,7 @@ public class US022_023_024_Page {
         emailAdressBoxUpdateAddressPage.click();
         emailAdressBoxUpdateAddressPage.clear();
         emailAdressBoxUpdateAddressPage.sendKeys("nevzat12@gmail.com");
-        Actions actions=new Actions(Driver.getDriver());
+
         actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
         countryBoxUpdateAddressPage.click();
         ReusableMethods.bekle(1);
@@ -261,4 +258,104 @@ public class US022_023_024_Page {
     @FindBy(xpath = "//button[text()='Create']")
     public WebElement createButtonAddressPage;
 
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/support-ticket']")
+    private WebElement supportTicketLink;
+    @FindBy(xpath = "//*[text()='All Submitted Ticket ']")
+    public WebElement allSubmittedTicketText;
+
+    public void supportTicketclick(){
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(1);
+        actions.moveToElement(supportTicketLink).click().perform();
+
+    }
+    @FindBy(xpath = "//*[@id=\"dataShow\"]/div[2]/div/table/thead/tr")
+    private WebElement allSubmittedTicketLine;
+
+    public void allSubmittedAssertion(){
+        String expected="SL Ticket ID Subject Priority Last update Action";
+        String actual=allSubmittedTicketLine.getText();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/support-ticket/TIC821524/show']")
+    public WebElement viewButtonSupportTicketPage;
+    @FindBy(xpath = "//*[text()='#TIC208302 - ornek']")
+    public WebElement dataTextSupportPage;
+    @FindBy(xpath = "(//a[@class='amaz_badge_btn7 d-inline-flex align-items-center'])[1]")
+    private WebElement statusInformation;
+    @FindBy(xpath = "(//a[@class='amaz_badge_btn7 d-inline-flex align-items-center'])[2]")
+    private WebElement priortyInformation;
+    @FindBy(xpath = "(//a[@class='amaz_badge_btn7 d-inline-flex align-items-center'])[3]")
+    private WebElement categoryInformation;
+
+    public void statusPriorityCategoryAssertion(){
+        String expectedStatus="Pending";
+        String actualStatus=statusInformation.getText();
+        String expectedPriority="Medium";
+        String actualPriority=priortyInformation.getText();
+        String expectedCategory="Installation";
+        String actualCategory=categoryInformation.getText();
+        Assert.assertEquals(expectedStatus,actualStatus);
+        Assert.assertEquals(expectedPriority,actualPriority);
+        Assert.assertEquals(expectedCategory,actualCategory);
+    }
+    @FindBy(xpath = "(//div[@class='ticket_view_box theme_border gray_color_1 radius_5px mb_20'])[2]")
+    public WebElement answerFromAdmin;
+    @FindBy(xpath = "//button[@data-bs-toggle='collapse']")
+    private WebElement replyButtonSupportTicket;
+    @FindBy(xpath = "//div[@class='note-editable']")
+    private WebElement descriptionTextBoxSupportTicket;
+    @FindBy(xpath = "//button[text()='+ Reply now']")
+    private WebElement plusReplyNowButton;
+
+    public void replyButtonSupportTicketandAnswer(){
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        replyButtonSupportTicket.click();
+        descriptionTextBoxSupportTicket.sendKeys("testForDesription");
+        plusReplyNowButton.click();
+        Assert.assertTrue(plusReplyNowButton.isDisplayed());
+    }
+
+    @FindBy(xpath = "//div[@class='nice-select amaz_select4 style2']")
+    private WebElement dropDownSupportTicket;
+    @FindBy(xpath = "//*[text()='TIC821524']")
+    private WebElement ticketIdText;
+    @FindBy(xpath = "//p[text()='Empty List.']")
+    private WebElement emptyListText;
+    @FindBy(xpath = "//li[@data-value='0']")
+    private WebElement allTicketsection;
+    @FindBy(xpath = "//li[@data-value='1']")
+    private WebElement pendingSection;
+    @FindBy(xpath = "//li[@data-value='2']")
+    private WebElement onGoingSection;
+    @FindBy(xpath = "//li[@data-value='3']")
+    private WebElement complatedSection;
+    @FindBy(xpath = "//li[@data-value='4']")
+    private WebElement closedSection;
+
+    public void supportTicketFilter(){
+
+     dropDownSupportTicket.click();
+     pendingSection.click();
+     Assert.assertTrue(ticketIdText.isDisplayed());
+        ReusableMethods.bekle(2);
+     dropDownSupportTicket.click();
+     onGoingSection.click();
+     Assert.assertTrue(emptyListText.isDisplayed());
+        ReusableMethods.bekle(2);
+     dropDownSupportTicket.click();
+     complatedSection.click();
+     Assert.assertTrue(emptyListText.isDisplayed());
+        ReusableMethods.bekle(2);
+     dropDownSupportTicket.click();
+     closedSection.click();
+     Assert.assertTrue(emptyListText.isDisplayed());
+    }
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/support-ticket/create']")
+    public WebElement plusAddnewButton;
+
+    @FindBy(xpath = "//*[text()='Create new ticket ']")
+    public WebElement createNewTicketText;
 }
