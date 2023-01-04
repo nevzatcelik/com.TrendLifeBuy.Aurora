@@ -118,6 +118,49 @@ public class US016_017 {
     }
     @Then("User verifies that Paid By is displayed")
     public void user_verifies_that_paid_by_is_displayed() {
+
         Assert.assertTrue(trendlife.paidByButton.isDisplayed());
     }
+
+    @Then("User verifies that all the options of the dropdown menu of the number of products can be determined")
+    public void userVerifiesThatAllTheOptionsOfTheDropdownMenuOfTheNumberOfProductsCanBeDetermined() {
+
+
+        trendlife.numbersDropDownMenu.click();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(trendlife.lastFiveOrdersButton.isDisplayed());
+        Assert.assertTrue(trendlife.lastTenOrdersButton.isDisplayed());
+
+        ReusableMethods.bekle(2);
+        trendlife.lastTenOrdersButton.click();
+
+        trendlife.numbersDropDownMenu.click();
+        Assert.assertTrue(trendlife.lastTwentyOrdersButton.isDisplayed());
+        trendlife.lastTwentyOrdersButton.click();
+
+        ReusableMethods.bekle(1);
+
+        trendlife.numbersDropDownMenu.click();
+        Assert.assertTrue(trendlife.lastFourtyOrdersButton.isDisplayed());
+        trendlife.lastFourtyOrdersButton.click();
+    }
+
+    @Then("User goes to bottom of the page")
+    public void user_goes_to_bottom_of_the_page() {
+        ReusableMethods.bekle(2);
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+    }
+    @Then("User clicks next and or previous buttons")
+    public void user_clicks_next_and_or_previous_buttons() {
+        ReusableMethods.bekle(2);
+        trendlife.nextButton.click();
+        Assert.assertTrue(trendlife.nextButton.isDisplayed());
+        ReusableMethods.bekle(2);
+        Driver.getDriver().navigate().back();
+        trendlife.previousButton.click();
+
+    }
+
 }

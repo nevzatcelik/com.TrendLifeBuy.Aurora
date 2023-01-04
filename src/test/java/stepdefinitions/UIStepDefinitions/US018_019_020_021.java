@@ -244,7 +244,20 @@ public class US018_019_020_021 {
     }
 
     //  ==================== 4. US21  MY Refund & Dispute   =======================>>>
+    @Then("User clicks Refund & Dispute section on dashboard page")
+    public void userClicksRefundDisputeSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(2);
+        life.refundDisputeLink.click();
 
+    }
+    @Then("User verifies that Refund & Dispute page is accessible")
+    public void userVerifiesThatRefundDisputePageIsAccessible() {
+        ReusableMethods.bekle(2);
+        String expRefundSidaLink= "my-refund-list";
+        String actualSidaLink = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualSidaLink.contains(expRefundSidaLink));
+    }
 
 
 
