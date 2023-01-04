@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 
 public class TrendLifeBuyCommonStep {
@@ -14,6 +15,7 @@ public class TrendLifeBuyCommonStep {
 
     @Given("Open browser go to url {string}")
     public void open_browser_go_to_url(String url) {
+
         Driver.getDriver().get(ConfigReader.getProperty(url));
     }
     @Then("User clicks on the login link, enters {string} and {string} and logs in")
@@ -26,12 +28,15 @@ public class TrendLifeBuyCommonStep {
     }
     @Then("Closes the page")
     public void closes_the_page() {
+
         Driver.closeDriver();
     }
     @Given("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
     public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail,String password) {
       life.adminLogin(mail, password);
+        ReusableMethods.bekle(4);
 
     }
 
 }
+
