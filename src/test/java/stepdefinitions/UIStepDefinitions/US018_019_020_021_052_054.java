@@ -4,13 +4,13 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US018_019_020_021_Page;
+import pages.US018_019_020_021_052_054_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US018_019_020_021 {
+public class US018_019_020_021_052_054 {
 
-    US018_019_020_021_Page life=new US018_019_020_021_Page();
+    US018_019_020_021_052_054_Page life=new US018_019_020_021_052_054_Page();
     Actions actions=new Actions(Driver.getDriver());
 
     // ==================== US18  MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM

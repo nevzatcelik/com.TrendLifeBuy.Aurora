@@ -1,17 +1,12 @@
 package pages;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
-public class US037_038_039_040_Page {
-    public US037_038_039_040_Page(){
+public class US037_038_039_040_044_Page {
+    public US037_038_039_040_044_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
