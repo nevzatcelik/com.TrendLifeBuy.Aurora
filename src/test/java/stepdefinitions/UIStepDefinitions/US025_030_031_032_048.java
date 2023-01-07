@@ -1,18 +1,15 @@
 package stepdefinitions.UIStepDefinitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US025_030_031_032_Page;
+import pages.US025_030_031_032_048_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.security.Key;
-
-public class US025_030_031_032 {
-    US025_030_031_032_Page life=new US025_030_031_032_Page();
+public class US025_030_031_032_048 {
+    US025_030_031_032_048_Page life=new US025_030_031_032_048_Page();
     Actions actions=new Actions(Driver.getDriver());
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {

@@ -1,7 +1,6 @@
 package pages;
 
 
-import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -14,9 +13,9 @@ import utilities.ReusableMethods;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class US022_023_024_Page {
+public class US022_023_024_053_Page {
     Actions actions=new Actions(Driver.getDriver());
-    public US022_023_024_Page(){
+    public US022_023_024_053_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "(//a[@href=\"https://trendlifebuy.com/profile\"])[1]")
