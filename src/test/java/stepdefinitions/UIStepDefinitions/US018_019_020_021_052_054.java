@@ -4,13 +4,13 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US018_019_020_021_Page;
+import pages.US018_019_020_021_052_054_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US018_019_020_021 {
+public class US018_019_020_021_052_054 {
 
-    US018_019_020_021_Page life=new US018_019_020_021_Page();
+    US018_019_020_021_052_054_Page life=new US018_019_020_021_052_054_Page();
     Actions actions=new Actions(Driver.getDriver());
 
     // ==================== US18  MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM
@@ -244,7 +244,20 @@ public class US018_019_020_021 {
     }
 
     //  ==================== 4. US21  MY Refund & Dispute   =======================>>>
+    @Then("User clicks Refund & Dispute section on dashboard page")
+    public void userClicksRefundDisputeSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(2);
+        life.refundDisputeLink.click();
 
+    }
+    @Then("User verifies that Refund & Dispute page is accessible")
+    public void userVerifiesThatRefundDisputePageIsAccessible() {
+        ReusableMethods.bekle(2);
+        String expRefundSidaLink= "my-refund-list";
+        String actualSidaLink = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualSidaLink.contains(expRefundSidaLink));
+    }
 
 
 

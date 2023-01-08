@@ -4,7 +4,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US022_023_024_Page;
+import pages.US022_023_024_053_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -12,10 +12,10 @@ import utilities.ReusableMethods;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class US022_023_024 {
+public class US022_023_024_053 {
 
 
-    US022_023_024_Page nevzat=new US022_023_024_Page();
+    US022_023_024_053_Page nevzat=new US022_023_024_053_Page();
     Actions actions=new Actions(Driver.getDriver());
 
 
@@ -29,8 +29,8 @@ public class US022_023_024 {
     }
 
 
-    @Then("User verifies that the page is {string} accessible")
-    public void userVerifiesThatThePageIsAccessible(String expectedurl) {
+    @Then("User verifies that the page is {string} accessibleS")
+    public void userVerifiesThatThePageIsAccessibleS(String expectedurl) {
         String actual=Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(ConfigReader.getProperty(expectedurl),actual);
@@ -139,5 +139,75 @@ public class US022_023_024 {
       //  actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitForVisibility(nevzat.createButtonAddressPage,5);
       assertTrue(nevzat.createButtonAddressPage.isDisplayed());
+    }
+
+    @Then("User clicks Support Ticket on dashboard page")
+    public void userClicksSupportTicketOnDashboardPage() {
+      nevzat.supportTicketclick();
+    }
+
+    @Then("User verifies that the page is accessibleS")
+    public void userVerifiesThatThePageIsAccessibleS() {
+      Assert.assertTrue(nevzat.adressButtonMyAccount.isDisplayed());
+    }
+
+    @Then("User verifies that the All Submitted Ticket text is visible")
+    public void userVerifiesThatTheAllSubmittedTicketTextIsVisible() {
+        Assert.assertTrue(nevzat.allSubmittedTicketText.isDisplayed());
+    }
+
+    @Then("User verifies name sequences of All Sent Ticket line text")
+    public void userVerifiesNameSequencesOfAllSentTicketLineText() {
+        nevzat.allSubmittedAssertion();
+    }
+
+    @Then("User clicks view button on Support Ticket page")
+    public void userClicksViewButtonOnSupportTicketPage() {
+        nevzat.viewButtonSupportTicketPage.click();
+    }
+
+    @Then("User verifies that data is visible")
+    public void userVerifiesThatDataIsVisible() {
+        Assert.assertTrue(nevzat.dataTextSupportPage.isDisplayed());
+    }
+
+    @Then("User verifies that Status, Priority, and Category information is visible")
+    public void userVerifiesThatStatusPriorityAndCategoryInformationIsVisible() {
+       nevzat.statusPriorityCategoryAssertion();
+    }
+
+    @Then("User verifies that the answer is visible")
+    public void userVerifiesThatTheAnswerIsVisible() {
+        Assert.assertTrue(nevzat.answerFromAdmin.isDisplayed());
+    }
+
+    @Then("User verifies that the Reply button visible")
+    public void userVerifiesThatTheReplyButtonVisible() {
+      nevzat.replyButtonSupportTicketandAnswer();
+    }
+
+    @Then("User verifies that All Ticket dropdown section is filterable")
+    public void userVerifiesThatAllTicketDropdownSectionIsFilterable() {
+      nevzat.supportTicketFilter();
+    }
+
+    @Then("User clicks Add New Button on Support Ticket page")
+    public void userClicksAddNewButtonOnSupportTicketPage() {
+        nevzat.plusAddnewButton.click();
+    }
+
+    @Then("User verifies that redirect to Create New Ticket page")
+    public void userVerifiesThatRedirectToCreateNewTicketPage() {
+      Assert.assertTrue(nevzat.createNewTicketText.isDisplayed());
+    }
+
+    @Then("User enters information  {string} {string} {string} and {string}")
+    public void userEntersInformationAnd(String subject, String category, String priority, String description) {
+         nevzat.crateNewTicketPage();
+    }
+
+    @Then("User verifies that the information are enterable on Create New Ticket page")
+    public void userVerifiesThatTheInformationAreEnterableOnCreateNewTicketPage() {
+        nevzat.allSubmittedTicketText.isDisplayed();
     }
 }
