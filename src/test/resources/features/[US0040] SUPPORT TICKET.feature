@@ -1,4 +1,4 @@
-@regression
+@Regression
 Feature: US040 support ticket - my ticket tests / Administrator want a page to open a support ticket
 
   Scenario: TC_4001 Verify that the my ticket link directs to the relevant page
