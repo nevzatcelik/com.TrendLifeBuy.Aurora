@@ -215,4 +215,17 @@ public class DBUtils {
         }
         return columns;
     }
+
+    public static String query(String tabloName){
+        String tableName="Select * From u480337000_tlb_training."+tabloName;
+    return tableName;
+    }
+
+    public static List<String> getCostumer(String id) throws SQLException {
+
+        List<String> costumerData=new ArrayList<>();
+      String costumersData=("Select * From u480337000_tlb_training.users Where id="+id);
+        resultSet=statement.executeQuery(costumersData);
+        return (List<String>) resultSet;
+    }
 }
