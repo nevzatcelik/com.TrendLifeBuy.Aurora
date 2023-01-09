@@ -480,7 +480,7 @@ public class US001_002_003_004_005_050 {
         lifegursel.tiClose.click();
         lifegursel.loadMoreButton.click();
         ReusableMethods.bekle(2);
-        //ReusableMethods.getScreenshot("https://trendlifebuy.com/");
+        //ReusableMethods.getScreenshot("https://trendlifebuy.com/"); bu satir baska
 
 
     /*@Then("The admin closes {string}")
