@@ -1,4 +1,4 @@
-
+@SystemTest
 Feature: US 0003 Home Page All Categories Menu Test
 
   Scenario: TC 0301 Verify that the categories Computer & Accessories, Electronics Devices,

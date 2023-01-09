@@ -214,4 +214,36 @@ public class US001_002_003_004_005_050_Page {
 
     @FindBy(xpath = "//a[@id='loadmore']")
     public WebElement loadMoreButton;
+
+    @FindBy(xpath = "//a[text()='Priority']")
+    public WebElement priorityLink;
+
+    @FindBy(xpath = "//h3[text()='Priority List']")
+    public WebElement priorityList;
+
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement addNewBox;
+
+    @FindBy(xpath = "//input[@id='status_inactive']")
+    public WebElement inactiveCheckMark;
+
+    @FindBy(xpath = "//button[@id='submit_btn']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//button[@id='submit_btn']")
+    public WebElement newPriName;
+
+    @FindBy(xpath = "(//th[@class='sorting'])[1]")
+    public WebElement nameHeading;
+
+    @FindBy(xpath = "(//th[@class='sorting'])[2]")
+    public WebElement statusHeading;
+
+    @FindBy(xpath = "(//th[@class='sorting'])[3]")
+    public WebElement actionHeading;
+
+    @FindBy(xpath = "(//div[@class='slider round'])[1]")
+    public WebElement statusSliderRound;
+
+
 }
