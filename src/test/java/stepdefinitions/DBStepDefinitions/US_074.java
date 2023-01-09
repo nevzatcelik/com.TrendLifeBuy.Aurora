@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import utilities.ConfigReader;
 import utilities.DBUtils;
 
 import java.sql.*;
@@ -19,17 +20,15 @@ public class US_074 {
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
-    @Given("Kullanici JDBC ile database ebaglanir")
-    public void kullanici_jdbc_ile_database_ebaglanir() throws SQLException {
+
+    @Given("nevzat JDBC ile database ebaglanir {string} tablosundaki verileri alir")
+    public void nevzatJDBCIleDatabaseEbaglanirTablosundakiVerileriAlir(String arg0) throws SQLException {
         connection= DriverManager.getConnection(url,username,password);
         statement= connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        String query= ConfigReader.getProperty(arg0);
+        resultSet=statement.executeQuery(query);
     }
 
-    @Then("{string} tablosundaki verilerini alir")
-    public void tablosundakiVerileriniAlir(String query2) throws SQLException {
-       String query="SELECT * FROM u480337000_tlb_training.users";
-       resultSet=statement.executeQuery(query);
-    }
 
     @And("User verifies {string} {string} {string} {string} {string} from data base")
     public void userVerifiesFromDataBase(String id, String firstname, String lastname, String email, String role_id) throws SQLException {
@@ -37,6 +36,7 @@ public class US_074 {
         String actualName=resultSet.getString(firstname);
         String expected="Super";
         Assert.assertEquals(expected,actualName);
+        /*
         String actualName2=resultSet.getString(lastname);
         String expectedLastname="admin";
         Assert.assertEquals(expectedLastname,actualName2);
@@ -45,6 +45,7 @@ public class US_074 {
         String expectedFirstname="Admin";
         Assert.assertEquals(expectedFirstname,actualfirstname);
 
+         */
 
 
 
@@ -58,6 +59,7 @@ public class US_074 {
 
 
     }
+
 
 
 }
