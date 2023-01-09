@@ -5,16 +5,15 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.TrendLifeBuyPage;
-import pages.US001_002_003_004_005_Page;
+import pages.US001_002_003_004_005_050_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class US001_002_003_004_005 {
-    US001_002_003_004_005_Page lifegursel = new US001_002_003_004_005_Page();
+public class US001_002_003_004_005_050 {
+    US001_002_003_004_005_050_Page lifegursel = new US001_002_003_004_005_050_Page();
 
     Actions actions= new Actions(Driver.getDriver());
 
@@ -481,12 +480,55 @@ public class US001_002_003_004_005 {
         lifegursel.tiClose.click();
         lifegursel.loadMoreButton.click();
         ReusableMethods.bekle(2);
-        //ReusableMethods.getScreenshot("https://trendlifebuy.com/");
+        //ReusableMethods.getScreenshot("https://trendlifebuy.com/"); bu satir baska
+
+
+    /*@Then("The admin closes {string}")
+    public void the_admin_closes (String adminUrl) {
+        Driver.closeDriver();*/
 
     }
-    @Then("The user closes {string}")
-    public void the_user_closes(String string) {
+    @Then("Admin clicks on Priority link")
+    public void admin_clicks_on_priority_link() {
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(2);
+      lifegursel.priorityLink.click();
+    }
+    @Then("Admin verifies if the Priority link leads to Priority page")
+    public void admin_verifies_if_the_priority_link_leads_to_priority_page() {
+    Assert.assertTrue(lifegursel.priorityList.isDisplayed());
+    }
+
+    @Then("Admin clicks on Add New Box and enters a name")
+    public void admin_clicks_on_add_new_box_and_enters_a_name() {
+        lifegursel.addNewBox.sendKeys("New Pri");
+        ReusableMethods.bekle(2);
+    }
+    @Then("Admin verifies if a new Priority can be seen under the Priority List")
+    public void admin_verifies_if_a_new_priority_can_be_seen_under_the_priority_list() {
+        Assert.assertTrue(lifegursel.newPriName.isDisplayed());
+    }
+
+    @Then("Admin verifies if the Priorities are displayed according to Name,Status and Actions headings")
+    public void admin_verifies_if_the_priorities_are_displayed_according_to_name_status_and_actions_headings() {
+        Assert.assertTrue(lifegursel.nameHeading.isDisplayed());
+        Assert.assertTrue(lifegursel.statusHeading.isDisplayed());
+        Assert.assertTrue(lifegursel.actionHeading.isDisplayed());
+    }
+    @Then("Admin verifies if the status of the Priorities can be changed under the Status title")
+    public void admin_verifies_if_the_status_of_the_priorities_can_be_changed_under_the_status_title() {
+        Assert.assertTrue(lifegursel.statusSliderRound.isEnabled());
+    }
+    @Then("Admin closes {string}")
+    public void admin_closes(String string) {
         Driver.closeDriver();
     }
 
 }
+
+
+

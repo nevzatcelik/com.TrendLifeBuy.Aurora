@@ -1,17 +1,14 @@
 package stepdefinitions.UIStepDefinitions;
 
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
-import pages.US037_038_039_040_Page;
+import pages.US037_038_039_040_044_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US037_038_039_040 {
+public class US037_038_039_040_044 {
 
-    US037_038_039_040_Page life= new US037_038_039_040_Page();
+    US037_038_039_040_044_Page life= new US037_038_039_040_044_Page();
 
     @Then("Admin clicks Wallet Manage link")
     public void admin_clicks_wallet_manage_link() {
@@ -19,9 +16,8 @@ public class US037_038_039_040 {
     }
 
     @Then("Admin clicks Offline Recharge link")
-    public void admin_clicks_offline_recharge_link() {
-        life.offlineRecharge.click();
-    }
+    public void admin_clicks_offline_recharge_link() {life.offlineRecharge.click();}
+
 
     @Then("Admin verifies that Offline Recharge List is displayed on the Offline Recharge Page")
     public void admin_verifies_that_offline_recharge_list_is_displayed_on_the_offline_recharge_page() {

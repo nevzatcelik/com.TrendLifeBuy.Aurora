@@ -1,20 +1,14 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-import utilities.ReusableMethods;
-
-import javax.swing.*;
 
 import static org.junit.Assert.assertTrue;
 
-public class US026_028_Page {
-    public US026_028_Page(){
+public class US026_028_047_Page {
+    public US026_028_047_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy (xpath = "/html/body/header/div/div[2]/div/div/div/div/div[1]/div/a")

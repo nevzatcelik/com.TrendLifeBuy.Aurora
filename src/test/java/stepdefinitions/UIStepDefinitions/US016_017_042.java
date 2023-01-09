@@ -4,12 +4,12 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US016_017_Page;
+import pages.US016_017_042_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US016_017 {
-    US016_017_Page trendlife = new US016_017_Page();
+public class US016_017_042 {
+    US016_017_042_Page trendlife = new US016_017_042_Page();
 
     Actions actions=new Actions(Driver.getDriver());
     @Then("User clicks Purchase History section on dashbord page")

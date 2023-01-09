@@ -1,3 +1,4 @@
+@SystemTest
 Feature: US 0004 Home Page Submenu Functions Test
 
   Scenario: TC 0401 Verify that My Account, Order Status, Referral, Coupons links are visible

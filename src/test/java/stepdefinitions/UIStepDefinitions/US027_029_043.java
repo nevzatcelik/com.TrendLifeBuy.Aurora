@@ -1,26 +1,19 @@
 package stepdefinitions.UIStepDefinitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en_old.Ac;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
-import pages.US027_029_Page;
-import utilities.ConfigReader;
+import pages.US027_029_043_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.Set;
 
 
-public class US027_029 {
-    US027_029_Page us027_029_page = new US027_029_Page();
+public class US027_029_043 {
+    US027_029_043_Page us027_029_page = new US027_029_043_Page();
     TrendLifeBuyPage trendLifeBuyPage = new TrendLifeBuyPage();
 
     TrendLifeBuyCommonStep ortaklife = new TrendLifeBuyCommonStep();
