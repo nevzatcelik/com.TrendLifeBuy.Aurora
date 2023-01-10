@@ -1,4 +1,4 @@
-
+@SmokeTest
 Feature: US0101 URL Test
 @SmokeTest
   Scenario: As a user I should be able to access the home page

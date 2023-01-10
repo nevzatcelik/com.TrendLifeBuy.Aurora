@@ -154,4 +154,11 @@ public class US018_019_020_021_052_054_Page {
     public WebElement refundDisputeLink;
 
 
+    // ==================== US52 All Activity Logs   =======================>>>
+
+
+
+
+    // ==================== US54 Contact Request   =======================>>>
+
 }
