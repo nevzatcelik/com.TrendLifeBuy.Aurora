@@ -1,4 +1,4 @@
-
+@dtb
 Feature: JDBC kullanarak yeterli bilgi ile database testi yapilabilir
 
   Scenario Outline: JDBC01 kullanici database de sorgu yapabilmeli
