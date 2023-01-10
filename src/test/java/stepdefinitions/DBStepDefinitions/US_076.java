@@ -1,8 +1,8 @@
 package stepdefinitions.DBStepDefinitions;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import io.cucumber.java.en.Given;
+
+import java.sql.*;
 
 public class US_076 {
 
@@ -14,5 +14,11 @@ public class US_076 {
     Statement statement;
     ResultSet resultSet;
 
+    @Given("Kullanici JDBC ile database'e baglanir")
+    public void kullanici_jdbc_ile_database_e_baglanir() throws SQLException {
+        connection = DriverManager.getConnection(url, username, password);
+        statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
+
+    }
 }
