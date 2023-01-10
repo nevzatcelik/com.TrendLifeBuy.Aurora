@@ -44,13 +44,13 @@ public class US_074 {
        while (resultSet.next())
        {
            String listfirstname=resultSet.getString(firstname);
-           System.out.println("firstname="+listfirstname);
+           System.out.println(listfirstname);
            firstnameToplam=listfirstname;
        }
        resultSet.absolute(0);
        while (resultSet.next()){
            String listlastname=resultSet.getString(lastname);
-           System.out.println("lastname= "+listlastname);
+           System.out.println(listlastname);
            lastnameToplam=listlastname;
 
 
@@ -58,7 +58,7 @@ public class US_074 {
        resultSet.absolute(0);
        while (resultSet.next()) {
            String list=resultSet.getString(email);
-           System.out.println("email List= "+list);
+           System.out.println(list);
            emailListToplam=list;
 
 
@@ -66,7 +66,7 @@ public class US_074 {
        resultSet.absolute(0);
        while (resultSet.next()){
            String roleidlist=resultSet.getString(role_id);
-           System.out.println("role_id="+roleidlist);
+           System.out.println(roleidlist);
            roleidToplamList=roleidlist;
 
        }
