@@ -389,4 +389,34 @@ public class US022_023_024_053_Page {
         createNewTicketButton.click();
 
     }
+
+    @FindBy(xpath = "//*[text()='All Activity Logs']")
+    public WebElement allactivityLogs;
+
+    @FindBy(xpath = "//*[text()='Clean All']")
+    private WebElement cleanAllButton;
+
+    @FindBy(xpath = "//*[text()='No data available in table']")
+    private WebElement noDataAvaliable;
+
+    @FindBy(xpath = "//*[text()='Activity Logs']")
+    public WebElement activitylogsButton;
+
+    public void activityLogsEntryMethod(){
+        actions.scrollToElement(allactivityLogs).click(allactivityLogs).perform();
+        actions.scrollToElement(activitylogsButton).click(activitylogsButton).perform();
+    }
+    public void cleanAllMethodandAssertion(){
+        cleanAllButton.click();
+        Assert.assertTrue(noDataAvaliable.isDisplayed());
+    }
+
+    @FindBy(xpath = "//tr[@role='row']")
+    private WebElement row;
+
+    public void row(){
+        String expected="SL TYPE DESCRIPTION URL IP AGENT ATTEMPTED AT USER";
+        String actual=row.getText();
+        Assert.assertEquals(expected,actual);
+    }
 }
