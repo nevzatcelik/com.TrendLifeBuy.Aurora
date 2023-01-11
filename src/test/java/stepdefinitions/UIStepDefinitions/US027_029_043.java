@@ -473,7 +473,51 @@ public class US027_029_043 {
 
     }
 
+    @Then("Admin clicks on the Admin Reports")
+    public void adminClicksOnTheAdminReports() {
+        us027_029_page.AdminReports.click();
+    }
+    @Then("Admin clicks on the WishlistButton")
+    public void adminClicksOnTheWishlistButton() {
+        us027_029_page.WishlistButton.click();
+
+    }
 
 
+    @Then("Admin verifies that Wishlist report accesible")
+    public void adminVerifiesThatWishlistReportAccesible() {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualUrl.contains("wishlist"));
+    }
+
+    @Then("Admin clicks on the wishlistSearchBox")
+    public void adminClicksOnTheWishlistSearchBox() {
+        us027_029_page.wishlistSearchBox.click();
+
+    }
+
+    @Then("Admin select one report type")
+    public void adminSelectOneReportType() {
+        us027_029_page.wishlistSelect.click();
+
+    }
+
+    @Then("Admin clicks on the wishlistSearchButton")
+    public void adminClicksOnTheWishlistSearchButton() {
+        us027_029_page.wishlistSearchButton.click();
+    }
+
+    @Then("Admin verifies that wishlist type can be selected")
+    public void adminVerifiesThatWishlistTypeCanBeSelected() {
+        Assert.assertTrue(us027_029_page.wishlistSearchBox.isEnabled());
+    }
+
+    @Then("Admin verifies that selected wishlist report is displayed")
+    public void adminVerifiesThatSelectedWishlistReportIsDisplayed() {
+        Assert.assertTrue(us027_029_page.wishlistSelectedType.isDisplayed());
+
+
+
+    }
 }
 

@@ -199,6 +199,25 @@ public class US027_029_043_Page {
 
 
 
+    //us 43
+    @FindBy (xpath = "//span[text()='Admin Reports']")
+    public WebElement AdminReports;
+
+    @FindBy (xpath = "//a[text()='Wishlist']")
+    public WebElement WishlistButton;
+
+    @FindBy (xpath = "//div[@class='nice-select primary_select mb-15']")
+    public WebElement wishlistSearchBox;
+
+    @FindBy (xpath = "//li[@data-value='product']")
+    public WebElement wishlistSelect;
+
+    @FindBy (xpath = "//button[@id='save_button_parent']")
+    public WebElement wishlistSearchButton;
+
+    @FindBy (xpath = "(//div[@class='box_header common_table_header'])[2]")
+    public WebElement wishlistSelectedType;
+
 
 
 

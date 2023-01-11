@@ -210,4 +210,19 @@ public class US022_023_024_053 {
     public void userVerifiesThatTheInformationAreEnterableOnCreateNewTicketPage() {
         nevzat.allSubmittedTicketText.isDisplayed();
     }
+
+    @Then("Admin clicks Activity Logs section on Dashboard page")
+    public void adminClicksActivityLogsSectionOnDashboardPage() {
+     nevzat.activityLogsEntryMethod();
+    }
+
+    @Then("Admin clicks Clean Button on the Activity Logs page, Admin verifies that the page is clean")
+    public void adminClicksCleanButtonOnTheActivityLogsPageAdminVerifiesThatThePageIsClean() {
+        nevzat.cleanAllMethodandAssertion();
+    }
+
+    @Then("Admin verifies that titles and subreddits are linked")
+    public void adminVerifiesThatTitlesAndSubredditsAreLinked() {
+        nevzat.row();
+    }
 }
