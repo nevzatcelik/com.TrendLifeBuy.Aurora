@@ -419,4 +419,26 @@ public class US022_023_024_053_Page {
         String actual=row.getText();
         Assert.assertEquals(expected,actual);
     }
+    @FindBy(xpath = "//a[@id='activityDataTable_next']")
+    private WebElement nextPage;
+
+    @FindBy(xpath = "//div[@id='activityDataTable_info']")
+    private WebElement showingInformText;
+
+
+
+    public void nextpageandAssertionMethods(){
+        actions.scrollToElement(nextPage).perform();
+        nextPage.click();
+        ReusableMethods.bekle(2);
+        String expected="Showing 11 to 20 of 30 entries";
+        String actual=showingInformText.getText();
+        Assert.assertEquals(expected,actual);
+        nextPage.click();
+        String expected2="Showing 21 to 30 of 30 entries";
+        String actual2=showingInformText.getText();
+        Assert.assertEquals(expected,actual);
+
+
+    }
 }

@@ -225,4 +225,9 @@ public class US022_023_024_053 {
     public void adminVerifiesThatTitlesAndSubredditsAreLinked() {
         nevzat.row();
     }
+
+    @Then("Admin verifies function of page switch button")
+    public void adminVerifiesFunctionOfPageSwitchButton() {
+         nevzat.nextpageandAssertionMethods();
+    }
 }
