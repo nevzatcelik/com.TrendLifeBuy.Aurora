@@ -1,4 +1,4 @@
-@SystemTesti
+
 Feature: [US0053] ADMIN ACTIVITY LOGS PAGE
 
   Scenario:[TC_5301] It should be verified that the activities in the Activity Logs list can be cleared / deleted with the Celan All button.
@@ -16,3 +16,10 @@ Feature: [US0053] ADMIN ACTIVITY LOGS PAGE
     Then Admin clicks Activity Logs section on Dashboard page
     Then Admin verifies that titles and subreddits are linked
     Then Closes the page
+  @SystemTesti
+  Scenario:[TC_5303] Verify that there are transitions between pages in the Activity Logs List
+    Given Open browser go to url "adminUrl"
+    Then Admin enters an "adminnevzatmail", a "password" and then clicks sign in link on admin page to login
+    Then Admin clicks Activity Logs section on Dashboard page
+    Then Admin verifies function of page switch button
+    And  Closes the page
