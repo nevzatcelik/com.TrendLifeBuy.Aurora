@@ -2,16 +2,16 @@ package stepdefinitions.UIStepDefinitions;
 
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Then;
+import org.apache.velocity.util.introspection.VelPropertySet;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US037_038_039_040_Page;
+import pages.US037_038_039_040_044_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US037_038_039_040 {
+public class US037_038_039_040_044 {
 
-    US037_038_039_040_Page life= new US037_038_039_040_Page();
+    US037_038_039_040_044_Page life= new US037_038_039_040_044_Page();
 
     @Then("Admin clicks Wallet Manage link")
     public void admin_clicks_wallet_manage_link() {
@@ -360,6 +360,60 @@ public class US037_038_039_040 {
     @Then("Admin verifies that the Tickets can be listed under the Action heading")
     public void admin_verifies_that_the_tickets_can_be_listed_under_the_action_heading() {
         Assert.assertTrue(life.action.isDisplayed());
+    }
+
+    // 2nd Sprint
+    @Then("Admin clicks Wallet Recharge History link")
+    public void admin_clicks_wallet_recharge_history_link() {
+        life.walletRechargeHistory.click();
+    }
+    @Then("Admin verifies that Wallet Recharge transactions are shown in Wallet Recharge History List")
+    public void admin_verifies_that_wallet_recharge_transactions_are_shown_in_wallet_recharge_history_list() {
+        Assert.assertTrue(life.walletRechargeHistoryList.isDisplayed());
+    }
+
+    @Then("Admin verifies that transactions are listed under User information")
+    public void admin_verifies_that_transactions_are_listed_under_user_information() {
+        Assert.assertTrue(life.userRechargeHistory.isDisplayed());
+    }
+    @Then("Admin verifies that transactions are listed under Email information")
+    public void admin_verifies_that_transactions_are_listed_under_email_information() {
+        Assert.assertTrue(life.emailRechargeHistory.isDisplayed());
+    }
+    @Then("Admin verifies that transactions are listed under Type information")
+    public void admin_verifies_that_transactions_are_listed_under_type_information() {
+        Assert.assertTrue(life.typeRechargeHistory.isDisplayed());
+    }
+    @Then("Admin verifies that transactions are listed under Amount information")
+    public void admin_verifies_that_transactions_are_listed_under_amount_information() {
+        Assert.assertTrue(life.amountRechargeHistory.isDisplayed());
+    }
+    @Then("Admin verifies that transactions are listed under Payment Details information")
+    public void admin_verifies_that_transactions_are_listed_under_payment_information() {
+        Assert.assertTrue(life.paymentDetailsRechargeHistory.isDisplayed());
+    }
+
+    @Then("Admin verifies that transactions are listed under TRX ID information")
+    public void admin_verifies_that_transactions_are_listed_under_trx_id_information() {
+        Assert.assertTrue(life.trxIdRechargeHistory.isDisplayed());
+    }
+    @Then("Admin verifies that transactions are listed under Date information")
+    public void admin_verifies_that_transactions_are_listed_under_date_information() {
+        Actions actions= new Actions(Driver.getDriver());
+        if (life.plus1.isDisplayed()){
+            actions.moveToElement(life.plus1);
+            actions.click(life.plus1).perform();
+
+        } else {
+            // actions.moveToElement(life.plus1);
+            // actions.click(life.plus1);
+            Assert.assertTrue(life.dateRechargeHistory.isDisplayed());
+        }
+    }
+
+    @Then("Admin verifies that there are transitions between pages")
+    public void admin_verifies_that_there_are_transitions_between_pages() {
+        Assert.assertTrue(life.transitionPages2RechargeHistory.isDisplayed());
     }
 
 }

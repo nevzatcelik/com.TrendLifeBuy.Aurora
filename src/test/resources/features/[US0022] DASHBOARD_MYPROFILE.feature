@@ -1,4 +1,4 @@
-@SmokeTest
+
 Feature: US0022 DASHBOARD MY PROFILE
 
   Scenario: TC_2201 Verify that the My Profile page is accessible.
@@ -20,7 +20,7 @@ Feature: US0022 DASHBOARD MY PROFILE
     Then User clicks Choose File button on My Profile page and "uploadPhoto" Photo
     Then User verifies that the photo  is uploaded
     And Closes the page
-
+  @SmokeTest
   Scenario: TC_2203 Verify that you have First Name, Last Name, Email Address, Phone Number, Date of Birth, Description, TextBox in the Basic Info tab.
 
     Given Open browser go to url "userUrl"
@@ -46,7 +46,7 @@ Feature: US0022 DASHBOARD MY PROFILE
     Then User clicks on the login link, enters "nevzatmail" and "password" and logs in
     Then User clicks on dashboard link
     Then User clicks My Account section on dashboard page
-    Then User enters "SXnewfirstname" "newLastname" "newMail" "newPhoneNumber" "newDateOfBirth" "newDescription" in textboxes and confirms that it is updateable
+    Then User enters "newfirstname" "newLastname" "newMail" "newPhoneNumber" "newDateOfBirth" "newDescription" in textboxes and confirms that it is updateable
     And  Closes the page
 
   Scenario: TC_2206 Verify that Current Password, New Password, Re enter New Password TextBoxes are present in the Change Password tab.

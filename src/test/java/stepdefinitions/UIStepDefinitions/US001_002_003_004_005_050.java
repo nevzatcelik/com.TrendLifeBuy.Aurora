@@ -5,16 +5,15 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.TrendLifeBuyPage;
-import pages.US001_002_003_004_005_Page;
+import pages.US001_002_003_004_005_050_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class US001_002_003_004_005 {
-    US001_002_003_004_005_Page lifegursel = new US001_002_003_004_005_Page();
+public class US001_002_003_004_005_050 {
+    US001_002_003_004_005_050_Page lifegursel = new US001_002_003_004_005_050_Page();
 
     Actions actions= new Actions(Driver.getDriver());
 

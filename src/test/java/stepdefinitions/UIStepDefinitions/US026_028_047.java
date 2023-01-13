@@ -14,15 +14,15 @@ import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
 
 
-import pages.US026_028_Page;
+import pages.US026_028_047_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 
 
-public class US026_028 {
+public class US026_028_047 {
     TrendLifeBuyPage life = new TrendLifeBuyPage();
-    US026_028_Page page = new US026_028_Page();
+    US026_028_047_Page page = new US026_028_047_Page();
     Actions actions = new Actions(Driver.getDriver());
 
     @Then("Visitor verify that the site is accessible")

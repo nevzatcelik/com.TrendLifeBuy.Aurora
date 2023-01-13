@@ -4,7 +4,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US022_023_024_Page;
+import pages.US022_023_024_053_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -12,10 +12,10 @@ import utilities.ReusableMethods;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class US022_023_024 {
+public class US022_023_024_053 {
 
 
-    US022_023_024_Page nevzat=new US022_023_024_Page();
+    US022_023_024_053_Page nevzat=new US022_023_024_053_Page();
     Actions actions=new Actions(Driver.getDriver());
 
 
@@ -148,7 +148,7 @@ public class US022_023_024 {
 
     @Then("User verifies that the page is accessibleS")
     public void userVerifiesThatThePageIsAccessibleS() {
-      Assert.assertTrue(nevzat.allSubmittedTicketText.isDisplayed());
+      Assert.assertTrue(nevzat.adressButtonMyAccount.isDisplayed());
     }
 
     @Then("User verifies that the All Submitted Ticket text is visible")

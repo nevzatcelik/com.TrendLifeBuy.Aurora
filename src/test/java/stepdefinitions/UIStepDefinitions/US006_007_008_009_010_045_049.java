@@ -6,16 +6,15 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
-import pages.US006_007_008_009_010_Page;
+import pages.US006_007_008_009_010_045_049_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-import com.github.javafaker.Faker;
 
-public class US006_007_008_009_010 {
+public class US006_007_008_009_010_045_049 {
 
     TrendLifeBuyPage life=new TrendLifeBuyPage();
-    US006_007_008_009_010_Page leventPage = new US006_007_008_009_010_Page();
+    US006_007_008_009_010_045_049_Page leventPage = new US006_007_008_009_010_045_049_Page();
     Actions actions=new Actions(Driver.getDriver());
 
     @Then("User clicks the LOGIN link")

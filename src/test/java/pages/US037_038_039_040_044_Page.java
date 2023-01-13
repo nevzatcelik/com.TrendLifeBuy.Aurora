@@ -1,17 +1,12 @@
 package pages;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
-public class US037_038_039_040_Page {
-    public US037_038_039_040_Page(){
+public class US037_038_039_040_044_Page {
+    public US037_038_039_040_044_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -235,6 +230,38 @@ public class US037_038_039_040_Page {
     @FindBy (xpath = "//*[@aria-label='Action: activate to sort column ascending']")
     public WebElement action;
 
+    // 2nd Sprint
+    @FindBy (xpath = "//*[text()='Wallet recharge history']")
+    public WebElement walletRechargeHistory;
 
+    @FindBy (xpath = "//h3[text()='Wallet recharge history']")
+    public WebElement walletRechargeHistoryList;
+
+    @FindBy (xpath = "//*[@aria-label='User: activate to sort column ascending']")
+    public WebElement userRechargeHistory;
+
+    @FindBy (xpath = "//*[@aria-label='Email: activate to sort column ascending']")
+    public WebElement emailRechargeHistory;
+
+    @FindBy (xpath = "//*[@aria-label='Type: activate to sort column ascending']")
+    public WebElement typeRechargeHistory;
+
+    @FindBy (xpath = "//*[@aria-label='Amount: activate to sort column ascending']")
+    public WebElement amountRechargeHistory;
+
+    @FindBy (xpath = "//*[@aria-label='Payment Details: activate to sort column ascending']")
+    public WebElement paymentDetailsRechargeHistory;
+
+    @FindBy (xpath = "//*[@aria-label='Trx Id: activate to sort column ascending']")
+    public WebElement trxIdRechargeHistory;
+
+    @FindBy (xpath = "//tbody/tr/td[1]")
+    public WebElement plus1;
+
+    @FindBy (xpath = "//span[@class='dtr-title']")
+    public WebElement dateRechargeHistory;
+
+    @FindBy (xpath = "//a[@data-dt-idx='2']")
+    public WebElement transitionPages2RechargeHistory;
 
 }
