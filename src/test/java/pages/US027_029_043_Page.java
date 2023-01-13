@@ -219,11 +219,4 @@ public class US027_029_043_Page {
     public WebElement wishlistSelectedType;
 
 
-
-
-
-
-
-
-
 }

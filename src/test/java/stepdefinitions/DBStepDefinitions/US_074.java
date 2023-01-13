@@ -53,7 +53,6 @@ public class US_074 {
            System.out.println("lastname= "+listlastname);
            lastnameToplam=listlastname;
 
-
        }
        resultSet.absolute(0);
        while (resultSet.next()) {

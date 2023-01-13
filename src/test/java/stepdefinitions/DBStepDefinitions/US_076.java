@@ -1,6 +1,9 @@
 package stepdefinitions.DBStepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import utilities.ConfigReader;
 
 import java.sql.*;
 
@@ -15,10 +18,29 @@ public class US_076 {
     ResultSet resultSet;
 
     @Given("Kullanici JDBC ile database'e baglanir")
-    public void kullanici_jdbc_ile_database_e_baglanir() throws SQLException {
+    public void kullaniciJDBCIleDatabaseEBaglanir() throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-
-
     }
+
+    @Then("carts tablosundaki id verilerini alir")
+    public void usersTablosundakiIsimVerileriniAlir() throws SQLException {
+        String query = "SELECT id FROM carts";
+        resultSet = statement.executeQuery(query);
+    }
+
+    @And("id verilerini test eder")
+    public void isimVerileriniTestEder() throws SQLException {
+        resultSet.absolute(4);
+        System.out.println(resultSet.getString("id"));
+    }
+
+
+
+
+
+
 }
+
+
+
