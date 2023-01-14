@@ -5,4 +5,3 @@ Feature: Bir yönetici olarak DataBase üzerinden Staff tablosundaki istenen Per
 
     Given gursel JDBC ile database ebaglanir "gurseldata" tablosundaki verileri alir
     Then  Kullanici listenen idleri litede oldugunu dogrular "expected"
-

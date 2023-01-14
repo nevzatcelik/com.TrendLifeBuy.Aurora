@@ -39,7 +39,5 @@ public class US_069 {
         String actual2=resultSet.getString("id");
         Assert.assertEquals(expected2, actual2);
 
-
     }
-
 }
