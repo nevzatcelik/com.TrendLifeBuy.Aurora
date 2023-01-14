@@ -1,10 +1,15 @@
 
-Feature: JDBC kullanarak yeterli bilgi ile database testi yapilabilir
+Feature: Fatih
 
-  Scenario Outline: JDBC01 kullanici database de sorgu yapabilmeli
+  Scenario Outline: FATIH
 
-    Given fatih JDBC ile database ebaglanir "fatihdata" tablosundaki verileri alir
-    And User verifies "<id>" "order_number" from data base
+    Given fatih JDBC ile database ebaglanir "<query>" tablosundaki verileri alir
+    And User verifies "customer_id" "order_number" "<expected>" from data base
     Examples:
-      | id |
-      | 3 |
+      | expected |        query       |
+      |Order-35-211116030414| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
+      |Order-23-211116030754| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
+      |Order-26-211116031600| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
+      |Order-60-211116034341| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
+      |Order-83-211116035939| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
+      |Order-45-211122114237| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=4;   |

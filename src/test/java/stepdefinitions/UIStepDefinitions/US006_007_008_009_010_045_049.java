@@ -363,4 +363,6 @@ public class US006_007_008_009_010_045_049 {
         String newPrice = leventPage.newPrice.toString();
         Assert.assertNotEquals(oldPrice, newPrice);
     }
+
+
 }
