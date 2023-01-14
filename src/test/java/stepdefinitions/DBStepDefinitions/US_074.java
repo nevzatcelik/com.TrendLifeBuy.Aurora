@@ -11,9 +11,6 @@ import java.sql.*;
 import java.util.*;
 
 public class US_074 {
-    List<Object> nevzatdata=new ArrayList<>();
-    String query;
-    US022_023_024_053_Page nevzat=new US022_023_024_053_Page();
 
     String url="jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username="u480337000_tbl_training_u";
@@ -41,8 +38,9 @@ public class US_074 {
         List<String> resultsFirstname = new ArrayList<String>();
         while(resultSet.next()) {
             resultsFirstname.add(resultSet.getNString(firstname));
-          //  System.out.println(resultsFirstname);
+
         }
+        System.out.println(resultsFirstname);
         Assert.assertTrue(resultsFirstname.contains(fnA));
 
         resultSet.absolute(0);
