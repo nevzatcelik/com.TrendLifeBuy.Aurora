@@ -13,3 +13,4 @@ Feature: Fatih
       |Order-60-211116034341| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
       |Order-83-211116035939| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26;  |
       |Order-45-211122114237| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=4;   |
+
