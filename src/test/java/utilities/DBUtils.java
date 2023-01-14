@@ -1,5 +1,7 @@
 package utilities;
 
+import org.checkerframework.checker.units.qual.C;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +22,7 @@ public class DBUtils {
     public static void createConnection() {
 
 
-        String url=ConfigReader.getProperty("db_credentials_url");
+        String url=ConfigReader.getProperty("databaseUrl");
         String username=ConfigReader.getProperty("db_username");
         String password=ConfigReader.getProperty("db_password");
         try {
@@ -67,9 +69,9 @@ public class DBUtils {
 
 
     public static Connection getConnection() {
-        String url = "jdbc:sqlserver://184.168.194.58:1433;databaseName=crystalkeyhotels2;user=Ahmet_User;password=Ahmet123!";
-        String username="Ahmet_User";
-        String password="Ahmet123!";
+        String url = ConfigReader.getProperty("databaseUrl");
+        String username=ConfigReader.getProperty("db_username");
+        String password=ConfigReader.getProperty("db_password");
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {

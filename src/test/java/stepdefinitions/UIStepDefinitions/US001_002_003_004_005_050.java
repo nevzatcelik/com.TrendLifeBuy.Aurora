@@ -480,12 +480,105 @@ public class US001_002_003_004_005_050 {
         lifegursel.tiClose.click();
         lifegursel.loadMoreButton.click();
         ReusableMethods.bekle(2);
-        //ReusableMethods.getScreenshot("https://trendlifebuy.com/");
+        //ReusableMethods.getScreenshot("https://trendlifebuy.com/"); bu satir baska
+
+
+    /*@Then("The admin closes {string}")
+    public void the_admin_closes (String adminUrl) {
+        Driver.closeDriver();*/
 
     }
-    @Then("The user closes {string}")
-    public void the_user_closes(String string) {
+    @Then("Admin clicks on Priority link")
+    public void admin_clicks_on_priority_link() {
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN). sendKeys(Keys.PAGE_DOWN).
+                sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(2);
+      lifegursel.priorityLink.click();
+    }
+    @Then("Admin verifies if the Priority link leads to Priority page")
+    public void admin_verifies_if_the_priority_link_leads_to_priority_page() {
+    Assert.assertTrue(lifegursel.priorityList.isDisplayed());
+    }
+
+    @Then("Admin clicks on Add New Box and enters a name")
+    public void admin_clicks_on_add_new_box_and_enters_a_name() {
+        lifegursel.addNewBox.sendKeys("New Pri");
+        ReusableMethods.bekle(2);
+    }
+    @Then("Admin verifies if a new Priority can be seen under the Priority List")
+    public void admin_verifies_if_a_new_priority_can_be_seen_under_the_priority_list() {
+        Assert.assertTrue(lifegursel.newPriName.isDisplayed());
+    }
+
+    @Then("Admin verifies if the Priorities are displayed according to Name,Status and Actions headings")
+    public void admin_verifies_if_the_priorities_are_displayed_according_to_name_status_and_actions_headings() {
+        Assert.assertTrue(lifegursel.nameHeading.isDisplayed());
+        Assert.assertTrue(lifegursel.statusHeading.isDisplayed());
+        Assert.assertTrue(lifegursel.actionHeading.isDisplayed());
+    }
+    @Then("Admin verifies if the status of the Priorities can be changed under the Status title")
+    public void admin_verifies_if_the_status_of_the_priorities_can_be_changed_under_the_status_title() {
+        Assert.assertTrue(lifegursel.statusSliderRound.isEnabled());
+    }
+
+    @Then("Admin clicks on Select tab")
+    public void admin_clicks_on_select_tab() {
+        lifegursel.selectTab1.click();
+        ReusableMethods.bekle(2);
+
+    }
+    @Then("Admin verifies that there are Edit and Delete links in the select tab")
+    public void admin_verifies_that_there_are_edit_and_delete_links_in_the_select_tab() {
+        Assert.assertTrue(lifegursel.editLink.isDisplayed());
+        Assert.assertTrue(lifegursel.deleteLink.isDisplayed());
+    }
+    @Then("Admin clicks on Edit link")
+    public void admin_clicks_on_edit_link() {
+       lifegursel.editLink.click();
+    }
+    @Then("Admin verifies that the edit page is opened after clicking Edit link")
+    public void admin_verifies_that_the_edit_page_is_opened_after_clicking_edit_link() {
+        Assert.assertTrue(lifegursel.editPage.isDisplayed());
+    }
+    @Then("Admin verifies if the Name and Status of the category can be updated")
+    public void admin_verifies_if_the_name_and_status_of_the_category_can_be_updated() {
+        lifegursel.selectTab1.click();
+        ReusableMethods.bekle(1);
+        lifegursel.editLink.click();
+        lifegursel.addNewBox.sendKeys("est" + Keys.ENTER);
+        ReusableMethods.bekle(1);
+        lifegursel.inactiveTick.click();
+        ReusableMethods.bekle(1);
+        lifegursel.updateButton.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(lifegursel.lowestText.isDisplayed());
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(lifegursel.statusSliderRound.isDisplayed());
+        ReusableMethods.bekle(3);
+    }
+    @Then("Admin clicks on Delete link")
+    public void admin_clicks_on_delete_link() {
+        lifegursel.selectTab4.click();
+        ReusableMethods.bekle(1);
+       lifegursel.deleteLink4.click();
+       ReusableMethods.bekle(1);
+       lifegursel.dataDeleteButton.click();
+       ReusableMethods.bekle(1);
+    }
+    @Then("Admin verifies if Priority can be deleted after clicking delete link on the select tab under the Action title")
+    public void admin_verifies_if_priority_can_be_deleted_after_clicking_delete_link_on_the_select_tab_under_the_action_title() {
+        Assert.assertTrue(lifegursel.selectTab4.isDisplayed());
+    }
+    @Then("Admin closes {string}")
+    public void admin_closes(String string) {
         Driver.closeDriver();
     }
 
 }
+
+
+

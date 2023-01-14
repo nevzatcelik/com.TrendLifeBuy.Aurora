@@ -19,9 +19,8 @@ public class US037_038_039_040_044 {
     }
 
     @Then("Admin clicks Offline Recharge link")
-    public void admin_clicks_offline_recharge_link() {
-        life.offlineRecharge.click();
-    }
+    public void admin_clicks_offline_recharge_link() {life.offlineRecharge.click();}
+
 
     @Then("Admin verifies that Offline Recharge List is displayed on the Offline Recharge Page")
     public void admin_verifies_that_offline_recharge_list_is_displayed_on_the_offline_recharge_page() {
