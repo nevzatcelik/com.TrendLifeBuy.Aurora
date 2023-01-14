@@ -207,6 +207,85 @@ public class US006_007_008_009_010_045_049_Page {
     // Home Page => Register Link => Cart Page
     @FindBy(xpath = "//span[text()='$ 340']")
     public WebElement newPrice;
+    // Admin Login => Admin Reports
+    @FindBy(xpath = "//span[text()='Admin Reports']")
+    public WebElement adminReportsTab;
+    // Admin Login => Dashboard
+    @FindBy(xpath = "//span[text()='Dashboard']")
+    public WebElement dashboard;
+    // Admin Login => Admin Reports => Top Customers
+    @FindBy(xpath = "//a[text()='Top Customers']")
+    public WebElement topCustomersTab;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List Title
+    @FindBy(xpath = "//h3[text()='Top Customers']")
+    public WebElement topCustomersListTitle;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Name Column
+    @FindBy(xpath = "//th[@aria-label='Name: activate to sort column ascending']")
+    public WebElement topCustomersListNameColumn;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Email Column
+    @FindBy(xpath = "//th[@aria-label='Email: activate to sort column ascending']")
+    public WebElement topCustomersListEmailColumn;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Phone Column
+    @FindBy(xpath = "//th[@aria-label='Phone: activate to sort column ascending']")
+    public WebElement topCustomersListPhoneColumn;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Total Spend Column
+    @FindBy(xpath = "//th[@aria-label='Total spend: activate to sort column ascending']")
+    public WebElement topCustomersListTotalSpendColumn;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Joined At Column
+    @FindBy(xpath = "//th[@aria-label='Joined at: activate to sort column ascending']")
+    public WebElement topCustomersListJoinedAtColumn;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Quick Search Text Box
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement topCustomersListQuickSearchTextBox;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => First Name
+    @FindBy(xpath = "//td[text()='Tester']")
+    public WebElement topCustomersListFirstName;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Next Page Link
+    @FindBy(xpath = "//i[@class='ti-arrow-right']")
+    public WebElement topCustomersListNextPageLink;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Previous Page Link
+    @FindBy(xpath = "//i[@class='ti-arrow-left']")
+    public WebElement topCustomersListPreviousPageLink;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => Second Page's First Element (11)
+    @FindBy(xpath = "//td[text()='11']")
+    public WebElement topCustomersListElement11;
+    // Admin Login => Admin Reports => Top Customers => Top Customers List => First Page's First Element (1)
+    @FindBy(xpath = "//td[text()='1']")
+    public WebElement topCustomersListElement1;
+    // Admin Login => Support Ticket
+    @FindBy(xpath = "//span[.='Support Ticket']")
+    public WebElement supportTicketLink;
+    // Admin Login => Support Ticket => Category Tab
+    @FindBy(xpath = "//ul[@class='mm-collapse mm-show']//a[.='Category']")
+    public WebElement supportTicketLinkCategoryTab;
+    // Admin Login => Support Ticket => Category Tab => Category List Title Text
+    @FindBy(xpath = "//h3[.='Category List']")
+    public WebElement categoryListTitleText;
+    // Admin Login => Support Ticket => Category Tab => Add New Category Name
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement addNewCategoryName;
+    // Admin Login => Support Ticket => Category Tab => Add New Category Name => Save Button
+    @FindBy(xpath = "//button[@id='submit_btn']")
+    public WebElement addNewCategoryNameSaveButton;
+    // Admin Login => Support Ticket => Category Tab => Category List => Category Name in First Line
+    @FindBy(css = "#sku_tbody > tr:nth-of-type(1) > td:nth-of-type(2)")
+    public WebElement categoryNameInFirstLine;
+    // Admin Login => Support Ticket => Category Tab => Category List => Head Line
+    @FindBy(xpath = "//th[.='Name']")
+    public WebElement categoryHeadLineName;
+    // Admin Login => Support Ticket => Category Tab => Category List => Head Line
+    @FindBy(xpath = "//th[.='Status']")
+    public WebElement categoryHeadLineStatus;
+    // Admin Login => Support Ticket => Category Tab => Category List => Head Line
+    @FindBy(xpath = "//th[.='Action']")
+    public WebElement categoryHeadLineAction;
+    // Admin Login => Support Ticket => Category Tab => Category List => Success Pop Up
+    @FindBy(xpath = "//body[@class='admin']/div[6]")
+    public WebElement categorySuccessPopUpMessage;
+    // Admin Login => Support Ticket => Category Tab => Category List => Status Button First Line
+    @FindBy(xpath = "//tbody[@id='sku_tbody']/tr[1]//div[@class='slider round']")
+    public WebElement categoryStatusButtonFirstLine;
+
 
 
 }

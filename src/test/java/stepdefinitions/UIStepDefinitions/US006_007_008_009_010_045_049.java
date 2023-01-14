@@ -272,9 +272,9 @@ public class US006_007_008_009_010_045_049 {
         leventPage.lastNameBox.sendKeys(ConfigReader.getProperty(arg0));
     }
 
+    Faker faker = new Faker();
     @Then("User enters valid e-mail")
     public void userEntersValidEMail() {
-        Faker faker = new Faker();
         leventPage.eMailBox.sendKeys(faker.internet().emailAddress());
     }
 
@@ -365,4 +365,116 @@ public class US006_007_008_009_010_045_049 {
     }
 
 
+    @Then("Admin clicks Admin reports Link on the dashboard")
+    public void adminClicksAdminReportsLinkOnTheDashboard() {
+        actions.moveToElement(leventPage.dashboard).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.moveToElement(leventPage.adminReportsTab).perform();
+        leventPage.adminReportsTab.click();
+    }
+
+    @Then("Admin clicks Top Customers link under Admin reports Tab")
+    public void adminClicksTopCustomersLinkUnderAdminReportsTab() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.moveToElement(leventPage.topCustomersTab).perform();
+        leventPage.topCustomersTab.click();
+    }
+
+    @Then("Admin verifies that the Top Customers List can be accessed from the Top Customers link")
+    public void adminVerifiesThatTheTopCustomersListCanBeAccessedFromTheTopCustomersLink() {
+        actions.moveToElement(leventPage.topCustomersListTitle).perform();
+        Assert.assertTrue(leventPage.topCustomersListTitle.isDisplayed());
+    }
+
+    @Then("Admin verifies that the top customers are listed under Name, Email, Phone, Total Spend, Joined AT in the Top Customers List")
+    public void adminVerifiesThatTheTopCustomersAreListedUnderNameEmailPhoneTotalSpendJoinedATInTheTopCustomersList() {
+        actions.moveToElement(leventPage.topCustomersListNameColumn).perform();
+        Assert.assertTrue(leventPage.topCustomersListNameColumn.isDisplayed());
+        actions.moveToElement(leventPage.topCustomersListEmailColumn).perform();
+        Assert.assertTrue(leventPage.topCustomersListEmailColumn.isDisplayed());
+        actions.moveToElement(leventPage.topCustomersListPhoneColumn).perform();
+        Assert.assertTrue(leventPage.topCustomersListPhoneColumn.isDisplayed());
+        actions.moveToElement(leventPage.topCustomersListTotalSpendColumn).perform();
+        Assert.assertTrue(leventPage.topCustomersListTotalSpendColumn.isDisplayed());
+        actions.moveToElement(leventPage.topCustomersListJoinedAtColumn).perform();
+        Assert.assertTrue(leventPage.topCustomersListJoinedAtColumn.isDisplayed());
+    }
+
+    @Then("Admin clicks Quick Search TextBox and searches a customer by name")
+    public void adminClicksQuickSearchTextBoxAndSearchesACustomerByName() {
+        leventPage.topCustomersListQuickSearchTextBox.sendKeys(leventPage.topCustomersListFirstName.getText());
+        leventPage.topCustomersListQuickSearchTextBox.sendKeys(Keys.ENTER);
+    }
+
+    @Then("Admin verifies that it is possible to search in the Top Customers List from the Quick Search TextBox")
+    public void adminVerifiesThatItIsPossibleToSearchInTheTopCustomersListFromTheQuickSearchTextBox() {
+        Assert.assertTrue(leventPage.topCustomersListFirstName.isDisplayed());
+        leventPage.topCustomersListQuickSearchTextBox.clear();
+    }
+
+    @Then("Admin clicks \\(next page arrow)")
+    public void adminClicksNextPageArrow() {
+        actions.moveToElement(leventPage.topCustomersListJoinedAtColumn).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.moveToElement(leventPage.topCustomersListNextPageLink).perform();
+        ReusableMethods.bekle(2);
+        leventPage.topCustomersListNextPageLink.click();
+    }
+
+    @Then("Admin verifies that there are transitions between pages in the Top Customers List")
+    public void adminVerifiesThatThereAreTransitionsBetweenPagesInTheTopCustomersList() {
+        Assert.assertTrue(leventPage.topCustomersListElement11.isDisplayed());
+        leventPage.topCustomersListPreviousPageLink.click();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(leventPage.topCustomersListElement1.isDisplayed());
+    }
+
+    @Then("Admin clicks Support Ticket Link on the dashboard")
+    public void adminClicksSupportTicketLinkOnTheDashboard() {
+        actions.moveToElement(leventPage.dashboard).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.moveToElement(leventPage.supportTicketLink).perform();
+        leventPage.supportTicketLink.click();
+    }
+
+    @Then("Admin clicks Category link under Support Ticket Tab")
+    public void adminClicksCategoryLinkUnderSupportTicketTab() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.moveToElement(leventPage.supportTicketLinkCategoryTab).perform();
+        leventPage.supportTicketLinkCategoryTab.click();
+    }
+
+    @Then("Admin verifies that the Categories page can be accessed from the Category link.")
+    public void adminVerifiesThatTheCategoriesPageCanBeAccessedFromTheCategoryLink() {
+        actions.moveToElement(leventPage.categoryListTitleText).perform();
+        Assert.assertTrue(leventPage.categoryListTitleText.isDisplayed());
+    }
+
+    @Then("Admin enters a category name at \\(add New) section, clicks to Save button and verifies that a new category can be created")
+    public void adminEntersACategoryNameAtAddNewSectionClicksToSaveButtonAndVerifiesThatANewCategoryCanBeCreated() {
+        String categoryName = faker.name().name();
+        leventPage.addNewCategoryName.sendKeys(categoryName);
+        leventPage.addNewCategoryNameSaveButton.click();
+        ReusableMethods.bekle(2);
+        String actualCategoryName = leventPage.categoryNameInFirstLine.getAccessibleName();
+        Assert.assertEquals(categoryName,actualCategoryName);
+    }
+
+
+    @Then("Admin verifies that the ticket categories are displayed according to Name, Status, Action titles in the Category List.")
+    public void adminVerifiesThatTheTicketCategoriesAreDisplayedAccordingToNameStatusActionTitlesInTheCategoryList() {
+        Assert.assertTrue(leventPage.categoryHeadLineName.isDisplayed());
+        Assert.assertTrue(leventPage.categoryHeadLineStatus.isDisplayed());
+        Assert.assertTrue(leventPage.categoryHeadLineAction.isDisplayed());
+    }
+
+    @Then("Admin clicks a categoriy’s status to make it inactive")
+    public void adminClicksACategoriySStatusToMakeItInactive() {
+        leventPage.categoryStatusButtonFirstLine.click();
+    }
+
+    @Then("Admin verifies that the status of the categories can be changed")
+    public void adminVerifiesThatTheStatusOfTheCategoriesCanBeChanged() {
+        Assert.assertTrue(leventPage.categorySuccessPopUpMessage.isEnabled());;
+    }
 }
