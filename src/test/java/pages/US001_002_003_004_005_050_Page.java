@@ -224,8 +224,6 @@ public class US001_002_003_004_005_050_Page {
     @FindBy(xpath = "//input[@id='name']")
     public WebElement addNewBox;
 
-    @FindBy(xpath = "//input[@id='status_inactive']")
-    public WebElement inactiveCheckMark;
 
     @FindBy(xpath = "//button[@id='submit_btn']")
     public WebElement saveButton;
@@ -244,6 +242,39 @@ public class US001_002_003_004_005_050_Page {
 
     @FindBy(xpath = "(//div[@class='slider round'])[1]")
     public WebElement statusSliderRound;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[1]")
+    public WebElement selectTab1;
+
+    @FindBy(xpath = "(//a[text()='Edit'])[1]")
+    public WebElement editLink;
+
+    @FindBy(xpath = "(//a[text()='Delete'])[1]")
+    public WebElement deleteLink;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[4]")
+    public WebElement selectTab4;
+
+    @FindBy(xpath = "(//a[text()='Edit'])[4]")
+    public WebElement editLink4;
+
+    @FindBy(xpath = "(//a[text()='Delete'])[4]")
+    public WebElement deleteLink4;
+
+    @FindBy(xpath = "(//h3[@class='mb-30'])[1]")
+    public WebElement editPage;
+
+    @FindBy(xpath = "(//span[@class='checkmark'])[2]")
+    public WebElement inactiveTick;
+
+    @FindBy(xpath = "//button[@id='submit_btn']")
+    public WebElement updateButton;
+
+    @FindBy(xpath = "//td[text()='Lowest']")
+    public WebElement lowestText;
+
+    @FindBy(xpath = "//input[@id='dataDeleteBtn']")
+    public WebElement dataDeleteButton;
 
 
 }

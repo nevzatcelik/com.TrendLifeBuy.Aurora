@@ -1,21 +1,15 @@
 package stepdefinitions.UIStepDefinitions;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
 import pages.US006_007_008_009_010_045_049_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
-import java.util.Collections;
-import java.util.List;
 
 public class US006_007_008_009_010_045_049 {
 
@@ -341,6 +335,7 @@ public class US006_007_008_009_010_045_049 {
         Assert.assertTrue(leventPage.privacyPolicyPopUpMessage.isEnabled());
     }
 
+
     @Then("User clicks the Sign In link")
     public void userClicksTheSignInLink() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -368,6 +363,7 @@ public class US006_007_008_009_010_045_049 {
         String newPrice = leventPage.newPrice.toString();
         Assert.assertNotEquals(oldPrice, newPrice);
     }
+
 
     @Then("Admin clicks Admin reports Link on the dashboard")
     public void adminClicksAdminReportsLinkOnTheDashboard() {
@@ -406,8 +402,8 @@ public class US006_007_008_009_010_045_049 {
 
     @Then("Admin clicks Quick Search TextBox and searches a customer by name")
     public void adminClicksQuickSearchTextBoxAndSearchesACustomerByName() {
-       leventPage.topCustomersListQuickSearchTextBox.sendKeys(leventPage.topCustomersListFirstName.getText());
-       leventPage.topCustomersListQuickSearchTextBox.sendKeys(Keys.ENTER);
+        leventPage.topCustomersListQuickSearchTextBox.sendKeys(leventPage.topCustomersListFirstName.getText());
+        leventPage.topCustomersListQuickSearchTextBox.sendKeys(Keys.ENTER);
     }
 
     @Then("Admin verifies that it is possible to search in the Top Customers List from the Quick Search TextBox")
