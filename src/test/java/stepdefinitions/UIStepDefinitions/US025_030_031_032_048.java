@@ -320,6 +320,43 @@ public class US025_030_031_032_048 {
         ReusableMethods.bekle(2);
 
     }
+    // 48
+
+    @Then("Click on the Reivew link")
+    public void click_on_the_reivew_link() {
+    life.reviewLink.click();
+    ReusableMethods.bekle(2);
+    }
+    @Then("Click on the Product Reivew link")
+    public void click_on_the_product_reivew_link() {
+    life.productReviewLink.click();
+    ReusableMethods.bekle(2);
+    }
+    @Then("Verifies that it goes to the Product Review page.")
+    public void verifies_that_it_goes_to_the_product_review_page() {
+    Assert.assertTrue(life.producttReviewPage.isDisplayed());
+    ReusableMethods.bekle(2);
+    }
+    @Then("Verify that the Product Review List appears on the Product Review page")
+    public void verify_that_the_product_review_list_appears_on_the_product_review_page() {
+    Assert.assertTrue(life.producttReviewList.isDisplayed());
+    ReusableMethods.bekle(2);
+    }
+    @Then("Verify that the Product Review List is searched from the Quick Search Text Box")
+    public void verify_that_the_product_review_list_is_searched_from_the_quick_search_text_box() {
+    life.searcBox.sendKeys("1" + Keys.ENTER);
+    Assert.assertTrue(life.SunGlassForMan.isDisplayed());
+    }
+    @Then("In the Product Review List, it is verified that the products are listed under the headings of Product, Rating, Number of Comments.")
+    public void in_the_product_review_list_it_is_verified_that_the_products_are_listed_under_the_headings_of_product_rating_number_of_comments() {
+    Assert.assertTrue(life.customerrFeedback.isDisplayed());
+        ReusableMethods.bekle(2);
+    Assert.assertTrue(life.customerrTime.isDisplayed());
+        ReusableMethods.bekle(2);
+    Assert.assertTrue(life.ratingg.isDisplayed());
+        ReusableMethods.bekle(2);
+    }
+
 
 
 
