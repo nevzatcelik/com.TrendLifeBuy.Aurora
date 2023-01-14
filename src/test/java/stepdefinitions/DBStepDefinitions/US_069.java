@@ -8,6 +8,7 @@ import utilities.ConfigReader;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class US_069 {
 
@@ -19,27 +20,29 @@ public class US_069 {
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
-    @Given("gursel JDBC ile database ebaglanir {string} tablosundaki verileri alir")
-    public void gurselJDBCIleDatabaseEbaglanirTablosundakiVerileriAlir(String table) throws SQLException {
+
+
+
+    @Given("The user gets the data in the table {string} by connecting to the database")
+    public void theUserGetsTheDataInTheTableByConnectingToTheDatabase(String gursel) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String query = ConfigReader.getProperty(table);
+        String query = ConfigReader.getProperty(gursel);
         resultSet = statement.executeQuery(query);
     }
 
-    @Then("Kullanici listenen idleri litede oldugunu dogrular {string}")
-    public void kullaniciListenenIdleriLitedeOldugunuDogrular(String arg0) throws SQLException {
 
-        resultSet.absolute(1);
-        String expected ="1";
-        String actual = resultSet.getString("id");
-        Assert.assertEquals(expected, actual);
-        resultSet.next();
-        String expected2="2";
-        String actual2=resultSet.getString("id");
-        Assert.assertEquals(expected2, actual2);
 
+    @Then("The user verifies that {string} in the list {string}")
+    public void theUserVerifiesThatInTheList(String id, String expected) throws SQLException {
+
+        resultSet.absolute(0);
+        List<String> resultsId = new ArrayList<String>();
+        while(resultSet.next()) {
+            resultsId.add(String.valueOf(resultSet.getInt(id)));
+
+        }
+        Assert.assertTrue(resultsId.contains(expected));
 
     }
-
 }
