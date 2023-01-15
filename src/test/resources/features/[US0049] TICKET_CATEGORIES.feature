@@ -73,7 +73,7 @@ Feature: US0049 As an administrator, I want a page to be able to perform operati
     Then Admin clicks Category link under Support Ticket Tab
     Then Admin clicks a categoriy’s Select Button and sees the Edit Button and Delete Button
     Then Admin clicks the edit link
-    Then Admin verifies that the Name and Status of the category can be updated on the Edit page that opens when the edit link is clicked on the select tab under the Action title in the Category List.
+    Then Admin changes the name and the status of the category and verifies that the Name and Status of the category can be updated
     And Closes the page
 
 
