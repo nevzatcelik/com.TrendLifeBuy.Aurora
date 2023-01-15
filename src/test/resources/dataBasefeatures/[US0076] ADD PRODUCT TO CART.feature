@@ -5,6 +5,6 @@ Feature: US0076 As an administrator, I should be able to add products to the car
 
   Scenario: TC_7601 I should be able to add products to the Carts
 
-    Given Kullanici JDBC ile database ebaglanir
+
 
 

@@ -36,15 +36,10 @@ public class US_074 {
     @And("User verifies {string} {string} {string} {string} {string} from data base")
     public void userVerifiesFromDataBase(String id, String firstname, String lastname, String email, String role_id) throws SQLException {
 
-
-
       String emailListToplam ="";
       String lastnameToplam="";
       String firstnameToplam="";
       String roleidToplamList="";
-
-
-
 
        while (resultSet.next())
        {
