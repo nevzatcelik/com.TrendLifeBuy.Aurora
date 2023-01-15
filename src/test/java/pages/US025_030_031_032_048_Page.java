@@ -134,6 +134,29 @@ public class US025_030_031_032_048_Page {
     @FindBy(xpath = "(//*[text()='All Activity Logs'])[1]")
     public WebElement allActivityLogs;
 
+    //48
+
+    @FindBy (xpath = "//*[text()='Review']")
+    public WebElement reviewLink;
+    @FindBy (xpath = "(//*[text()='Product Review'])[1]")
+    public WebElement productReviewLink;
+    @FindBy (xpath = "(//*[text()='All Product Review List'])[1]")
+    public WebElement producttReviewPage;
+    @FindBy(xpath = "(//a[@class='paginate_button current'])[1]")
+    public WebElement producttReviewList;
+    @FindBy(xpath = "(//input[@type='search'])[1]")
+    public WebElement searcBox;
+    @FindBy(xpath = "//*[text()='Sun glass For Man']")
+    public WebElement SunGlassForMan;
+    @FindBy(xpath = "(//*[text()='Rating'])[3]")
+    public WebElement ratingg;
+    @FindBy(xpath = "(//*[text()='Customer Feedback'])[1]")
+    public WebElement customerrFeedback;
+    @FindBy(xpath = "(//*[text()='Customer & Time'])[1]")
+    public WebElement customerrTime;
+
+
+
 
 
 
