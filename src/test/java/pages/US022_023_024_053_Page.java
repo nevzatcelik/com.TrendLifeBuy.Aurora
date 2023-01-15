@@ -389,4 +389,56 @@ public class US022_023_024_053_Page {
         createNewTicketButton.click();
 
     }
+
+    @FindBy(xpath = "//*[text()='All Activity Logs']")
+    public WebElement allactivityLogs;
+
+    @FindBy(xpath = "//*[text()='Clean All']")
+    private WebElement cleanAllButton;
+
+    @FindBy(xpath = "//*[text()='No data available in table']")
+    private WebElement noDataAvaliable;
+
+    @FindBy(xpath = "//*[text()='Activity Logs']")
+    public WebElement activitylogsButton;
+
+    public void activityLogsEntryMethod(){
+        actions.scrollToElement(allactivityLogs).click(allactivityLogs).perform();
+        actions.scrollToElement(activitylogsButton).click(activitylogsButton).perform();
+    }
+    public void cleanAllMethodandAssertion(){
+        cleanAllButton.click();
+        Assert.assertTrue(noDataAvaliable.isDisplayed());
+    }
+
+    @FindBy(xpath = "//tr[@role='row']")
+    private WebElement row;
+
+    public void row(){
+        String expected="SL TYPE DESCRIPTION URL IP AGENT ATTEMPTED AT USER";
+        String actual=row.getText();
+        Assert.assertEquals(expected,actual);
+    }
+    @FindBy(xpath = "//a[@id='activityDataTable_next']")
+    private WebElement nextPage;
+
+    @FindBy(xpath = "//div[@id='activityDataTable_info']")
+    private WebElement showingInformText;
+
+
+
+    public void nextpageandAssertionMethods(){
+        actions.scrollToElement(nextPage).perform();
+        nextPage.click();
+        ReusableMethods.bekle(2);
+        String expected="Showing 11 to 20 of 30 entries";
+        String actual=showingInformText.getText();
+        Assert.assertEquals(expected,actual);
+        nextPage.click();
+        String expected2="Showing 21 to 30 of 30 entries";
+        String actual2=showingInformText.getText();
+        Assert.assertEquals(expected,actual);
+
+
+    }
 }
