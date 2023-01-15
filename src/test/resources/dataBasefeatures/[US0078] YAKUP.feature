@@ -1,4 +1,4 @@
-@dtb
+
   Feature: yakup
 
     Scenario Outline: yakup
