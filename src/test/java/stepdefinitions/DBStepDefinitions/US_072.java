@@ -7,11 +7,9 @@ import utilities.ConfigReader;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class US_069 {
-
+public class US_072 {
     String url = "jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username = "u480337000_tbl_training_u";
     String password = "O+e3!xmZcO]";
@@ -20,29 +18,24 @@ public class US_069 {
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
-
-
-
-    @Given("The user gets the data in the table {string} by connecting to the database")
-    public void theUserGetsTheDataInTheTableByConnectingToTheDatabase(String gursel) throws SQLException {
+    @Given("Nese gets the data in the table {string} by connecting to the database")
+    public void nese_gets_the_data_in_the_table_by_connecting_to_the_database(String nese) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String query = ConfigReader.getProperty(gursel);
+        String query = ConfigReader.getProperty(nese);
         resultSet = statement.executeQuery(query);
     }
-
-
-
-    @Then("The user verifies that {string} in the list {string}")
-    public void theUserVerifiesThatInTheList(String id, String expected) throws SQLException {
+    @Then("Nese verifies LIST that {string} in the list {string}")
+    public void nese_verifies_list_that_in_the_list(String email, String expectedEmail) throws SQLException {
 
         resultSet.absolute(0);
-        List<String> resultsId = new ArrayList<String>();
+        List<String> resultsEmail = new ArrayList<String>();
         while(resultSet.next()) {
-            resultsId.add(String.valueOf(resultSet.getInt(id)));
+            resultsEmail.add(String.valueOf(resultSet.getNString(email)));
 
         }
-        Assert.assertTrue(resultsId.contains(expected));
 
+        Assert.assertTrue(resultsEmail.contains(expectedEmail));
     }
+
 }

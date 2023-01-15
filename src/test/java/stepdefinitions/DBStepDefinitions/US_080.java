@@ -3,14 +3,12 @@ package stepdefinitions.DBStepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import utilities.ConfigReader;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class US_069 {
+public class US_080 {
 
     String url = "jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username = "u480337000_tbl_training_u";
@@ -19,30 +17,26 @@ public class US_069 {
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
-
-
-
-
-    @Given("The user gets the data in the table {string} by connecting to the database")
-    public void theUserGetsTheDataInTheTableByConnectingToTheDatabase(String gursel) throws SQLException {
+    @Given("Levent connects to the database with JDBC and gets the datas from the table {string}")
+    public void levent_connects_to_the_database_with_jdbc_and_gets_the_datas_from_the_table(String arg0) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String query = ConfigReader.getProperty(gursel);
+        String query = arg0;
         resultSet = statement.executeQuery(query);
     }
-
-
-
-    @Then("The user verifies that {string} in the list {string}")
-    public void theUserVerifiesThatInTheList(String id, String expected) throws SQLException {
-
+    @Then("Admin verifies {string} {string} {string} from data base")
+    public void admin_verifies_from_data_base(String id, String compare, String expected) throws SQLException {
         resultSet.absolute(0);
-        List<String> resultsId = new ArrayList<String>();
-        while(resultSet.next()) {
-            resultsId.add(String.valueOf(resultSet.getInt(id)));
-
+        List<Integer> resultCompare = new ArrayList<Integer>();
+        while (resultSet.next()) {
+            resultCompare.add(resultSet.getInt(compare));
         }
-        Assert.assertTrue(resultsId.contains(expected));
-
+        System.out.println(resultCompare);
+        Assert.assertTrue(String.valueOf(resultCompare).contains(expected));
+        resultSet.close();
     }
+
+
+
+
 }
