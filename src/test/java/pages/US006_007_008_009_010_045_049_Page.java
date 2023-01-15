@@ -285,6 +285,30 @@ public class US006_007_008_009_010_045_049_Page {
     // Admin Login => Support Ticket => Category Tab => Category List => Status Button First Line
     @FindBy(xpath = "//tbody[@id='sku_tbody']/tr[1]//div[@class='slider round']")
     public WebElement categoryStatusButtonFirstLine;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line
+    @FindBy(xpath = "//tbody[@id='sku_tbody']/tr[1]//button[@class='btn btn-secondary dropdown-toggle']")
+    public WebElement categorySelectButtonFirstLine;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Edit Button
+    @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right show']/a[.='Edit']")
+    public WebElement categorySelectButtonFirstLineEditButton;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Delete Button
+    @FindBy(xpath = "//div[@class='dropdown-menu dropdown-menu-right show']/a[.='Delete']")
+    public WebElement categorySelectButtonFirstLineDeleteButton;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Edit Button => edit Page
+    @FindBy(xpath = "//h3[contains(.,'Edit')]")
+    public WebElement categoryEditPageText;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Edit Button => edit Page => Name Box
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement categoryEditPageNameBox;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Edit Button => edit Page => Status Check Box
+    @FindBy(xpath = "//ul[@id='theme_nav']/li[2]//span[@class='checkmark']")
+    public WebElement categoryEditPageStatusCheckBox;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Edit Button => edit Page => Update Button
+    @FindBy(xpath = "//button[@id='submit_btn']")
+    public WebElement categoryEditPageUpdateButton;
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Status Button
+    @FindBy(xpath = "//tbody[@id='sku_tbody']/tr[1]//div[@class='slider round']")
+    public WebElement categoryEditPageStatusButton;
 
 
 
