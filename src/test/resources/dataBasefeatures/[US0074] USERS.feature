@@ -1,9 +1,9 @@
 
-Feature: JDBC kullanarak yeterli bilgi ile database testi yapilabilir
+Feature: DATABASE USERS
 
-  Scenario Outline: JDBC01 kullanici database de sorgu yapabilmeli
+  Scenario Outline:Among the users in the Users table, I should be able to verify the ID, name, surname, email and role_id of the user whose Id is given.
 
-    Given nevzat JDBC ile database ebaglanir "<query>" tablosundaki verileri alir
+    Given AdminN gets datas from in the table "<query>" by connecting to the database
     And   User verifies "<id>" "first_name" "last_name" "email" "role_id" "<nameAssert>" "<lastAssert>" "<emailAss>" "<roleidAss>"from data base
     Examples:
       |nameAssert|lastAssert|emailAss                       |roleidAss| query|
