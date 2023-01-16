@@ -69,6 +69,15 @@ public class US026_028_047_Page {
     @FindBy (xpath = "//input[@value='pickup_location']")
     public WebElement pickuplocationradiobutton;
 
+    @FindBy (xpath = "//div[@class=\"nice-select primary_select mb-15 open\"]")
+    public WebElement typelistfromorder;
+
+    @FindBy (xpath = "//input[@class=\"primary_input_field primary-input form-control\"]")
+    public WebElement datelistfromorder;
+
+    @FindBy (xpath = "/html/body/div[2]/nav/ul/li[16]/ul/li[9]/a/text()")
+    public WebElement orderlink;
+
 
 
 

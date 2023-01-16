@@ -21,7 +21,6 @@ import utilities.ReusableMethods;
 
 
 public class US026_028_047 {
-    TrendLifeBuyPage life = new TrendLifeBuyPage();
     US026_028_047_Page page = new US026_028_047_Page();
     Actions actions = new Actions(Driver.getDriver());
 
@@ -58,11 +57,10 @@ public class US026_028_047 {
         Assert.assertTrue(page.product2addtocart.isDisplayed());
 
 
-
-
     }
+
     @Then("Visitor select Add to Cart button")
-    public void select_add_to_cart () {
+    public void select_add_to_cart() {
         ReusableMethods.bekle(5);
         page.closead.click();
         ReusableMethods.bekle(2);
@@ -83,14 +81,10 @@ public class US026_028_047 {
         ReusableMethods.bekle(2);
 
 
-
-
-
-
-
     }
+
     @Then("View cart should be visible")
-    public void viewcart_should_visible(){
+    public void viewcart_should_visible() {
         ReusableMethods.bekle(5);
         page.closead.click();
         ReusableMethods.bekle(2);
@@ -111,29 +105,22 @@ public class US026_028_047 {
         ReusableMethods.bekle(2);
 
 
-
-
-
-
-
-
     }
+
     @Then("in the Item added to your cart window and when clicked, it redirects to the Cart page")
     public void viewcart_section() {
-       page.viewcartwindow.click();
-       ReusableMethods.bekle(2);
-        String expectedUrl="https://trendlifebuy.com/cart";
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expectedUrl,actualUrl);
+        page.viewcartwindow.click();
+        ReusableMethods.bekle(2);
+        String expectedUrl = "https://trendlifebuy.com/cart";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
         Driver.getDriver().navigate().back();
 
 
-
-
-
     }
+
     @Then("Proceed to Checkout button is visible")
-    public void proceed_checkout_visible(){
+    public void proceed_checkout_visible() {
         ReusableMethods.bekle(5);
         page.closead.click();
         ReusableMethods.bekle(2);
@@ -155,8 +142,8 @@ public class US026_028_047 {
         Assert.assertTrue(page.proceedtocheckout.isDisplayed());
     }
 
-    @Then ("Redirecting to Checkout page when PROCEED TO CHECKOUT button is click should be verified")
-    public void proceed_to_checkout(){
+    @Then("Redirecting to Checkout page when PROCEED TO CHECKOUT button is click should be verified")
+    public void proceed_to_checkout() {
         ReusableMethods.bekle(5);
         page.closead.click();
         ReusableMethods.bekle(2);
@@ -175,15 +162,15 @@ public class US026_028_047 {
         ReusableMethods.bekle(2);
         page.proceedtocheckout.click();
         ReusableMethods.bekle(2);
-        String expectedUrl="https://trendlifebuy.com/checkout";
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expectedUrl,actualUrl);
+        String expectedUrl = "https://trendlifebuy.com/checkout";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
         Driver.getDriver().navigate().back();
 
     }
 
     @Then("verified that it is mandatory to enter E-mail in the Contact Information field on the Checkout page.")
-    public void mendatory_email (){
+    public void mendatory_email() {
         ReusableMethods.bekle(5);
         page.closead.click();
         ReusableMethods.bekle(2);
@@ -220,14 +207,14 @@ public class US026_028_047 {
         page.cityclark.click();
         ReusableMethods.bekle(2);
         page.countinuetoshiipingbutton.click();
-        String expectedUrl="https://trendlifebuy.com/checkout?email=aaa%40aaa.com&news_letter=1&delivery_type=home_delivery&pickup_location=&name=talha&address=Houston&phone=12345678&country=231&state=3953&city=47802&postal_code=&note=&step=select_shipping";
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        if (!expectedUrl.equals(actualUrl))
-        {
+        String expectedUrl = "https://trendlifebuy.com/checkout?email=aaa%40aaa.com&news_letter=1&delivery_type=home_delivery&pickup_location=&name=talha&address=Houston&phone=12345678&country=231&state=3953&city=47802&postal_code=&note=&step=select_shipping";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        if (!expectedUrl.equals(actualUrl)) {
             System.out.println("Email is mandatory");
         }
 
     }
+
     @Then("To Checkout Page")
     public void emailme_checkbox() {
         ReusableMethods.bekle(5);
@@ -251,8 +238,9 @@ public class US026_028_047 {
 
 
     }
+
     @Then("Email me with news and offers Check Box is visible and selected")
-    public void email_visible_selected () {
+    public void email_visible_selected() {
         Actions checkbox = new Actions(Driver.getDriver());
         checkbox.moveToElement(page.emailboxcheckout).perform();
         Assert.assertTrue(page.emailboxcheckout.isDisplayed());
@@ -262,7 +250,7 @@ public class US026_028_047 {
     }
 
     @Then("Home delivery and Pickup Location radio buttons are visible and selectable in the Shipping Address section.")
-    public void radiobutton_visible_selectable(){
+    public void radiobutton_visible_selectable() {
         Actions radiobutton = new Actions(Driver.getDriver());
         radiobutton.moveToElement(page.homedeliveryradiobutton).click().perform();
         radiobutton.moveToElement(page.homedeliveryradiobutton).click().perform();
@@ -272,11 +260,42 @@ public class US026_028_047 {
         Assert.assertFalse(page.pickuplocationradiobutton.isSelected());
 
 
+    }
 
+    @Then("page related to the Order Link can be accessed")
+    public void orderlink_visible_accessed() {
+
+        String expectedUrl = "https://trendlifebuy.com/admin-report/order";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl, actualUrl);
 
 
     }
 
+    @Then("verified that the Type and Date are selectable")
+    public void type_date_are_selectable() {
 
+        Actions dateandtype = new Actions(Driver.getDriver());
+        dateandtype.moveToElement(page.typelistfromorder).click().perform();
+        dateandtype.moveToElement(page.datelistfromorder).click().perform();
+        Assert.assertTrue(page.typelistfromorder.isSelected());
+        Assert.assertTrue(page.datelistfromorder.isSelected());
+
+
+    }
+
+    @Then("Click order link")
+    public void click_order_link (){
+        Actions actn = new Actions(Driver.getDriver());
+        ReusableMethods.bekle(2);
+        actn.sendKeys(Keys.PAGE_DOWN).perform();
+
+        page.orderlink.click();
+
+
+
+
+
+    }
 }
 
