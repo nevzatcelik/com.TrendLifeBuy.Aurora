@@ -1,4 +1,4 @@
-
+@dtb
 Feature: DATABASE USERS
 
   Scenario Outline:Among the users in the Users table, I should be able to verify the ID, name, surname, email and role_id of the user whose Id is given.
