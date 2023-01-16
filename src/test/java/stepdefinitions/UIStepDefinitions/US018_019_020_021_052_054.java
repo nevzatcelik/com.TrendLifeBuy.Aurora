@@ -1,5 +1,6 @@
 package stepdefinitions.UIStepDefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -249,7 +250,6 @@ public class US018_019_020_021_052_054 {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(2);
         life.refundDisputeLink.click();
-
     }
     @Then("User verifies that Refund & Dispute page is accessible")
     public void userVerifiesThatRefundDisputePageIsAccessible() {
@@ -258,6 +258,82 @@ public class US018_019_020_021_052_054 {
         String actualSidaLink = Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualSidaLink.contains(expRefundSidaLink));
     }
+
+    //  ====================  US52  All Activity Logs   =======================>>>
+    /*@Given("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
+    public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail,String password) {
+        life.adminLoginBora(mail, password);
+        ReusableMethods.bekle(2);
+    }
+
+     */
+    @Then("Admin clicks All Activity Logs and Activity Logs links in Dashboard")
+    public void adminClicksAllActivityLogsAndActivityLogsLinksInDashboard() {                                    //5201
+        actions.moveToElement(life.allActivityLogsLink).perform();
+        ReusableMethods.bekle(2);
+
+        actions.click(life.allActivityLogsLink).perform();
+        ReusableMethods.bekle(1);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        ReusableMethods.bekle(1);
+        life.loginActivityLink.click();
+    }
+    @Then("Admin verifies accessing Login - Logout Activity page from All Activity Logs menu")
+    public void adminVerifiesAccessingLoginLogoutActivityPageFromAllActivityLogsMenu() {
+        //Assert.assertTrue(life.loginLogoutActivityTitle.isDisplayed());
+        String expLoginLogoutActivityTitle="Login - Logout Activity";
+        Assert.assertTrue(life.loginLogoutActivityTitle.getText().contains(expLoginLogoutActivityTitle));
+    }
+
+    @Then("Admin verifies that activities in Login - Logout Activity list are deleted with Celan All button")
+    public void adminVerifiesThatActivitiesInLoginLogoutActivityListAreDeletedWithCelanAllButton() {            //5202
+        ReusableMethods.bekle(2);
+        life.cleanAllButton.click();
+        ReusableMethods.bekle(1);
+        life.dataDeleteButton2.click();
+        ReusableMethods.bekle(2);
+        String expData="No data";
+        String actData=life.sonucYazisi52NoData.getText();
+        Assert.assertTrue(actData.contains(expData));
+
+
+    }
+    @Then("Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed")
+    public void adminVerifiesThatTheActivitiesInTheLoginLogoutActivityListAreTheTitlesForWhichTheyAreListed() { //5203
+        Assert.assertTrue(life.loginLogoutActivityUser.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityLoginAt.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityLogoutAt.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityIP.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityAgent.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityDescription.isDisplayed());
+        //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
+    }
+
+    @Then("Admin verifies that it is possible to search Login - Logout Activity list with Quick Search Text Box")
+    public void adminVerifiesThatItIsPossibleToSearchLoginLogoutActivityListWithQuickSearchTextBox() {           //5204
+        ReusableMethods.bekle(3);
+        //actions.sendKeys(Keys.END).perform();
+        String sonucYazisi1=life.searchBoxInfoYazisi.getText();
+        ReusableMethods.bekle(2);
+        life.quickSearchBox.sendKeys("9999");
+        ReusableMethods.bekle(3);
+        String sonucYazisi2=life.searchBoxInfoYazisi.getText();
+        Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);  //Passed
+
+    }
+    @Then("Test for transitions between pages in Login - Logout Activity List")
+    public void testForTransitionsBetweenPagesInLoginLogoutActivityList() {                                      //5205
+        actions.sendKeys(Keys.END).perform();
+        String sonucYazisi1=life.searchBoxInfoYazisi.getText();
+        ReusableMethods.bekle(1);
+        //life.sayfa2Button.click();
+        life.nextSagTus.click();
+        ReusableMethods.bekle(1);
+        String sonucYazisi2=life.searchBoxInfoYazisi.getText();
+        Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);
+    }
+
+    // ==================== US54 Contact Request   =======================>>>
 
 
 
