@@ -4,7 +4,7 @@ Feature: Admin should be able to list a customer's orders from the orders table 
   Scenario Outline: To be verified that all orders of the customer with specified Id should be saved in a list and verified
 
     Given AdminF gets the data in the table "<query>" by connecting to the database
-    And Admin verifies "customer_id" "order_number" "<expected>" from data base
+    And AdminF verifies "customer_id" "order_number" "<expected>" from data base
     Examples:
       | expected |        query       |
       |Order-35-211116030414| select customer_id,order_number from u480337000_tlb_training.orders where customer_id=26; |

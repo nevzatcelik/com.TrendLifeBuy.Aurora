@@ -32,7 +32,7 @@ public class US_079 {
     }
 
 
-    @And("Admin verifies {string} {string} {string} from data base")
+    @And("AdminF verifies {string} {string} {string} from data base")
     public void userVerifiesFromDataBase(String id, String order, String expected) throws SQLException {
         resultSet.absolute(0);
         List<String> resultOrder = new ArrayList<String>();
