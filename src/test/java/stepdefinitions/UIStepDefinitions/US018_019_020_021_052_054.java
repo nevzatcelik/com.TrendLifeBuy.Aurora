@@ -1,5 +1,6 @@
 package stepdefinitions.UIStepDefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -249,7 +250,6 @@ public class US018_019_020_021_052_054 {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(2);
         life.refundDisputeLink.click();
-
     }
     @Then("User verifies that Refund & Dispute page is accessible")
     public void userVerifiesThatRefundDisputePageIsAccessible() {
@@ -259,6 +259,181 @@ public class US018_019_020_021_052_054 {
         Assert.assertTrue(actualSidaLink.contains(expRefundSidaLink));
     }
 
+    //  ====================  US52  All Activity Logs   =======================>>>
+    /*@Given("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
+    public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail,String password) {
+        life.adminLoginBora(mail, password);
+        ReusableMethods.bekle(2);
+    }
+
+     */
+    @Then("Admin clicks All Activity Logs and Activity Logs links in Dashboard")
+    public void adminClicksAllActivityLogsAndActivityLogsLinksInDashboard() {                                    //5201
+        actions.moveToElement(life.allActivityLogsLink).perform();
+        ReusableMethods.bekle(2);
+
+        actions.click(life.allActivityLogsLink).perform();
+        ReusableMethods.bekle(1);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        ReusableMethods.bekle(1);
+        life.loginActivityLink.click();
+    }
+    @Then("Admin verifies accessing Login - Logout Activity page from All Activity Logs menu")
+    public void adminVerifiesAccessingLoginLogoutActivityPageFromAllActivityLogsMenu() {
+        //Assert.assertTrue(life.loginLogoutActivityTitle.isDisplayed());
+        String expLoginLogoutActivityTitle="Login - Logout Activity";
+        Assert.assertTrue(life.loginLogoutActivityTitle.getText().contains(expLoginLogoutActivityTitle));
+    }
+
+    @Then("Admin verifies that activities in Login - Logout Activity list are deleted with Celan All button")
+    public void adminVerifiesThatActivitiesInLoginLogoutActivityListAreDeletedWithCelanAllButton() {            //5202
+        ReusableMethods.bekle(2);
+        life.cleanAllButton.click();
+        ReusableMethods.bekle(1);
+        life.dataDeleteButton2.click();
+        ReusableMethods.bekle(2);
+        String expData="No data";
+        String actData=life.sonucYazisi52NoData.getText();
+        Assert.assertTrue(actData.contains(expData));
 
 
+    }
+    @Then("Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed")
+    public void adminVerifiesThatTheActivitiesInTheLoginLogoutActivityListAreTheTitlesForWhichTheyAreListed() { //5203
+        Assert.assertTrue(life.loginLogoutActivityUser.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityLoginAt.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityLogoutAt.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityIP.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityAgent.isDisplayed());
+        Assert.assertTrue(life.loginLogoutActivityDescription.isDisplayed());
+        //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
+        //System.out.println(life.loginLogoutActivityBasliklar.getText()); // SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION
+        String expData="SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION";
+        String actData=life.loginLogoutActivityBasliklar.getText();  // Actual   :SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION
+        Assert.assertEquals(expData,actData);
+    }
+
+    @Then("Admin verifies that it is possible to search Login - Logout Activity list with Quick Search Text Box")
+    public void adminVerifiesThatItIsPossibleToSearchLoginLogoutActivityListWithQuickSearchTextBox() {           //5204
+        ReusableMethods.bekle(3);
+        //actions.sendKeys(Keys.END).perform();
+        String sonucYazisi1=life.searchBoxInfoYazisi.getText();
+        ReusableMethods.bekle(2);
+        life.quickSearchBox.sendKeys("9999");
+        ReusableMethods.bekle(3);
+        String sonucYazisi2=life.searchBoxInfoYazisi.getText();
+        Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);  //Passed
+
+    }
+    @Then("Test for transitions between pages in Login - Logout Activity List")
+    public void testForTransitionsBetweenPagesInLoginLogoutActivityList() {                                      //5205
+        actions.sendKeys(Keys.END).perform();
+        String sonucYazisi1=life.searchBoxInfoYazisi.getText();
+        ReusableMethods.bekle(1);
+        //life.sayfa2Button.click();
+        life.nextSagTus.click();
+        ReusableMethods.bekle(1);
+        String sonucYazisi2=life.searchBoxInfoYazisi.getText();
+        Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);
+    }
+
+    // ==================== US54 Contact Request   =======================>>>
+    @Then("Admin clicks Contact Request and contact Mail links in Dashboard")
+    public void adminClicksContactRequestAndContactMailLinksInDashboard() {
+        actions.moveToElement(life.contactRequestLink).perform();
+        ReusableMethods.bekle(2);
+        life.contactRequestLink.click();
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        ReusableMethods.bekle(2);
+
+        actions.moveToElement(life.contactMailLink).perform();
+        ReusableMethods.bekle(2);
+        life.contactMailLink.click();
+        ReusableMethods.bekle(3);
+    }
+    @Then("Admin verifies that Contact Mail page is accessible from Contact Request tab in Dashboard")
+    public void adminVerifiesThatContactMailPageIsAccessibleFromContactRequestTabInDashboard() {
+        String expectedData="contact";
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedData));
+    }
+    @Then("Admin verifies Contact Mail LIst is visible on Contact Mail page")
+    public void adminVerifiesContactMailLIstIsVisibleOnContactMailPage() {                                   //5402
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.contactMailListTitle.isDisplayed());
+    }
+    @Then("Admin verifies that messages are listed with Name , Email, Message headers in Contact Mail LIst")
+    public void adminVerifiesThatMessagesAreListedWithNameEmailMessageHeadersInContactMailLIst() {             //5403
+        Assert.assertTrue(life.contactMailListNAME.isDisplayed());
+        Assert.assertTrue(life.contactMailListEMAIL.isDisplayed());
+        Assert.assertTrue(life.contactMailListMESSAGE.isDisplayed());
+    }
+    @Then("Admin verifies that when clicking Contact Mail List headers, the order of the information is changed")
+    public void adminVerifiesThatWhenClickingContactMailListHeadersTheOrderOfTheInformationIsChanged() {        //5404
+        //ReusableMethods.bekle(2);
+        String foreClickExpData=life.altEMAILWebElementBirinci.getText();
+        ReusableMethods.bekle(2);
+        life.contactMailListEMAIL.click();
+        ReusableMethods.bekle(2);
+        String efterClickActData=life.altEMAILWebElementBirinci.getText();   //bitox26925@lance7.com
+        Assert.assertNotEquals(foreClickExpData,efterClickActData);
+
+    }
+    @Then("Admin verifies that it is possible to search Contact Mail List with Quick Search Box")
+    public void adminVerifiesThatItIsPossibleToSearchContactMailListWithQuickSearchBox() {              //5405  --Dinamik degil
+        String foreClickExpData=life.altEMAILWebElementBirinci.getText();
+        String altEMAILWebElementIkinci= life.altEMAILWebElementIkinci.getText();
+        //System.out.println(foreClickExpData);      // Expected :u_3_4635293334@wisequarter.com
+        actions.click(life.mailListQuickSearchBoxKutusu).sendKeys("test@test.com").sendKeys(Keys.ENTER).perform();
+        ReusableMethods.bekle(2);
+        String enterQuickSearhBoxData=life.altEMAILWebElementBirinci.getText();   //test@test.com
+        //System.out.println(enterQuickSearhBoxData);     // test@test.com
+        String beklenenBirinciData= "test@test.com";
+        Assert.assertNotEquals(foreClickExpData,enterQuickSearhBoxData);
+        Assert.assertEquals(enterQuickSearhBoxData,beklenenBirinciData);
+
+    }
+
+    @Then("Admin verifies the visibility of Show and Delete links in Select tab under Action heading")
+    public void adminVerifiesTheVisibilityOfShowAndDeleteLinksInSelectTabUnderActionHeading() {             //5406
+        life.actionsSelectButton.click();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.actionsShowButton.isDisplayed());
+        Assert.assertTrue(life.actionsDeleteButton.isDisplayed());
+    }
+
+    @Then("Admin verifies that clicking the Show link in the Select tab reaches the Contact Mail page")
+    public void adminVerifiesThatClickingTheShowLinkInTheSelectTabReachesTheContactMailPage() {           //5407
+        life.actionsSelectButton.click();
+        ReusableMethods.bekle(1);
+        life.actionsShowButton.click();
+        ReusableMethods.bekle(3);
+        Assert.assertTrue(life.contactMailDetayTitle.isDisplayed());
+
+        String expData="contact";
+        String actData=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actData.contains(expData));
+
+        String expData2="Contact";
+        String actData2=life.contactMailDetayTitle.getText();
+        Assert.assertTrue(actData2.contains(expData2));
+    }
+
+    @Then("Admin verifies that the mail has been deleted with the Delete link in the Select tab under the Action title")
+    public void adminVerifiesThatTheMailHasBeenDeletedWithTheDeleteLinkInTheSelectTabUnderTheActionTitle() {    //5408
+        String expSonucYazisi1=life.getSonucYazisi54NoData.getText();
+        life.actionsSelectButton.click();
+        ReusableMethods.bekle(1);
+        life.actionsDeleteButton.click();
+        ReusableMethods.bekle(1);
+        life.actionsSelectDelete2Button.click();
+        ReusableMethods.bekle(1);
+        String actSonucYazisi2=life.getSonucYazisi54NoData.getText();
+        // Peki ikinci sayfada veriler olunca, birinci sayfadan silinen yerine hemen ikinci sayfadan veri gelirse
+        Assert.assertNotEquals(expSonucYazisi1,actSonucYazisi2);
+        //Assert.assertNotEquals(foreDeleteExpData,efterDeleteActData);   // alttaki mailde ayni olunca FAILED, message sanki uniq
+
+    }
 }
+
+
+

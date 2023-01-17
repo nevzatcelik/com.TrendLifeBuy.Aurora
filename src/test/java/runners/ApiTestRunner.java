@@ -9,12 +9,12 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber1.json",
                 "junit:target/xml-report/cucumber1.xml"
         },
-        features ="src/test/resources/features",
-        glue={"stepdefinitions","hooks"}, //@SystemTest
-        tags= "@US5203",
+        features ="src/test/resources/Api_features",
+        glue={"stepdefinitions", "hooks"},
+        tags= "@Api",
         dryRun =false
 )
-public class SystemTestRunner {
+public class ApiTestRunner {
     /*
     Bir framework'de bir tek Runner class'i yeterli olabilir
     Runner class'inda class body'sinde hic bir sey olmaz
