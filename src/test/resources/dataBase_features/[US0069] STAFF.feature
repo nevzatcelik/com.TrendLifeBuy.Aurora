@@ -1,6 +1,6 @@
-Feature: Bir yönetici olarak DataBase üzerinden Staff tablosundaki istenen Personelin ID'sini dogrulayabilmeliyim
+Feature: As an administrator, I should be able to verify the ID of the desired Personnel in the Staff table via the DataBase.
 
-  Scenario Outline:Staff tablosundaki ID'ler bir listeye alinarak istenilen ID'nin bu listede olup olmadigi dogrulanmali.
+  Scenario Outline:The IDs in the staff table should be taken to a list and it should be verified whether the desired ID is in this list.
 
     Given AdminG gets the data in the table "gurseldata" by connecting to the database
     Then  AdminG verifies that "id" in the list "<expected>"
