@@ -21,9 +21,7 @@ public class US_069 {
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
 
-
-
-    @Given("The user gets the data in the table {string} by connecting to the database")
+    @Given("AdminG gets the data in the table {string} by connecting to the database")
     public void theUserGetsTheDataInTheTableByConnectingToTheDatabase(String gursel) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -32,8 +30,7 @@ public class US_069 {
     }
 
 
-
-    @Then("The user verifies that {string} in the list {string}")
+    @Then("AdminG verifies that {string} in the list {string}")
     public void theUserVerifiesThatInTheList(String id, String expected) throws SQLException {
 
         resultSet.absolute(0);
