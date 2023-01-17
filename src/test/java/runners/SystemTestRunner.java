@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber1.xml"
         },
         features ="src/test/resources/features",
-        glue={"stepdefinitions","hooks"},
-        tags= "@SystemTest",
+        glue={"stepdefinitions","hooks"}, //@SystemTest
+        tags= "@US5201",
         dryRun =false
 )
 public class SystemTestRunner {
