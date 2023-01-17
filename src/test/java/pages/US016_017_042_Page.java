@@ -108,6 +108,42 @@ public class US016_017_042_Page {
     @FindBy(xpath = "(//span[text()='Next'])[1]")
     public WebElement nextButton;
 
+    //++++++++++++++++++ US42 ++++++++++++++++
+
+    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    public WebElement adminSignInButton;
+
+    @FindBy(xpath = "//*[text()='Admin Reports']")
+    public WebElement adminReportsButton;
+
+    //@FindBy(xpath = "/*[text()='Product stock']")
+    @FindBy(xpath = "//a[text()='Product stock']")
+    public WebElement productStockButton;
+
+    @FindBy(xpath = "//label[@class='primary_input_label']")
+    public WebElement typeButton;
+
+    @FindBy(xpath = "(//div[@tabindex='0'])[2]")
+    public WebElement typedropDownMenu;
+
+    //@FindBy(xpath = "//li[@class='option']")
+    // @FindBy(xpath = "(//span[@class='current'])[2]")
+    @FindBy(xpath = "//li[@class='option selected focus']")
+    public WebElement selectOneOption;
+
+
+    @FindBy(xpath = "//li[@data-value='all']")
+    public WebElement allProductList;
+
+    // @FindBy(xpath = "//li[@class='option']")
+    //public WebElement allProductList2;
+
+    // @FindBy(xpath = "(//button[@type='submit'])[2]")
+    @FindBy(xpath = "//button[@id='save_button_parent']")
+    public WebElement searchButton;
+
+
+
 
 
 }

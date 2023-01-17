@@ -3,12 +3,30 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US018_019_020_021_052_054_Page {
     public US018_019_020_021_052_054_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    @FindBy(xpath = "//div[@class='newsletter_form_inner']")
+    private WebElement firstAlertMail;
+
+    @FindBy(xpath = "(//div[@class='close_modal'])[1]")
+    private WebElement firstAlertMailClose;
+    @FindBy(xpath = "(//a[text()='Login'])[1]")
+    public WebElement loginLink;
+
+    @FindBy(xpath = "//input[@name='login']")
+    public WebElement emailBox;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordBox;
+
+    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    public WebElement signInButton;
 
     // ==================== US18 MY ORDER   ======
     @FindBy(xpath = "(//a[@href='https://trendlifebuy.com/my-purchase-orders'])[1]")
@@ -156,9 +174,57 @@ public class US018_019_020_021_052_054_Page {
 
     // ==================== US52 All Activity Logs   =======================>>>
 
+    /*public void adminLoginBora(String mail,String password){
+        emailBox.sendKeys(ConfigReader.getProperty("adminBoraMail"));
+        passwordBox.sendKeys(ConfigReader.getProperty("password"));
+        signInButton.click();
+    }
 
+     */
+    @FindBy(xpath = "//span[text()='All Activity Logs']")
+    public WebElement allActivityLogsLink;                                                                       //5201
+    @FindBy(xpath = "//a[text()='Login Activity']")   //a[@class='active ']
+    public WebElement loginActivityLink;
+    @FindBy(xpath = "//h3[text()='Login - Logout Activity']")
+    public WebElement loginLogoutActivityTitle;
+    @FindBy(xpath = "//a[text()='Clean All']")   //div[text()='Showing 1 to 10 of 22 entries']
+    public WebElement cleanAllButton;            //div[text()='Showing 1 to 10 of 123 entries']                  //5202
+    @FindBy(xpath = "//input[@id='dataDeleteBtn']")
+    public WebElement dataDeleteButton2;  //td[text()='No data available in table']
+    @FindBy(xpath = "//a[@id='loginLogoutDataTable_next']")
+    public WebElement nextSagTus;                                                                                //5202
+    @FindBy(xpath = "//td[text()='No data available in table']")
+    public WebElement sonucYazisi52NoData;
+
+
+    @FindBy(xpath = "(//tr[@role='row'])[1]")                   //5203  User, Login AT, Logout AT, IP, Agent, Description
+    public WebElement loginLogoutActivityBasliklar;
+    @FindBy(xpath = "//th[text()='User']")                                                                     //5203
+    public WebElement loginLogoutActivityUser;                  //5203  User, Login AT, Logout AT, IP, Agent, Description
+    @FindBy(xpath = "//th[text()='Login At']")
+    public WebElement loginLogoutActivityLoginAt;
+    @FindBy(xpath = "//th[text()='Logout At']")
+    public WebElement loginLogoutActivityLogoutAt;
+    @FindBy(xpath = "//th[text()='IP']")
+    public WebElement loginLogoutActivityIP;
+    @FindBy(xpath = "//th[text()='Agent']")
+    public WebElement loginLogoutActivityAgent;
+    @FindBy(xpath = "//th[text()='Description']")
+    public WebElement loginLogoutActivityDescription;
+    @FindBy(xpath = "//input[@type='search']")                                    // 5204- Quick Search Text Box'i ile
+    public WebElement quickSearchBox;                                                                          //5204
+
+    @FindBy(xpath = "//a[text()='1']")
+    public WebElement sayfa1Button;                                                                              //5205
+    @FindBy(xpath = "//a[text()='2']")  //div[@id='loginLogoutDataTable_info']
+    public WebElement sayfa2Button;
+    @FindBy(xpath = "//div[@id='loginLogoutDataTable_info']")
+    public WebElement searchBoxInfoYazisi;                                                                     //5205
 
 
     // ==================== US54 Contact Request   =======================>>>
+
+
+
 
 }
