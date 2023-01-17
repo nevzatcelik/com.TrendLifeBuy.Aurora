@@ -174,13 +174,6 @@ public class US018_019_020_021_052_054_Page {
 
     // ==================== US52 All Activity Logs   =======================>>>
 
-    /*public void adminLoginBora(String mail,String password){
-        emailBox.sendKeys(ConfigReader.getProperty("adminBoraMail"));
-        passwordBox.sendKeys(ConfigReader.getProperty("password"));
-        signInButton.click();
-    }
-
-     */
     @FindBy(xpath = "//span[text()='All Activity Logs']")
     public WebElement allActivityLogsLink;                                                                       //5201
     @FindBy(xpath = "//a[text()='Login Activity']")   //a[@class='active ']
@@ -195,7 +188,6 @@ public class US018_019_020_021_052_054_Page {
     public WebElement nextSagTus;                                                                                //5202
     @FindBy(xpath = "//td[text()='No data available in table']")
     public WebElement sonucYazisi52NoData;
-
 
     @FindBy(xpath = "(//tr[@role='row'])[1]")                   //5203  User, Login AT, Logout AT, IP, Agent, Description
     public WebElement loginLogoutActivityBasliklar;
