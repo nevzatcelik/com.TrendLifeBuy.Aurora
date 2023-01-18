@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber1.json",
                 "junit:target/xml-report/cucumber1.xml"
         },
-        features ="src/test/resources/dataBasefeatures",
+        features ="src/test/resources/dataBase_features",
         glue={"stepdefinitions", "hooks"},
         tags= "@dtb",
         dryRun =false

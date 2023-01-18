@@ -21,8 +21,8 @@ public class US_074 {
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
 
-    @Given("nevzat JDBC ile database ebaglanir {string} tablosundaki verileri alir")
-    public void nevzatJDBCIleDatabaseEbaglanirTablosundakiVerileriAlir(String arg0) throws SQLException {
+    @Given("AdminN gets datas from in the table {string} by connecting to the database")
+    public void adminnGetsDatasFromInTheTableByConnectingToTheDatabase(String arg0) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         String query =arg0;

@@ -9,7 +9,7 @@ Feature: US044 Admin Report - Wallet Recharge History tests / Administrator want
     Then Admin clicks Wallet Recharge History link
     Then Admin verifies that Wallet Recharge transactions are shown in Wallet Recharge History List
     And Closes the page
-@fatih
+
   Scenario: TC_4402 Verify that transactions are listed under User, Email, Type, Amount, Payment Details, TRX ID, Date
 
     Given Open browser go to url "adminUrl"

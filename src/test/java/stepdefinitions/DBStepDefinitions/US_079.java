@@ -23,7 +23,7 @@ public class US_079 {
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
 
-    @Given("fatih JDBC ile database ebaglanir {string} tablosundaki verileri alir")
+    @Given("AdminF gets the data in the table {string} by connecting to the database")
     public void fatihJDBCIleDatabaseEbaglanirTablosundakiVerileriAlir(String arg0) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -32,7 +32,7 @@ public class US_079 {
     }
 
 
-    @And("User verifies {string} {string} {string} from data base")
+    @And("AdminF verifies {string} {string} {string} from data base")
     public void userVerifiesFromDataBase(String id, String order, String expected) throws SQLException {
         resultSet.absolute(0);
         List<String> resultOrder = new ArrayList<String>();
