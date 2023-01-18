@@ -21,14 +21,14 @@ public class POST_REQUEST {
     Response response;
     LoginPojo loginPojo;
 
-    ///Gursel
-    @Then("Kullanici gerekli path {string} {string} {string} param ayarlarini yapar")
-    public void kullaniciGerekliPathParamAyarlariniYapar(String param1, String param2, String param3) {
+
+    @Given("User sets Post the necessary {string} {string} path param")
+    public void user_sets_post_the_necessary_path_param(String param1, String param2) {
         spec=new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("baseUrl")).build();
         spec.pathParams("get1",ConfigReader.getProperty(param1),"get2",ConfigReader.getProperty(param2));
     }
-    @Given("Kullanici request islemi yapar ve response alir")
-    public void kullanici_request_islemi_yapar_ve_response_alir() {
+    @Then("User sends Post request and gets response")
+    public void user_sends_post_request_and_gets_response() {
         String token= ApiUtils.generateToken();
         loginPojo=new LoginPojo("test@test.com","123123123");
         response=given().headers("Authorization","Bearer"+token).
@@ -39,26 +39,23 @@ public class POST_REQUEST {
                 post("{get1}/{get2}");
         response.prettyPrint();
     }
-    @Given("Kullanici statusunun {string} oldugunu dogrular")
-    public void kullanici_statusunun_oldugunu_dogrular(String status) {
+    @Then("User Verifies Post user status is {string}")
+    public void user_verifies_post_user_status_is(String status) {
         response.then().assertThat().statusCode(Integer.parseInt(status));
     }
-    @Given("User degerlerini Matcher class yontemi ile dogrular")
-    public void user_degerlerini_matcher_class_yontemi_ile_dogrular() {
+    @Then("UserG verifies the returned response body")
+    public void user_g_verifies_the_returned_response_body() {
         // response.then().body("user.id", equalTo(453),
         //       "user.first_name",equalTo("testName2"));
         response.then().body("message",equalTo("Successfully logged In"));
     }
 
-    @Then("Kullanici token oldugunu dogrular")
-    public void kullaniciTokenOldugunuDogrular() {
-
-         JsonPath json=response.jsonPath();
+    @Then("User verifies the token response body")
+    public void userVerifiesTheTokenResponseBody() {
+        JsonPath json=response.jsonPath();
         // String tokendata=json.getString("token");
         // Assert.assertEquals(tokendata,json.getString("token"));
         response.then().assertThat().body("token",Matchers.anything());
         // Assert.assertNotNull(json.getString("token"));
-
-
     }
 }

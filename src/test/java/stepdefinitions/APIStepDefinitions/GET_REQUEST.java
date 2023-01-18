@@ -42,6 +42,28 @@ public class GET_REQUEST {
                 get("{get1}/{get2}");
         response.prettyPrint();
     }
+    @Then("UserFf verifies the returned response body")
+    public void userffVerifiesTheReturnedResponseBody() {
+        response.then().body(
+                "notifications[0].user_id",equalTo(453),
+                "notifications[0].notification_setting.admin_msg",equalTo("Offline recharge done to user."),
+                "notifications[1].user_id",equalTo(453),
+                "notifications[1].notification_setting.admin_msg",equalTo("An order has been approved."),
+                "notifications[2].user_id",equalTo(453),
+                "notifications[2].notification_setting.admin_msg",equalTo("An order process change to Pending"),
+                "notifications[3].user_id",equalTo(453),
+                "notifications[3].notification_setting.admin_msg",equalTo("An order process change to Processing"),
+                "notifications[4].user_id",equalTo(453),
+                "notifications[4].notification_setting.admin_msg",equalTo("An order process change to Shipped"),
+                "notifications[5].user_id",equalTo(453),
+                "notifications[5].notification_setting.admin_msg",equalTo("An order process change to Recieved"),
+                "notifications[6].user_id",equalTo(453),
+                "notifications[6].notification_setting.admin_msg",equalTo("An order process change to Delivered"),
+                "notifications[7].user_id",equalTo(453),
+                "notifications[7].notification_setting.admin_msg",equalTo("New Order placed"),
+                "msg",equalTo("success")
+        );
+    }
     @Then("User Verifies user status is {string}")
     public void user_verifies_user_status_is(String statusCode) {
         response.then().assertThat().statusCode(Integer.parseInt(statusCode));
@@ -82,5 +104,49 @@ public class GET_REQUEST {
                 "addresses[1].email",Matchers.equalTo("enim@enim.com"),
                 "message",Matchers.equalTo("success"));
 
+    }
+//-------------------------------------------------Yakup------------------------------------------------------------------------------//
+    @Then("UserY verifies the returned response body")
+    public void useryVerifiesTheReturnedResponseBody() {
+
+    }
+//-------------------------------------------------Talha-----------------------------------------------------------------------------//
+    @Then("UserT verifies the returned response body")
+    public void usertVerifiesTheReturnedResponseBody() {
+
+        response.then().body(
+                "packages.1.items[0].id",equalTo(746),
+                "packages.1.items[0].created_at",equalTo("2023-01-16T20:18:02.000000Z"),
+                "packages.1.items[0].customer.customer_shipping_address.created_at",equalTo("2022-12-20T22:07:40.000000Z"),
+                "packages.1.items[0].product.product.product_name",equalTo("Sun glass for girls"),
+                "packages.1.items[0].product.product.skus[0].id",equalTo(200),
+                "packages.1.shipping[0].id",equalTo(2),
+                "packages.1.shipping[0].carrier.slug",equalTo("Manual"),
+                "packages.1.shipping[1].carrier.slug",equalTo("Manual"),
+                 "differant_state_gst_list[0].name",equalTo("CGST"),
+                  "differant_state_gst_list[1].name",equalTo("SGST"),
+                "message",equalTo("success"));
+
+    }
+//-----------------------------------------------------Zeynep------------------------------------------------------------------------//
+    @Then("UserZ verifies the returned response body")
+    public void userzVerifiesTheReturnedResponseBody() {
+
+        response.then().body(
+                "message",equalTo("success")
+        );
+    }
+//----------------------------------------------------Emine--------------------------------------------------------------------------//
+    @Then("UserE verifies the returned response body")
+    public void usereVerifiesTheReturnedResponseBody() {
+        response.then().body(
+                "orders[0].id",equalTo(133),
+                "orders[0].customer.first_name",equalTo("testName"),
+                "orders[0].packages[0].processes[0].id",equalTo(1),
+                "orders[0].packages[0].processes[1].id",equalTo(2),
+                "orders[0].packages[0].processes[2].id",equalTo(3),
+                "orders[0].address.shipping_email",equalTo("test@test.com"),
+                "message",equalTo("success")
+        );
     }
 }

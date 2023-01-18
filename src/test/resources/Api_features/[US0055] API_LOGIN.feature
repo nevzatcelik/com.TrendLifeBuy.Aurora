@@ -1,15 +1,15 @@
+@api
+  Feature: API_LOGIN POST
+    Scenario: When sending POST Request to the /api/login endpoint, it should be verified that the status code returned is 200 and the message information in the Response Body is "Successfully logged In".
 
-  Feature: GURSEL
+      Given User sets Post the necessary "ilkdata1" "gurseldata2" path param
+      Then  User sends Post request and gets response
+      Then  User Verifies Post user status is "200"
+      Then  UserG verifies the returned response body
 
-    Scenario: GURSEL
+      Scenario:It should be verified that the token used in API Authorization transactions is in the returned response.
 
-      Then Kullanici gerekli path "ilkdata1" "gurseldata2" "" param ayarlarini yapar
-      Then Kullanici request islemi yapar ve response alir
-      Then Kullanici statusunun "200" oldugunu dogrular
-      Then User degerlerini Matcher class yontemi ile dogrular
-    @api
-      Scenario:
-        Then Kullanici gerekli path "ilkdata1" "gurseldata2" "" param ayarlarini yapar
-        Then Kullanici request islemi yapar ve response alir
-        Then Kullanici statusunun "200" oldugunu dogrular
-        Then Kullanici token oldugunu dogrular
+        Given User sets Post the necessary "ilkdata1" "gurseldata2" path param
+        Then  User sends Post request and gets response
+        Then  User Verifies Post user status is "200"
+        Then  User verifies the token response body
