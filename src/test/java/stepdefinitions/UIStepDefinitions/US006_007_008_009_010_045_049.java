@@ -491,6 +491,7 @@ public class US006_007_008_009_010_045_049 {
 
     @Then("Admin clicks the edit link")
     public void adminClicksTheEditLink() {
+        String oldCategoryName = leventPage.categoryNameInFirstLine.getText();
         leventPage.categorySelectButtonFirstLineEditButton.click();
     }
 
@@ -501,19 +502,28 @@ public class US006_007_008_009_010_045_049 {
 
     @Then("Admin changes the name and the status of the category and verifies that the Name and Status of the category can be updated")
     public void adminChangesTheNameAndTheStatusOfTheCategoryAndVerifiesThis() {
-       // leventPage.categoryEditPageStatusCheckBox.click();
-       // ReusableMethods.bekle(2);
-        actions.moveToElement(leventPage.categoryEditPageNameBox).sendKeys(Keys.BACK_SPACE).perform();
-
-        ReusableMethods.bekle(10);
-       /* String newCategoryName = faker.name().name();
         ReusableMethods.bekle(2);
-        leventPage.categoryEditPageNameBox.sendKeys(newCategoryName);
+        String oldCategoryName = leventPage.categoryNameInFirstLine.getText();
+        String newName = faker.name().username();
+        leventPage.categoryEditPageNameBox.sendKeys(newName);
+        ReusableMethods.bekle(2);
+        leventPage.categoryEditPageStatusCheckBox.click();
         ReusableMethods.bekle(2);
         leventPage.categoryEditPageUpdateButton.click();
+        ReusableMethods.bekle(3);
+        Assert.assertTrue(leventPage.categorySuccessPopUpMessage.isEnabled());
+        String actualCategoryName = leventPage.categoryNameInFirstLine.getText();
+        Assert.assertNotEquals(oldCategoryName, actualCategoryName);
+        leventPage.categoryEditPageStatusButton.click();
+    }
+
+    @Then("Admin clicks the delete link and verifies that the category can be deleted")
+    public void adminClicksTheDeleteLink() {
         ReusableMethods.bekle(2);
-        String actualCategoryName = leventPage.categoryNameInFirstLine.getAccessibleName();
-        Assert.assertEquals(newCategoryName,actualCategoryName);
-        //Assert.assertTrue(leventPage.categoryEditPageStatusButton.isSelected());*/
+        leventPage.categorySelectButtonFirstLineDeleteButton.click();
+        ReusableMethods.bekle(2);
+        leventPage.categoryEditPageDeletePopUpPage.click();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(leventPage.categorySuccessPopUpMessage.isEnabled());
     }
 }
