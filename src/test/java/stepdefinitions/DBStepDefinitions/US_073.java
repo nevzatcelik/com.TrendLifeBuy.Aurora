@@ -37,7 +37,6 @@ public class US_073 {
             resultsphone.add(resultSet.getNString(phone));
 
         }
-
          Assert.assertEquals(expected,resultsphone.toString());
 
     }
