@@ -6,12 +6,8 @@ import org.junit.Assert;
 import utilities.ConfigReader;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-public class US_069 {
-
+public class US_077 {
     String url = "jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username = "u480337000_tbl_training_u";
     String password = "O+e3!xmZcO]";
@@ -19,27 +15,22 @@ public class US_069 {
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
-
-
-    @Given("AdminG gets the data in the table {string} by connecting to the database")
-    public void theUserGetsTheDataInTheTableByConnectingToTheDatabase(String gursel) throws SQLException {
+    @Given("Emine gets the data in the table {string} by connecting to the database")
+    public void emine_gets_the_data_in_the_table_by_connecting_to_the_database(String emine) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String query = ConfigReader.getProperty(gursel);
+        String query =emine;
         resultSet = statement.executeQuery(query);
     }
 
+    @Then("Emine verifies LIST that {string} {string}  in the list {string} {string}")
+    public void emineVerifiesLISTThatInTheList(String name, String phonecode, String expectedname, String expectedphone) throws SQLException {
 
-    @Then("AdminG verifies that {string} in the list {string}")
-    public void theUserVerifiesThatInTheList(String id, String expected) throws SQLException {
-
-        resultSet.absolute(0);
-        List<String> resultsId = new ArrayList<String>();
-        while(resultSet.next()) {
-            resultsId.add(String.valueOf(resultSet.getInt(id)));
-
-        }
-        Assert.assertTrue(resultsId.contains(expected));
-
+        resultSet.first();
+        Assert.assertEquals(expectedname,resultSet.getNString(name));
+        resultSet.first();
+       // Assert.assertEquals(expectedphone,(String.valueOf(resultSet.getInt(phonecode))));
+        Assert.assertEquals(expectedphone,resultSet.getNString(phonecode));
+        System.out.println(expectedname+expectedphone);
     }
 }

@@ -16,19 +16,37 @@ public class US_070 {
 
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
-    ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
-    @Given("Levent gets the data in the table {string} by connecting to the database")
-    public void levent_gets_the_data_in_the_table_by_connecting_to_the_database(String levent) throws SQLException {
+    int resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
+    ResultSet resultSetiki;
+
+
+    @Given("Levent updates the address information of the desired Customer in the table {string}")
+    public void leventUpdatesTheAddressInformationOfTheDesiredCustomerInTheTable(String arg0) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        String query =ConfigReader.getProperty(levent);
-        resultSet = statement.executeQuery(query);
+        String query = ConfigReader.getProperty(arg0);
+        resultSet = statement.executeUpdate(query);
     }
-    @Then("Levent verifies that {string} in the list {string}")
-    public void levent_verifies_that_in_the_list(String address, String string2) throws SQLException {
 
+    @Given("Levent gets the data in the table {string} by connecting to the database")
+    public void leventGetsTheDataInTheTableByConnectingToTheDatabase(String arg0) throws SQLException {
+        connection = DriverManager.getConnection(url, username, password);
+        statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        String query = ConfigReader.getProperty(arg0);
+        resultSetiki=statement.executeQuery(query);
     }
+
+    @Then("Levent verifies that the updated {string} in the list is {string}")
+    public void leventVerifiesThatTheUpdatedInTheListIs(String address, String expected) throws SQLException {
+        resultSetiki.first();
+
+        Assert.assertEquals(expected,(resultSetiki.getNString(address)));
+    }
+
+
+
+/*
     @Then("Levent verifies LIST that {string} in the list {string}")
     public void leventVerifiesLISTThatInTheList(String address, String expected) throws SQLException {
         resultSet.absolute(0);
@@ -38,5 +56,5 @@ public class US_070 {
 
         }
         Assert.assertTrue(adressList.contains(expected));
-    }
+    }*/
 }
