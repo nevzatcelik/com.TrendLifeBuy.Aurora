@@ -1,4 +1,4 @@
-@api
+
   Feature: API_LOGIN POST
     Scenario: When sending POST Request to the /api/login endpoint, it should be verified that the status code returned is 200 and the message information in the Response Body is "Successfully logged In".
 

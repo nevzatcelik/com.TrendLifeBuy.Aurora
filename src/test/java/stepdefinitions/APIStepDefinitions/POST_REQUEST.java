@@ -8,6 +8,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
+import org.json.JSONObject;
 import org.junit.Assert;
 import pojos.LoginPojo;
 import utilities.ApiUtils;
@@ -57,5 +58,34 @@ public class POST_REQUEST {
         // Assert.assertEquals(tokendata,json.getString("token"));
         response.then().assertThat().body("token",Matchers.anything());
         // Assert.assertNotNull(json.getString("token"));
+    }
+
+    @Then("User verifies Response Body is Product added to wishlist.")
+    public void userVerifiesResponseBodyIsProductAddedToWishlist() {
+
+    }
+
+    @Then("UserZ sends Post request and gets response")
+    public void userzSendsPostRequestAndGetsResponse() {
+        /*
+        {
+    "seller_id": 1,
+    "seller_product_id": 82,
+    "type": "product"
+}
+         */
+
+
+        JSONObject jsonObject=new JSONObject();
+        jsonObject.put("seller_id",1);
+        jsonObject.put("seller_product_id",82);
+        jsonObject.put("type","product");
+        response=given().
+                spec(spec).
+                contentType(ContentType.JSON).
+                when().
+                body(jsonObject.toString()).
+                post("{get1}/{get2}");
+        response.prettyPrint();
     }
 }
