@@ -31,36 +31,35 @@ public class GET_REQUEST {
     @Then("User sends GET request and gets response")
     public void user_sends_get_request_and_gets_response() {
         String token = generateToken();
-        loginPojo = new LoginPojo("test@test.com", "123123123");
+        loginPojo = new LoginPojo("admin@gmail.com", "123123123");
 
         response = given().
                 headers("Authorization","Bearer "+ token).
                 spec(spec).
-                contentType(ContentType.JSON).
+                contentType(ContentType.JSON).accept("application/json").
                 when().
-                body(loginPojo).
                 get("{get1}/{get2}");
         response.prettyPrint();
     }
     @Then("UserFf verifies the returned response body")
     public void userffVerifiesTheReturnedResponseBody() {
         response.then().body(
-                "notifications[0].user_id",equalTo(453),
+                "notifications[0].user_id",equalTo(2),
                 "notifications[0].notification_setting.admin_msg",equalTo("Offline recharge done to user."),
-                "notifications[1].user_id",equalTo(453),
-                "notifications[1].notification_setting.admin_msg",equalTo("An order has been approved."),
-                "notifications[2].user_id",equalTo(453),
-                "notifications[2].notification_setting.admin_msg",equalTo("An order process change to Pending"),
-                "notifications[3].user_id",equalTo(453),
-                "notifications[3].notification_setting.admin_msg",equalTo("An order process change to Processing"),
-                "notifications[4].user_id",equalTo(453),
-                "notifications[4].notification_setting.admin_msg",equalTo("An order process change to Shipped"),
-                "notifications[5].user_id",equalTo(453),
-                "notifications[5].notification_setting.admin_msg",equalTo("An order process change to Recieved"),
-                "notifications[6].user_id",equalTo(453),
-                "notifications[6].notification_setting.admin_msg",equalTo("An order process change to Delivered"),
-                "notifications[7].user_id",equalTo(453),
-                "notifications[7].notification_setting.admin_msg",equalTo("New Order placed"),
+                "notifications[1].user_id",equalTo(2),
+                "notifications[1].notification_setting.admin_msg",equalTo("A withdraw request has been declined."),
+                "notifications[2].user_id",equalTo(2),
+                "notifications[2].notification_setting.admin_msg",equalTo("A withdraw request has been approved."),
+                "notifications[3].user_id",equalTo(2),
+                "notifications[3].notification_setting.admin_msg",equalTo("An order has been approved."),
+                "notifications[4].user_id",equalTo(2),
+                "notifications[4].notification_setting.admin_msg",equalTo("An order process change to Pending"),
+                "notifications[5].user_id",equalTo(2),
+                "notifications[5].notification_setting.admin_msg",equalTo("An order process change to Processing"),
+                "notifications[6].user_id",equalTo(2),
+                "notifications[6].notification_setting.admin_msg",equalTo("An order process change to Shipped"),
+                "notifications[7].user_id",equalTo(2),
+                "notifications[7].notification_setting.admin_msg",equalTo("An order process change to Recieved"),
                 "msg",equalTo("success")
         );
     }
@@ -71,11 +70,11 @@ public class GET_REQUEST {
     @Then("UserF verifies the returned response body")
     public void user_f_verifies_the_returned_response_body() {
         response.then().body(
-                "wallet_running_balance",Matchers.equalTo(1949.99F),
+                "wallet_running_balance",Matchers.equalTo(0),
                 "wallet_pending_balance",equalTo(0),
                    "total_coupon",equalTo(0),
-                   "total_wishlist",equalTo(7),
-                    "total_cancel_order",equalTo(2),
+                   "total_wishlist",equalTo(0),
+                    "total_cancel_order",equalTo(0),
                      "message",equalTo("success")
         );
     }
@@ -85,9 +84,8 @@ public class GET_REQUEST {
     @Then("UserN verifies the returned response body")
     public void usernVerifiesTheReturnedResponseBody() {
         response.then().
-                body("user.id", equalTo(453),
-                        "user.customer_addresses[0].id",equalTo(19),
-                        "user.customer_addresses[1].city",equalTo("quisquam"),
+                body("user.id", equalTo(2),
+                        "user.customer_addresses[0].id",equalTo(30),
                         "user.currency.code",equalTo("USD"),
                         "user.language.name",equalTo("English"),
                         "message",equalTo("success"));
@@ -97,11 +95,11 @@ public class GET_REQUEST {
     @Then("UserB verifies the returned response body")
     public void userbVerifiesTheReturnedResponseBody() {
 
-        response.then().body("addresses[0].id",Matchers.equalTo(19),
+        response.then().body("addresses[0].id",Matchers.equalTo(30),
                 "addresses[0].get_country.name",Matchers.equalTo("United States")
-                ,"addresses[0].get_state.name",Matchers.equalTo("New Jersey"),
+                ,"addresses[0].get_state.name",Matchers.equalTo("Arizona"),
                 "addresses[0].get_city.created_at",Matchers.equalTo(null),
-                "addresses[1].email",Matchers.equalTo("enim@enim.com"),
+                "addresses[1].email",Matchers.equalTo(null),
                 "message",Matchers.equalTo("success"));
 
     }
@@ -115,11 +113,11 @@ public class GET_REQUEST {
     public void usertVerifiesTheReturnedResponseBody() {
 
         response.then().body(
-                "packages.1.items[0].id",equalTo(746),
-                "packages.1.items[0].created_at",equalTo("2023-01-16T20:18:02.000000Z"),
-                "packages.1.items[0].customer.customer_shipping_address.created_at",equalTo("2022-12-20T22:07:40.000000Z"),
-                "packages.1.items[0].product.product.product_name",equalTo("Sun glass for girls"),
-                "packages.1.items[0].product.product.skus[0].id",equalTo(200),
+                "packages.1.items[0].id",equalTo(234),
+                "packages.1.items[0].created_at",equalTo("2022-12-18T13:22:02.000000Z"),
+                "packages.1.items[0].customer.customer_shipping_address.created_at",equalTo("2022-12-22T20:52:15.000000Z"),
+                "packages.1.items[0].product.product.product_name",equalTo("Black Synthetic Casual Blazer For Men"),
+                "packages.1.items[0].product.product.skus[0].id",equalTo(202),
                 "packages.1.shipping[0].id",equalTo(2),
                 "packages.1.shipping[0].carrier.slug",equalTo("Manual"),
                 "packages.1.shipping[1].carrier.slug",equalTo("Manual"),
