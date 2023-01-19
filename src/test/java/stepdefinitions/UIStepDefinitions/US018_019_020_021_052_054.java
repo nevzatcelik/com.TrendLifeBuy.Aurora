@@ -307,6 +307,10 @@ public class US018_019_020_021_052_054 {
         Assert.assertTrue(life.loginLogoutActivityAgent.isDisplayed());
         Assert.assertTrue(life.loginLogoutActivityDescription.isDisplayed());
         //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
+        //System.out.println(life.loginLogoutActivityBasliklar.getText()); // SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION
+        String expData="SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION";
+        String actData=life.loginLogoutActivityBasliklar.getText();  // Actual   :SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION
+        Assert.assertEquals(expData,actData);
     }
 
     @Then("Admin verifies that it is possible to search Login - Logout Activity list with Quick Search Text Box")
