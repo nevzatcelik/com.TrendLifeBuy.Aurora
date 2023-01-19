@@ -1,4 +1,4 @@
-
+@api
 Feature:  API_COUPON
 
   Scenario: When a GET request is sent to the /api/coupon endpoint, it should be checked that the status code returned is 200 and that the information in the Response Body is correct.

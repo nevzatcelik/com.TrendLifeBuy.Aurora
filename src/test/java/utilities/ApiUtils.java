@@ -21,7 +21,7 @@ public class ApiUtils {
         RequestSpecification requestSpec = spec;
 
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("email", "test@test.com");
+        expectedData.put("email", "admin@gmail.com");
         expectedData.put("password", "123123123");
 
         Response response = given().spec(requestSpec).contentType(ContentType.JSON).

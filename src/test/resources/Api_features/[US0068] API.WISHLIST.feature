@@ -6,7 +6,7 @@ Feature:
     Then  User sends GET request and gets response
     Then  User Verifies user status is "200"
     Then  UserZ verifies the returned response body
-@api
+
     Scenario: post
       Given User sets Post the necessary "ilkdata1" "zeynepdata1" path param
       Then  UserZ sends Post request and gets response

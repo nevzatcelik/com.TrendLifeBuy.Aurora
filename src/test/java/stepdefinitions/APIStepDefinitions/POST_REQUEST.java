@@ -14,6 +14,8 @@ import pojos.LoginPojo;
 import utilities.ApiUtils;
 import utilities.ConfigReader;
 
+import java.util.HashMap;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -31,8 +33,8 @@ public class POST_REQUEST {
     @Then("User sends Post request and gets response")
     public void user_sends_post_request_and_gets_response() {
         String token= ApiUtils.generateToken();
-        loginPojo=new LoginPojo("test@test.com","123123123");
-        response=given().headers("Authorization","Bearer"+token).
+        loginPojo=new LoginPojo("admin@gmail.com","123123123");
+        response=given().headers("Authorization","Bearer "+token).
                 spec(spec).
                 contentType(ContentType.JSON).
                 when().
@@ -67,24 +69,19 @@ public class POST_REQUEST {
 
     @Then("UserZ sends Post request and gets response")
     public void userzSendsPostRequestAndGetsResponse() {
-        /*
-        {
-    "seller_id": 1,
-    "seller_product_id": 82,
-    "type": "product"
-}
-         */
 
-
-        JSONObject jsonObject=new JSONObject();
-        jsonObject.put("seller_id",1);
-        jsonObject.put("seller_product_id",82);
-        jsonObject.put("type","product");
-        response=given().
+        HashMap<String, String> requestBody = new HashMap<String, String>();
+        requestBody.put("seller_id", String.valueOf(1));
+        requestBody.put("seller_product_id", String.valueOf(82));
+        requestBody.put("type","product");
+        System.out.println(requestBody);
+        String token= ApiUtils.generateToken();
+        loginPojo=new LoginPojo("admin@gmail.com","123123123");
+        response=given().headers("Authorization","Bearer"+token).
                 spec(spec).
                 contentType(ContentType.JSON).
                 when().
-                body(jsonObject.toString()).
+                body(requestBody).
                 post("{get1}/{get2}");
         response.prettyPrint();
     }
