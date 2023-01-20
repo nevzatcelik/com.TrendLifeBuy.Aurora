@@ -1,6 +1,6 @@
-
-  Feature: US0080 Compares (As an administrator, I should be able to list a customer's compares from the compares table through the Database.)
 @dtb
+  Feature: US0080 Compares (As an administrator, I should be able to list a customer's compares from the compares table through the Database.)
+
     Scenario Outline: All compares of the customer with the specified Id number should be saved in a list and verified.
 
       Given Levent connects to the database with JDBC and gets the datas from the table "<query>"

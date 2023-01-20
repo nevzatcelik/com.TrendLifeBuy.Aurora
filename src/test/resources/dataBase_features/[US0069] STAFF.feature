@@ -1,3 +1,4 @@
+@dtb
 Feature: As an administrator, I should be able to verify the ID of the desired Personnel in the Staff table via the DataBase.
 
   Scenario Outline:The IDs in the staff table should be taken to a list and it should be verified whether the desired ID is in this list.
@@ -11,4 +12,4 @@ Feature: As an administrator, I should be able to verify the ID of the desired P
       | 3 |
       | 4 |
       | 5 |
-      | 7 |
+      | 100 |

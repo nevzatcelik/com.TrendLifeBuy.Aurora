@@ -1,7 +1,7 @@
 
-Feature: BORA
+Feature: USERS
 
-  Scenario Outline: BORA
+  Scenario Outline:The phone numbers in the Users table should be saved into a list and it should be verified whether the desired phone number is in this list.
 
     Given  Bora gets the data in the table "boradata" by connecting to the database
     Then   Bora verifies LIST that "phone" in the list "<expectedphone>"
