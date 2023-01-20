@@ -1,4 +1,4 @@
-
+@dtb
 Feature: US0077 As an administrator, when I query the code number from the Countries table on the Database, it should be verified that the requested information is frozen.
 
   Scenario Outline: I should be able to verify the name and phonecode of the country whose Id is given among the users in the Countries table

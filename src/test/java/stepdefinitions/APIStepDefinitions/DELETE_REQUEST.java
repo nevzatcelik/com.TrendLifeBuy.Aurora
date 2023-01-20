@@ -33,7 +33,7 @@ public class DELETE_REQUEST {
     @Then("UserB sends Delete request and gets response")
     public void userbSendsDeleteRequestAndGetsResponse() {
         JSONObject json=new JSONObject();
-        json.put("id",59);
+        json.put("id",62);
         String token= ApiUtils.generateToken();
         response = given().
                 headers("Authorization","Bearer "+ token).
@@ -55,5 +55,52 @@ public class DELETE_REQUEST {
     }
 
 
+    @Then("UserBb sends Delete request and gets response")
+    public void userbbSendsDeleteRequestAndGetsResponse() {
+        JSONObject json=new JSONObject();
+        json.put("id",500);
+        String token= ApiUtils.generateToken();
+        response = given().
+                headers("Authorization","Bearer "+ token).
+                spec(spec).
+                contentType(ContentType.JSON).accept("application/json").
+                when().
+                body(json.toString()).
+                delete("{get1}/{get2}");
+        response.prettyPrint();
+    }
+//-----------------------------------------------------------ZEYNEP-----------------------------------------------------------------------//
+    @Then("UserZ sends Delete request and gets response")
+    public void userzSendsDeleteRequestAndGetsResponse() {
 
+        JSONObject json=new JSONObject();
+        json.put("id",190);
+        json.put("type","product");
+        String token= ApiUtils.generateToken();
+        response = given().
+                headers("Authorization","Bearer "+ token).
+                spec(spec).
+                contentType(ContentType.JSON).accept("application/json").
+                when().
+                body(json.toString()).
+                delete("{get1}/{get2}");
+        response.prettyPrint();
+    }
+
+    @Then("UserZe sends Delete request and gets response")
+    public void userzeSendsDeleteRequestAndGetsResponse() {
+
+        JSONObject json=new JSONObject();
+        json.put("id",1900);
+        json.put("type","product");
+        String token= ApiUtils.generateToken();
+        response = given().
+                headers("Authorization","Bearer "+ token).
+                spec(spec).
+                contentType(ContentType.JSON).accept("application/json").
+                when().
+                body(json.toString()).
+                delete("{get1}/{get2}");
+        response.prettyPrint();
+    }
 }

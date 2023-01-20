@@ -1,4 +1,4 @@
-
+@dtb
 Feature:[US0072] As an administrator, I should be able to list user email addresses from the DataBase
 
   Scenario Outline: Listing the mails from the user table and verification of the requested mails are on the list
