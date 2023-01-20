@@ -7,19 +7,26 @@ Feature: US0067
     Then  User sends GET request and gets response
     Then  User Verifies user status is "200"
     Then  UserB verifies the returned response body
-  @api
+
   Scenario:
     Given User sets Post the necessary "ilkdata1" "boraData3" path param
     Then  UserB sends Post request and gets response
     Then  User Verifies Post user status is "201"
-    Then  UserB Verifies Post returned response body
+    Then  User Verifies Post returned "message" "address added successfully" response body
 
-  Scenario: When DELETE Request Body is sent to the /api/profile/address-delete endpoint with valid information, it should be verified that the status code returned is 201 and the message information in the Response Body is "address deleted successfully".
+  Scenario:
 
-    Given User sets Delete the necessary "ilkdata1" "boraData1" path param
-    Then  User sends Delete request and gets response
-    Then  User Verifies Delete user status is "201"
-    Then  UserB verifies the returned Delete response body
+    Given User sets Patch the necessary "ilkdata1" "boradata4" path param
+    Then  User sends Patch request and gets response
+    Then  User Verifies Patch user status is "202"
+    Then  User Verifies Patch returned "message" "address updated successfully" response body
+  @api
+  Scenario:
+# bu seneryo sadece 1 kere calisir 2. kez calistirilmak istenildiginde id numarasi degismeli 59,58......
+  Given  User sets Delete the necessary "ilkdata1" "boraData2" path param
+  Then   UserB sends Delete request and gets response
+  Then   User Verifies Delete user status is "202"
+  Then   UserB verifies the returned Deleted "message" "address deleted successfully" response body
 
 
 
