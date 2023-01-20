@@ -85,4 +85,34 @@ public class POST_REQUEST {
                 post("{get1}/{get2}");
         response.prettyPrint();
     }
+
+    @Then("UserB sends Post request and gets response")
+    public void userbSendsPostRequestAndGetsResponse() {
+        String token= ApiUtils.generateToken();
+
+        JSONObject json=new JSONObject();
+        json.put("name","deneme22");
+        json.put("email","enim@enim.com");
+        json.put("address","aut");
+        json.put("phone","tempore");
+        json.put("city","quisquam");
+        json.put("state","est");
+        json.put("country","quidem");
+        json.put("postal_code","mollitia");
+        json.put("address_type","11");
+
+        response=given().headers("Authorization","Bearer "+token).
+                spec(spec).
+                contentType(ContentType.JSON).
+                accept("application/json").
+                when().
+                body(json.toString()).
+                post("{get1}/{get2}");
+        response.prettyPrint();
+    }
+
+    @Then("UserB Verifies Post returned response body")
+    public void userbVerifiesPostReturnedResponseBody() {
+         response.then().assertThat().body("message",equalTo("address added successfully"));
+    }
 }
