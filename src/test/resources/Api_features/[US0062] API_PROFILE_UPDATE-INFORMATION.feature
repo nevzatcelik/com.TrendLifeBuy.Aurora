@@ -5,5 +5,5 @@ Feature: API_PROFILE_UPDATE-INFORMATION
 
     Given User sets Post the necessary "ilkdata1" "zeynepData2" path param
     Then  UserZZ sends Post request and gets response
-    Then  User Verifies Post user status is "202"
+    Then  User Verifies Post user status is "200"
     Then  User Verifies Post returned "message" "profile updated successfully" response body

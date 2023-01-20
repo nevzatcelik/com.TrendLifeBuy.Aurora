@@ -14,7 +14,7 @@ public class US_074 {
 
     String url="jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username="u480337000_tbl_training_u";
-    String password="O+e3!xmZcO]";
+    String password="pO9#4bmxU";
 
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar

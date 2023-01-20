@@ -1,4 +1,4 @@
-
+@dtb
 Feature: Admin should be able to list a customer's orders from the orders table through the Database
 
   Scenario Outline: To be verified that all orders of the customer with specified Id should be saved in a list and verified
