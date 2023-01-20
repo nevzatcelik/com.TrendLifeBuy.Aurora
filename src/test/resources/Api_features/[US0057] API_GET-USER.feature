@@ -1,4 +1,4 @@
-@api
+@
  Feature: API_GET-USER
 
    Scenario: When a Get Request is sent to the api/get-user endpoint, the status code should be 200 and the user information in the Response Body should be verified.

@@ -1,4 +1,4 @@
-@api
+
   Feature: API_USER-NOTIFICATIONS-SETTING
 
     Scenario: When a GET Request is sent to the /api/user-notifications-setting endpoint, it should be checked that the status code returned is 200 and that the information in the Response Body is correct.
