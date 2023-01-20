@@ -1,4 +1,4 @@
-
+@api
   Feature:
 
     Scenario:

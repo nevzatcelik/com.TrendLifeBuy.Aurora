@@ -8,10 +8,13 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
+import org.json.JSONObject;
 import org.junit.Assert;
 import pojos.LoginPojo;
 import utilities.ApiUtils;
 import utilities.ConfigReader;
+
+import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -30,8 +33,8 @@ public class POST_REQUEST {
     @Then("User sends Post request and gets response")
     public void user_sends_post_request_and_gets_response() {
         String token= ApiUtils.generateToken();
-        loginPojo=new LoginPojo("test@test.com","123123123");
-        response=given().headers("Authorization","Bearer"+token).
+        loginPojo=new LoginPojo("admin@gmail.com","123123123");
+        response=given().headers("Authorization","Bearer "+token).
                 spec(spec).
                 contentType(ContentType.JSON).
                 when().
@@ -57,5 +60,29 @@ public class POST_REQUEST {
         // Assert.assertEquals(tokendata,json.getString("token"));
         response.then().assertThat().body("token",Matchers.anything());
         // Assert.assertNotNull(json.getString("token"));
+    }
+
+    @Then("User verifies Response Body is Product added to wishlist.")
+    public void userVerifiesResponseBodyIsProductAddedToWishlist() {
+
+    }
+
+    @Then("UserZ sends Post request and gets response")
+    public void userzSendsPostRequestAndGetsResponse() {
+
+        HashMap<String, String> requestBody = new HashMap<String, String>();
+        requestBody.put("seller_id", String.valueOf(1));
+        requestBody.put("seller_product_id", String.valueOf(82));
+        requestBody.put("type","product");
+        System.out.println(requestBody);
+        String token= ApiUtils.generateToken();
+        loginPojo=new LoginPojo("admin@gmail.com","123123123");
+        response=given().headers("Authorization","Bearer"+token).
+                spec(spec).
+                contentType(ContentType.JSON).
+                when().
+                body(requestBody).
+                post("{get1}/{get2}");
+        response.prettyPrint();
     }
 }
