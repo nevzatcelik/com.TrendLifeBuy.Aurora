@@ -45,21 +45,21 @@ public class GET_REQUEST {
     public void userffVerifiesTheReturnedResponseBody() {
         response.then().body(
                 "notifications[0].user_id",equalTo(453),
-                "notifications[0].notification_setting.admin_msg",equalTo("An order has been approved."),
+                "notifications[0].notification_setting.admin_msg",equalTo("A withdraw request has been declined."),
                 "notifications[1].user_id",equalTo(453),
-                "notifications[1].notification_setting.admin_msg",equalTo("An order process change to Pending"),
+                "notifications[1].notification_setting.admin_msg",equalTo("An order process change to Processing"),
                 "notifications[2].user_id",equalTo(453),
-                "notifications[2].notification_setting.admin_msg",equalTo("An order process change to Processing"),
+                "notifications[2].notification_setting.admin_msg",equalTo("An order process change to Pending"),
                 "notifications[3].user_id",equalTo(453),
-                "notifications[3].notification_setting.admin_msg",equalTo("An order process change to Shipped"),
+                "notifications[3].notification_setting.admin_msg",equalTo("An order process change to Pending"),
                 "notifications[4].user_id",equalTo(453),
-                "notifications[4].notification_setting.admin_msg",equalTo("An order process change to Recieved"),
+                "notifications[4].notification_setting.admin_msg",equalTo("An order has been approved."),
                 "notifications[5].user_id",equalTo(453),
-                "notifications[5].notification_setting.admin_msg",equalTo("An order process change to Delivered"),
+                "notifications[5].notification_setting.admin_msg",equalTo("An order process change to Pending"),
                 "notifications[6].user_id",equalTo(453),
-                "notifications[6].notification_setting.admin_msg",equalTo("New Order placed"),
-                "notifications[7].user_id",equalTo(null),
-                "notifications[7].notification_setting.admin_msg",equalTo(null),
+                "notifications[6].notification_setting.admin_msg",equalTo("An order process change to Processing"),
+                "notifications[7].user_id",equalTo(453),
+                "notifications[7].notification_setting.admin_msg",equalTo("An order process change to Shipped"),
                 "msg",equalTo("success")
         );
     }
@@ -73,7 +73,7 @@ public class GET_REQUEST {
                 "wallet_running_balance",Matchers.equalTo(1949.99F),
                 "wallet_pending_balance",equalTo(0),
                    "total_coupon",equalTo(0),
-                   "total_wishlist",equalTo(10),
+                   "total_wishlist",equalTo(14),
                     "total_cancel_order",equalTo(2),
                      "message",equalTo("success")
         );

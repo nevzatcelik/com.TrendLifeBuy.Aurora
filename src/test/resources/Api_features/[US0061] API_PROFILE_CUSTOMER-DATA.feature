@@ -1,4 +1,4 @@
-
+@api
 Feature: API_PROFILE_CUSTOMER-DATA
 
     Scenario:When a GET Request is sent to the /api/profile/get-customer-data endpoint, it should be checked that the status code returned is 200 and that the user information in the Response Body is correct.

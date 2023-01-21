@@ -1,6 +1,6 @@
 
 Feature: US0067
-
+@api
   Scenario: When a GET Request is sent to the /api/profile/address-list endpoint, it should be checked that the status code returned is 200 and that the information in the Response Body is correct.
 
     Given User sets the necessary "ilkdata1" "boraData1" path param
@@ -13,7 +13,7 @@ Feature: US0067
     Then  UserB sends Post request and gets response
     Then  User Verifies Post user status is "201"
     Then  User Verifies Post returned "message" "address added successfully" response body
-
+@api
   Scenario:When a PATCH Request Body is sent to the /api/profile/address-update/:id endpoint, it should be verified that the status code returned is 202 (Accepted) and the message information in the Response Body is "address updated successfully".
 
     Given User sets Patch the necessary "ilkdata1" "boradata4" path param

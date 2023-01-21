@@ -1,6 +1,6 @@
 
   Feature: US0045 As an administrator, I would like to have a Top Customer page to access reports on the most active customers on the site.
-
+@SystemSecond
     Scenario: [TC_4501] It should be verified that the Top Customers List can be accessed from the Top Customers link
 
       Given Open browser go to "adminUrl"
@@ -10,7 +10,7 @@
       Then Admin verifies that the Top Customers List can be accessed from the Top Customers link
       And Closes the page
 
-
+    @SystemSecond
     Scenario: [TC_4502] Verify that the top customers are listed under Name, Email, Phone, Total Spend, Joined AT in the Top Customers List
 
       Given Open browser go to "adminUrl"
