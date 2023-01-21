@@ -1,4 +1,4 @@
-
+@api
 Feature: US0060 As a user, when I forget my password, I want the verification link to be sent to my registered E_mail.
 
   Scenario:When a Request Body is sent to the /api/forgot-password endpoint with valid information, it should be verified that the status code returned is 200 and the message information in the Response Body is "Reset password link sent on your email id."

@@ -9,7 +9,7 @@
     Then User clicks Support Ticket on dashboard page
     Then User verifies that the page is accessibleS
     And  Closes the page
-    @Regression
+
       Scenario:TC_2302 Verify that the All Submitted Ticket List is visible on the Spport Ticket page.
 
       Given Open browser go to url "userUrl"

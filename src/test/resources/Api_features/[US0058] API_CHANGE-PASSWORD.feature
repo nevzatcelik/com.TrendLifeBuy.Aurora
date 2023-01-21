@@ -1,4 +1,4 @@
-
+@api
 Feature:
 
   Scenario:When a Request Body is sent to the /api/change-password endpoint with incorrect information, the status code returned is 409 Conflict and the message information in the Response Body is "Invalid Credintials." must be verified
