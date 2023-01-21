@@ -1,6 +1,6 @@
 
 Feature: API.WISHLIST
-
+@api
    Scenario: When sending GET Request to the /api/wishlist endpoint, it should be checked that the status code returned is 200 and that the information in the Response Body is correct.
     Given User sets the necessary "ilkdata1" "zeynepdata1" path param
     Then  User sends GET request and gets response
@@ -13,7 +13,7 @@ Feature: API.WISHLIST
       Then  UserZ sends Post request and gets response
       Then  User Verifies Post user status is "201"
       Then  User Verifies Post returned "message" "Product added to wishlist." response body
-
+@api
     Scenario: When a POST Request Body is sent to the /api/wishlist endpoint with a product information already in Wishlist, it should be verified that the status code returned is 409 Conflict and the message information in the Response Body is "Product already in wishlist".
 
       Given User sets Post the necessary "ilkdata1" "zeynepdata1" path param
@@ -27,7 +27,7 @@ Feature: API.WISHLIST
       Then   UserZ sends Delete request and gets response
       Then   User Verifies Delete user status is "202"
       Then   UserB verifies the returned Deleted "message" "product removed from wishlist successfully." response body
-
+      @api
      Scenario: When DELETE Request Body is sent to the /api/wishlist/delete endpoint with invalid information, it should be verified that the status code returned is 404 (Not Found) and the message information in the Response Body is "product not found".
 
        Given  User sets Delete the necessary "ilkdata1" "zeynepdata3" path param

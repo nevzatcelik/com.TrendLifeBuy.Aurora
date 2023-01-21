@@ -1,5 +1,5 @@
 
-@Regression
+
 
 Feature: US040 support ticket - my ticket tests / Administrator want a page to open a support ticket
 
@@ -23,7 +23,7 @@ Feature: US040 support ticket - my ticket tests / Administrator want a page to o
     Then Admin verifies that Technical is selectable from the Category Tab in the My Ticket Page
     Then Admin verifies that Others is selectable from the Category Tab in the My Ticket Page
     And Closes the page
-@Regression
+
   Scenario: TC_4003 Verify that Select One, High, Medium, Low options are visible and selectable
 
     Given Open browser go to url "adminUrl"

@@ -1,4 +1,4 @@
- #status code bug
+@api #status code bug
 Feature: API_PROFILE_UPDATE-INFORMATION
 
   Scenario:When a POST Request Body is sent to the /api/profile/update-information endpoint with the correct information, it should be verified that the status code returned is 200 and that the message information in the Response Body is "profile updated successfully".

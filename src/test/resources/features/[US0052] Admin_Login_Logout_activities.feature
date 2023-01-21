@@ -1,7 +1,7 @@
 
-  @US52
+
   Feature: Visibility testing of Login/Logout activities
-    @US5201
+    @SystemSecond
     Scenario: Test to access Login - Logout Activity page with Login Activity link from All Activity Logs menu
 
       Given Open browser go to url "adminUrl"
@@ -11,7 +11,7 @@
       And   Closes the page
         #All Activity Logs menusunden Login Activity linki ile Login - Logout Activity  sayfasina erisildigi dogrulanmali
 
-    @US5202
+    @SystemSecond
     Scenario: Test of deletion of activities in Login/Logout Activity list with Celan All button
       Given Open browser go to url "adminUrl"
       Then  Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login
@@ -20,7 +20,7 @@
       And   Closes the page
          #Login - Logout Activity listesindeki aktivitelerin Celan All butonu ile temizlenebildigi / silinebildigi dogrulanmali
 
-    @US5203
+
     Scenario: Test for listing activities in Login/Logout Activity list with User, Login AT, Logout AT, IP, Agent, Description headers
 
       Given Open browser go to url "adminUrl"
@@ -30,7 +30,7 @@
       And   Closes the page
           #Login - Logout Activity listesindeki aktivitelerin User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
 
-    @US5204
+
     Scenario: Search test with Quick Search Text Box in Login /Logout Activity list
 
       Given Open browser go to url "adminUrl"
@@ -40,7 +40,7 @@
       And   Closes the page
          #Quick Search Text Box'i ile Login - Logout Activity listesinde arama yapilabildigi dogrulanmali
 
-    @US5205
+
     Scenario: Login/Logout Activity Listesindeki sayfalar arasinda gecisler testi
 
       Given Open browser go to url "adminUrl"

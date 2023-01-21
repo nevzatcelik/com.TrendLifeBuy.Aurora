@@ -1,4 +1,4 @@
-
+@api
   Feature: US0056 As a user, I shouldn't be able to connect to the API with my wrong Email and Wrong Password.
 
 

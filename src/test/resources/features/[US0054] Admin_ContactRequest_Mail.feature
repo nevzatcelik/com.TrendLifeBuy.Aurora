@@ -1,6 +1,6 @@
 
     Feature:
-      @US5201
+      @SmokeSecond
       Scenario: Accessibility test of Contact Mail page from Contact Request tab in Content menu on Dashboard Side Bar
 
         Given Open browser go to url "adminUrl"
@@ -10,7 +10,7 @@
         And   Closes the page
              #Dashboard Side Bar'indaki Content menüsündeki Contact Request sekmesinden Contact Mail sayfasina erisilebilir oldugu dogrulanmali.
 
-      @US5402
+      @SmokeSecond
       Scenario: Visibility test of Contact Mail LIst on Contact Mail page
 
         Given Open browser go to url "adminUrl"
@@ -20,7 +20,7 @@
         And   Closes the page
              #Contact Mail sayfasinda Contact Mail LIst'in görunur oldugu dogrulanmali.
 
-      @US5403
+
       Scenario: Test of Name , Email, Message headers in Contact Mail LIst
 
         Given Open browser go to url "adminUrl"
@@ -30,7 +30,7 @@
         And   Closes the page
              #Contact Mail LIst'te mesajlarin Name , Email, Message basliklari altinda listelendigi dogrulanmali.
 
-      @US5404
+
       Scenario: Test to change the order of the information appearing in the List when the headings of the Contact Mail List are clicked
 
         Given Open browser go to url "adminUrl"
@@ -40,7 +40,7 @@
         And   Closes the page
              #Contact Mail List basliklarina tiklandiginda List'te görünen bilgilerin siralanisinin degistigi dogrulanmali
 
-      @US5405
+
       Scenario: Test to search in Contact Mail List with Quick Search Box
 
         Given Open browser go to url "adminUrl"
@@ -50,7 +50,7 @@
         And   Closes the page
              #Visibility test of Show and Delete links in Select tab under Action title
 
-      @US5406
+
       Scenario: Visibility test of Show and Delete links in Select tab under Action title
 
         Given Open browser go to url "adminUrl"
@@ -61,7 +61,7 @@
            #Action basligi altindaki Select sekmesinde Show ve Delete linklerinin görünür oldugu dogrulanmali.
 
 
-      @US5407
+
       Scenario: Test to redirect to Contact Mail page when Show link is clicked in Select tab
 
         Given Open browser go to url "adminUrl"
@@ -72,7 +72,7 @@
            #Action basligi altindaki Select sekmesinde Show linkine tiklandiginda Contact Mail sayfasina yönlendirdigi ve Contact Mail sayfasinda ilgili mailin detaylarinin göründügü dogrulanmali
 
 
-      @US5408
+
       Scenario: Mail deletion test with Delete link in Select tab under Action title
 
         Given Open browser go to url "adminUrl"

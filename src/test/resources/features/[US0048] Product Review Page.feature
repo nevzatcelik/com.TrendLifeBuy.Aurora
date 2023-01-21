@@ -1,6 +1,6 @@
 
 Feature: US_0048 As an administrator, I want the Product Review page to be able to see the ratings for the products.
-  
+  @SmokeSecond
   Scenario: US_4801 It should be verified that the Product Review page can be accessed with the Product Review link.
     Given Open browser go to url "adminUrl"
     Then  Admin enters an "admineminemail", a "password" and then clicks sign in link on admin page to login
@@ -8,7 +8,7 @@ Feature: US_0048 As an administrator, I want the Product Review page to be able 
     Then Click on the Product Reivew link
     Then Verifies that it goes to the Product Review page.
     And Closes the page
-
+@SmokeSecond
   Scenario: US_4802 Verify that the Product Review List is visible on the Product Review page
     Given Open browser go to url "adminUrl"
     Then  Admin enters an "admineminemail", a "password" and then clicks sign in link on admin page to login

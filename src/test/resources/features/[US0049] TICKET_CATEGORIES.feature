@@ -1,6 +1,6 @@
 
 Feature: US0049 As an administrator, I want a page to be able to perform operations regarding the categories that users will choose when opening a ticket.
-
+  @SmokeSecond
   Scenario: [TC_4901] It should be verified that the Categories page can be accessed from the Category link.
 
     Given Open browser go to "adminUrl"
@@ -10,7 +10,7 @@ Feature: US0049 As an administrator, I want a page to be able to perform operati
     Then Admin verifies that the Categories page can be accessed from the Category link.
     And Closes the page
 
-
+  @SmokeSecond
   Scenario: [TC_4902] It should be verified that a new category can be created for the Tickets by entering the name and status from the Add new section on the Categories page.
 
     Given Open browser go to "adminUrl"
@@ -20,7 +20,7 @@ Feature: US0049 As an administrator, I want a page to be able to perform operati
     Then Admin enters a category name at (add New) section, clicks to Save button and verifies that a new category can be created
     And Closes the page
 
-
+  @SmokeSecond
   Scenario: [TC_4903] It should be verified that the ticket categories are displayed according to Name, Status, Action titles in the Category List.
 
     Given Open browser go to "adminUrl"
@@ -30,7 +30,7 @@ Feature: US0049 As an administrator, I want a page to be able to perform operati
     Then Admin verifies that the ticket categories are displayed according to Name, Status, Action titles in the Category List.
     And Closes the page
 
-
+  @SmokeSecond
   Scenario: [TC_4904] It should be verified that the status of the categories can be changed under the Status title in the Category List.
 
     Given Open browser go to "adminUrl"
