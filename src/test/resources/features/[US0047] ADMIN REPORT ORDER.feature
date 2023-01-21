@@ -74,7 +74,7 @@ Feature: US0047 As an administrator, I want the Order page to be able to see the
               And Closes the page
 
 
-              Scenario: TC_4708 Verify that the products are listed under the headings Date, Order ID, Email, Product QTY, Total Amount, Order Status, Work Paid in the opened Order Lists.
+              Scenario: TC_4707 Verify that the products are listed under the headings Date, Order ID, Email, Product QTY, Total Amount, Order Status, Work Paid in the opened Order Lists.
                 Given Open browser go to url "adminUrl"
                 Then Admin enters an "admintalhamail", a "password" and then clicks sign in link on admin page to login
                 Then Admin clicks Admin Reports link
