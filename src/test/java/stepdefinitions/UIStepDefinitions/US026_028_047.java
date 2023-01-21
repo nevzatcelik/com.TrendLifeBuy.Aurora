@@ -4,12 +4,15 @@ package stepdefinitions.UIStepDefinitions;
 import io.cucumber.java.en.Then;
 
 
+import org.apache.xmlbeans.impl.jam.JElement;
+import org.checkerframework.checker.formatter.qual.Format;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import pages.TrendLifeBuyPage;
 
@@ -18,6 +21,8 @@ import pages.US026_028_047_Page;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.text.DateFormat;
+import java.util.Date;
 
 
 public class US026_028_047 {
@@ -285,7 +290,7 @@ public class US026_028_047 {
     }
 
     @Then("Click order link")
-    public void click_order_link (){
+    public void click_order_link() {
         Actions actn = new Actions(Driver.getDriver());
         ReusableMethods.bekle(2);
         actn.sendKeys(Keys.PAGE_DOWN).perform();
@@ -293,9 +298,349 @@ public class US026_028_047 {
         page.orderlink.click();
 
 
+    }
+
+    @Then("Click Type Section")
+    public void click_type_section() {
+        page.clicktypelist.click();
+        ReusableMethods.bekle(1);
+
+
+    }
+    @Then("Click Date Section")
+    public void click_date_section () {
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Type and Date List from admin")
+    public void verify_type_date() {
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.clicktypelist.isDisplayed());
+        Assert.assertTrue(page.clickdatelist.isDisplayed());
+    }
+
+    @Then("Verify All Order")
+    public void verify_all_order() {
+
+        Assert.assertTrue(page.allorderadmin.isDisplayed());
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @Then("Verify Pending Orders")
+    public void verify_pending_order() {
+
+        Actions pendingoerder = new Actions(Driver.getDriver());
+        pendingoerder.moveToElement(page.pendingordersadmin).perform();
+        Assert.assertTrue(page.pendingordersadmin.isDisplayed());
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @Then("Verify Confirmed Order")
+    public void verify_confirmed_order() {
+
+        Actions confiremedorder = new Actions(Driver.getDriver());
+        confiremedorder.moveToElement(page.confirmedordersadmin).perform();
+        Assert.assertTrue(page.confirmedordersadmin.isDisplayed());
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @Then("Verify Completed Orders")
+    public void verify_completed_order() {
+        Actions completedorders = new Actions(Driver.getDriver());
+        completedorders.moveToElement(page.completedordersadmin).perform();
+
+        Assert.assertTrue(page.completedordersadmin.isDisplayed());
+        ReusableMethods.bekle(1);
+
+
+    }
+
+    @Then("Verify Inhouse Orders")
+    public void verify_inhouse_order() {
+
+        Actions inhouseorders = new Actions(Driver.getDriver());
+        inhouseorders.moveToElement(page.inhouseorderadmin).perform();
+        Assert.assertTrue(page.inhouseorderadmin.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Today")
+    public void verify_today() {
+
+        Assert.assertTrue(page.todaydate.isDisplayed());
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("Verify Yesterday")
+    public void verify_yesterday() {
+        Actions yesterday = new Actions(Driver.getDriver());
+        yesterday.moveToElement(page.yesterdaydate).perform();
+        Assert.assertTrue(page.yesterdaydate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Last 7 Days")
+    public void verify_last_sevendays () {
+        Actions sevendays = new Actions(Driver.getDriver());
+        sevendays.moveToElement(page.lastsevendate).perform();
+        Assert.assertTrue(page.lastsevendate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Last 30 Days")
+    public void verify_30_month() {
+        Actions monthdays = new Actions(Driver.getDriver());
+        monthdays.moveToElement(page.last30date).perform();
+        Assert.assertTrue(page.last30date.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify This Month")
+    public void verify_this_month() {
+        Actions thismonth = new Actions(Driver.getDriver());
+        thismonth.moveToElement(page.thismonthdate).perform();
+        Assert.assertTrue(page.thismonthdate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Last Month")
+    public void verify_last_month() {
+        Actions lastmonth = new Actions(Driver.getDriver());
+        lastmonth.moveToElement(page.lastmonthdate).perform();
+        Assert.assertTrue(page.lastmonthdate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify This Year")
+    public void verify_this_year() {
+        Actions thisyear = new Actions(Driver.getDriver());
+        thisyear.moveToElement(page.thisyeardate).perform();
+        Assert.assertTrue(page.thisyeardate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Last Year")
+    public void verify_last_year() {
+        Actions lastyear = new Actions(Driver.getDriver());
+        lastyear.moveToElement(page.lastyeardate).perform();
+        Assert.assertTrue(page.lastyeardate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+    @Then("Verify Custom Range")
+    public void verify_custom_range() {
+        Actions customrange = new Actions(Driver.getDriver());
+        customrange.moveToElement(page.customrangedate).perform();
+        Assert.assertTrue(page.customrangedate.isDisplayed());
+        ReusableMethods.bekle(1);
+
+    }
+
+@Then("verified that the desired date range can be selected manually.")
+public void verify_select_manually () {
+        Actions customedate = new Actions(Driver.getDriver());
+        customedate.moveToElement(page.customrangedate).click().perform();
+        ReusableMethods.bekle(2);
+        customedate.moveToElement(page.datedate).click().perform();
+        Assert.assertTrue(page.datedate.isDisplayed());
+
+
+
+
+
+
+
+}
+@Then("Verified today section correct date is shown in the Date TextBox")
+    public void verify_today_show () {
+        ReusableMethods.bekle(2);
+        page.todaydate.click();
+     String Startdate = page.startdate.getText();
+     String Enddate = page.enddate.getText();
+    Assert.assertEquals(Startdate,Enddate);
+
+
+
+
+
+
+
+}
+    @Then("Verified Yesterday section correct date is shown in the Date TextBox")
+    public void verify_yesterday_show () {
+        ReusableMethods.bekle(2);
+        Actions yesterday = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+        yesterday.moveToElement(page.yesterdaydate).click().perform();
+        ReusableMethods.bekle(2);
+        String Enddate = page.enddate.getText();
+        String startdate = page.startdate.getText();
+
+        Assert.assertEquals(Enddate,startdate);
+
+
+
+
 
 
 
     }
-}
+    @Then("Verified Last 7 day section correct date is shown in the Date TextBox")
+    public void verify_last7day_show () {
+        ReusableMethods.bekle(2);
+        Actions lastseven = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+        lastseven.moveToElement(page.lastsevendate).click().perform();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.startdate.isEnabled());
+
+
+
+
+
+
+
+    }
+    @Then("Verified Last 30 Day section correct date is shown in the Date TextBox")
+    public void verify_last30day_show () {
+        ReusableMethods.bekle(2);
+        Actions last30 = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+      last30.moveToElement(page.last30date).click().perform();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.startdate.isEnabled());
+    }
+
+
+    @Then("Verified This Month section correct date is shown in the Date TextBox")
+    public void verify_thismonth_show () {
+        ReusableMethods.bekle(2);
+        Actions thismonth = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+      thismonth.moveToElement(page.thismonthdate).click().perform();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.startdate.isEnabled());
+
+    }
+
+    @Then("Verified Last Month section correct date is shown in the Date TextBox")
+    public void verify_lastmonth_show () {
+        ReusableMethods.bekle(2);
+        Actions lastmonth = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+        lastmonth.moveToElement(page.lastmonthdate).click().perform();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.startdate.isEnabled());
+    }
+
+    @Then("Verified This Year section correct date is shown in the Date TextBox")
+    public void verify_thisyear_show () {
+        ReusableMethods.bekle(2);
+        Actions thisyear = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+     thisyear.moveToElement(page.thisyeardate).click().perform();
+        ReusableMethods.bekle(2);
+
+
+            Assert.assertTrue(page.startdate.isEnabled());
+    }
+
+
+    @Then("Verified Last Year section correct date is shown in the Date TextBox")
+    public void verify_lastyear_show () {
+        ReusableMethods.bekle(2);
+        Actions lastyear = new Actions(Driver.getDriver());
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+        lastyear.moveToElement(page.lastyeardate).click().perform();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(page.startdate.isEnabled());
+    }
+
+    @Then("Click Search Button")
+    public void click_search_button() {
+        ReusableMethods.bekle(2);
+        page.searchbutton.click();
+
+
+    }
+
+    @Then("Verify Date that the products are listed under the headings")
+    public void verify_date (){
+        Assert.assertTrue(page.dateordersearch.isDisplayed());
+    }
+
+
+    @Then("Verify Order ID that the products are listed under the headings")
+    public void verify_order_id (){
+        Assert.assertTrue(page.orderidsearch.isDisplayed());
+    }
+
+    @Then("Verify E mail that the products are listed under the headings")
+    public void verify_e_mail (){
+        Assert.assertTrue(page.emailorder.isDisplayed());
+    }
+
+    @Then("Verify Product QTY that the products are listed under the headings")
+    public void verify_product_qty (){
+        Assert.assertTrue(page.productqtyorder.isDisplayed());
+    }
+    @Then("Verify Total Amount that the products are listed under the headings")
+    public void verify_total_amount (){
+        Assert.assertTrue(page.orderstatusorder.isDisplayed());
+    }
+
+    @Then("Verify IS PAID that the products are listed under the headings")
+    public void verify_is_paid (){
+            Assert.assertTrue(page.ispaidorder.isDisplayed());
+
+    }
+    @Then("should be verified that it is possible to search in the Orders Lists from the Quick Search TextBox")
+    public void verify_searchbox () {
+        ReusableMethods.bekle(2);
+        page.searchboxbutton.click();
+        ReusableMethods.bekle(4);
+        page.searchboxbutton.sendKeys("76");
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(page.searchboxbutton.isDisplayed());
+
+
+
+
+    }
+
+    @Then("Click This Month from Date list")
+    public void select_this_moth () {
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+        page.thismonthdate.click();
+        ReusableMethods.bekle(2);
+    }
+
+
+
+    }
 
