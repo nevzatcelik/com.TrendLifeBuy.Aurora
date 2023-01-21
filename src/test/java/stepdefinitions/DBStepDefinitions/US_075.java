@@ -17,7 +17,7 @@ public class US_075 {
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
-    @Given("Talha JDBC ile database ebaglanir {string} tablosundaki verileri alir")
+    @Given("Talha connects to database with JDBC {string} retrieves data from table")
     public void talha_jdbc_ile_database_ebaglanir_tablosundaki_verileri_alir(String string) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

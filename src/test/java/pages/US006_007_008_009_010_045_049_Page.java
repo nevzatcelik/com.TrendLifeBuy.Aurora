@@ -268,7 +268,7 @@ public class US006_007_008_009_010_045_049_Page {
     @FindBy(xpath = "//button[@id='submit_btn']")
     public WebElement addNewCategoryNameSaveButton;
     // Admin Login => Support Ticket => Category Tab => Category List => Category Name in First Line
-    @FindBy(css = "#sku_tbody > tr:nth-of-type(1) > td:nth-of-type(2)")
+    @FindBy(xpath = "//tbody[@id='sku_tbody']/tr[1]/td[2]")
     public WebElement categoryNameInFirstLine;
     // Admin Login => Support Ticket => Category Tab => Category List => Head Line
     @FindBy(xpath = "//th[.='Name']")
@@ -309,7 +309,8 @@ public class US006_007_008_009_010_045_049_Page {
     // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Status Button
     @FindBy(xpath = "//tbody[@id='sku_tbody']/tr[1]//div[@class='slider round']")
     public WebElement categoryEditPageStatusButton;
-
-
+    // Admin Login => Support Ticket => Category Tab => Category List => Select Button First Line => Status Button
+    @FindBy(xpath = "//input[@value='Delete']")
+    public WebElement categoryEditPageDeletePopUpPage;
 
 }

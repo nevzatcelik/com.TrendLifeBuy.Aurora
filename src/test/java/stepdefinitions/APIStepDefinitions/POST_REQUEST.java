@@ -18,6 +18,7 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static utilities.ApiUtils.generateToken;
 
 public class POST_REQUEST {
     public static RequestSpecification spec;
@@ -310,5 +311,25 @@ public class POST_REQUEST {
                 body(json.toString()).
                 post("{get1}/{get2}");
         response.prettyPrint();
+    }
+
+    //-----------------------------------------------------LEVENT---------------------------------------------------------------------------//
+
+    @Then("User sends Post request with {string} and {string} and gets response")
+    public void userSendsPostRequestWithAndAndGetsResponse(String arg0, String arg1) {
+        JSONObject json=new JSONObject();
+        json.put("email",arg0);
+        json.put("password",arg1);
+
+        String token= ApiUtils.generateToken();
+        response=given().headers("Authorization","Bearer "+token).
+                spec(spec).
+                contentType(ContentType.JSON).
+                accept("application/json").
+                when().
+                body(json.toString()).
+                post("{get1}/{get2}");
+        response.prettyPrint();
+
     }
 }
