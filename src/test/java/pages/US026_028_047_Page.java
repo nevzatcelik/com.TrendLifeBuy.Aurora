@@ -159,6 +159,9 @@ public class US026_028_047_Page {
     @FindBy (xpath = "//input[@aria-controls=\"allOrderTable\"]")
     public WebElement searchboxbutton;
 
+    @FindBy (xpath = "(//span[@class=\"current\"])[2]")
+    public WebElement allorderlist;
+
 
 
 
