@@ -174,13 +174,6 @@ public class US018_019_020_021_052_054_Page {
 
     // ==================== US52 All Activity Logs   =======================>>>
 
-    /*public void adminLoginBora(String mail,String password){
-        emailBox.sendKeys(ConfigReader.getProperty("adminBoraMail"));
-        passwordBox.sendKeys(ConfigReader.getProperty("password"));
-        signInButton.click();
-    }
-
-     */
     @FindBy(xpath = "//span[text()='All Activity Logs']")
     public WebElement allActivityLogsLink;                                                                       //5201
     @FindBy(xpath = "//a[text()='Login Activity']")   //a[@class='active ']
@@ -195,7 +188,6 @@ public class US018_019_020_021_052_054_Page {
     public WebElement nextSagTus;                                                                                //5202
     @FindBy(xpath = "//td[text()='No data available in table']")
     public WebElement sonucYazisi52NoData;
-
 
     @FindBy(xpath = "(//tr[@role='row'])[1]")                   //5203  User, Login AT, Logout AT, IP, Agent, Description
     public WebElement loginLogoutActivityBasliklar;
@@ -224,7 +216,55 @@ public class US018_019_020_021_052_054_Page {
 
     // ==================== US54 Contact Request   =======================>>>
 
+    @FindBy(xpath = "//span[text()='Contact Request']")   // 5401
+    public WebElement contactRequestLink;
+
+    @FindBy(xpath = "//a[text()='Contact Mail']")
+    public WebElement contactMailLink;
+
+    @FindBy(xpath = "//h3[text()='Contact Mail List']")  //5402
+    public WebElement contactMailListTitle;
+
+    @FindBy(xpath = "//th[text()='Name']")               //5403
+    public WebElement contactMailListNAME;
+    @FindBy(xpath = "//th[text()='Message']")
+    public WebElement contactMailListMESSAGE;
+    @FindBy(xpath = "//th[text()='Email']")  //tbody[1]/tr[1]/td[@class='sorting_1']
+    public WebElement contactMailListEMAIL;
+    @FindBy(xpath = "//tbody[1]/tr[1]/td[@class='sorting_1']")
+    public WebElement contactMailListTable;
 
 
+    @FindBy(xpath = "//td[text()='bitox26925@lance7.com']") //5404  --Kullanmadim
+    public WebElement altEMAILWebElement;
+    @FindBy(xpath = "(//td[@class='sorting_1'])[1]") //5404
+    public WebElement altEMAILWebElementBirinci;    //Basta, EMAIL in altindaki elemani verir,tiklayincada yeni gelenin textini verir
+    @FindBy(xpath = "(//td[@class='sorting_1'])[2]") //5404
+    public WebElement altEMAILWebElementIkinci;
+
+    @FindBy(xpath = "//input[@type='search']")                         //5405
+    public WebElement mailListQuickSearchBoxKutusu;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[1]")                         //5406
+    public WebElement actionsSelectButton;
+
+    @FindBy(xpath = "(//a[text()='Show'])[1]")                         //5406
+    public WebElement actionsShowButton;
+
+    @FindBy(xpath = "(//a[text()='Delete'])[1]")    //h3[text()='Contact Mail']                      //5406
+    public WebElement actionsDeleteButton;
+
+    @FindBy(xpath = "//h3[text()='Contact Mail']")                                                    //5407
+    public WebElement contactMailDetayTitle;
+
+    @FindBy(xpath = "//input[@id='dataDeleteBtn']")                                                    //5408
+    public WebElement actionsSelectDelete2Button;
+
+    //
+    @FindBy(xpath = "//div[@id='a11y-speak-polite']")                                                    //5408
+    public WebElement delectedMessage;
+
+    @FindBy(xpath = "//div[@id='dataTable_info']")
+    public WebElement getSonucYazisi54NoData;
 
 }

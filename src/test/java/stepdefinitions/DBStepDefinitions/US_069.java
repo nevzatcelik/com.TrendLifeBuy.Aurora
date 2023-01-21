@@ -14,16 +14,14 @@ public class US_069 {
 
     String url = "jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username = "u480337000_tbl_training_u";
-    String password = "O+e3!xmZcO]";
+    String password = "pO9#4bmxU";
 
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
 
-
-
-    @Given("The user gets the data in the table {string} by connecting to the database")
+    @Given("AdminG gets the data in the table {string} by connecting to the database")
     public void theUserGetsTheDataInTheTableByConnectingToTheDatabase(String gursel) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -32,8 +30,7 @@ public class US_069 {
     }
 
 
-
-    @Then("The user verifies that {string} in the list {string}")
+    @Then("AdminG verifies that {string} in the list {string}")
     public void theUserVerifiesThatInTheList(String id, String expected) throws SQLException {
 
         resultSet.absolute(0);

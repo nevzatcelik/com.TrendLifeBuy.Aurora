@@ -1,10 +1,10 @@
+@dtb
+Feature: As an administrator, I should be able to verify the ID of the desired Personnel in the Staff table via the DataBase.
 
-Feature: Bir yönetici olarak DataBase üzerinden Staff tablosundaki istenen Personelin ID'sini dogrulayabilmeliyim
+  Scenario Outline:The IDs in the staff table should be taken to a list and it should be verified whether the desired ID is in this list.
 
-  Scenario Outline:Staff tablosundaki ID'ler bir listeye alinarak istenilen ID'nin bu listede olup olmadigi dogrulanmali.
-
-    Given The user gets the data in the table "gurseldata" by connecting to the database
-    Then  The user verifies that "id" in the list "<expected>"
+    Given AdminG gets the data in the table "gurseldata" by connecting to the database
+    Then  AdminG verifies that "id" in the list "<expected>"
     Examples:
       | expected |
       | 1 |
@@ -12,5 +12,4 @@ Feature: Bir yönetici olarak DataBase üzerinden Staff tablosundaki istenen Per
       | 3 |
       | 4 |
       | 5 |
-      | 7 |
-
+      | 100 |

@@ -1,7 +1,7 @@
+@dtb
+Feature: US0077 As an administrator, when I query the code number from the Countries table on the Database, it should be verified that the requested information is frozen.
 
-Feature:
-
-  Scenario Outline: EMINE
+  Scenario Outline: I should be able to verify the name and phonecode of the country whose Id is given among the users in the Countries table
 
     Given  Emine gets the data in the table "<eminedata>" by connecting to the database
     Then   Emine verifies LIST that "name" "phonecode"  in the list "<expectedname>" "<expectedphone>"

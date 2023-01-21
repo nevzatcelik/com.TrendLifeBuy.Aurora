@@ -16,14 +16,14 @@ public class US_079 {
 
     String url = "jdbc:mysql://45.84.205.255:3306/u480337000_tlb_training";
     String username = "u480337000_tbl_training_u";
-    String password = "O+e3!xmZcO]";
+    String password = "pO9#4bmxU";
 
     Connection connection; // database'e baglantimizi saglayacak
     Statement statement; // database'de istedigimiz query'leri calistirmamizi saglar
     ResultSet resultSet; // statement ile yapilan sorgu sonucunu store etmek icin kullanilir
 
 
-    @Given("fatih JDBC ile database ebaglanir {string} tablosundaki verileri alir")
+    @Given("AdminF gets the data in the table {string} by connecting to the database")
     public void fatihJDBCIleDatabaseEbaglanirTablosundakiVerileriAlir(String arg0) throws SQLException {
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -32,7 +32,7 @@ public class US_079 {
     }
 
 
-    @And("User verifies {string} {string} {string} from data base")
+    @And("AdminF verifies {string} {string} {string} from data base")
     public void userVerifiesFromDataBase(String id, String order, String expected) throws SQLException {
         resultSet.absolute(0);
         List<String> resultOrder = new ArrayList<String>();
