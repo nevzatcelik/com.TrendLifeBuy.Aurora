@@ -84,6 +84,5 @@ Feature: US0049 As an administrator, I want a page to be able to perform operati
     Then Admin clicks Support Ticket Link on the dashboard
     Then Admin clicks Category link under Support Ticket Tab
     Then Admin clicks a categoriy’s Select Button and sees the Edit Button and Delete Button
-    Then Admin clicks the delete link
-    Then Admin verifies that the category can be deleted
+    Then Admin clicks the delete link and verifies that the category can be deleted
     And Closes the page
