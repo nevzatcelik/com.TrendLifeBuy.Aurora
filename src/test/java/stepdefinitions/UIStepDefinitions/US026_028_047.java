@@ -640,7 +640,15 @@ public void verify_select_manually () {
         ReusableMethods.bekle(2);
     }
 
+@Then("Click type and Date")
+    public void click_type_and_date() {
 
+        page.allorderlist.click();
+        ReusableMethods.bekle(2);
+        page.datelistfromorder.click();
+        ReusableMethods.bekle(2);
+
+}
 
     }
 
